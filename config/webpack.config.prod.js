@@ -31,6 +31,7 @@ module.exports = merge(common, {
 	},
 	plugins: [
 		new CleanPlugin([PATHS.build], {
+			root: process.cwd(),
 			verbose: false
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
