@@ -1,5 +1,6 @@
 # react-seed
 
+## Frameworks/technologies
 * ES6/7
 * webpack
 * browersync
@@ -9,3 +10,7 @@
 * snapshot testing
 * scss
 * eslint
+
+## Secondary features (in separate branch)
+* Bootstrap
+* Server-side rendering
