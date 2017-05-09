@@ -16,4 +16,6 @@
 ## Secondary features (in separate branch)
 * Bootstrap
 * Server-side rendering
+* React only
+* Storybook
 * TravisCI integration
