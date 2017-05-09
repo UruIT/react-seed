@@ -14,3 +14,6 @@
 ## Secondary features (in separate branch)
 * Bootstrap
 * Server-side rendering
+* simple-react
+* using bootstrap
+* react-storybook
