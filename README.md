@@ -9,4 +9,3 @@
 * snapshot testing
 * scss
 * eslint
-* editorconfig
