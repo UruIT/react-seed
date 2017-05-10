@@ -21,11 +21,21 @@ module.exports = merge(common, {
 			use: ['eslint-loader'],
 			include: PATHS.app,
 			enforce: 'pre'
-		},{
+		}, {
 			test: /\.scss$/,
 			use: ExtractTextPlugin.extract({
 				fallback: 'style-loader',
-				use: ['css-loader', 'resolve-url-loader' ,'sass-loader']
+				use: [{
+					loader: 'css-loader',
+					options: {
+						modules: true,
+						localIdentName: '[path][name]__[local]--[hash:base64:5]'
+					}
+				}, {
+					loader: 'resolve-url-loader'
+				}, {
+					loader: 'sass-loader'
+				}]
 			})
 		}]
 	},
