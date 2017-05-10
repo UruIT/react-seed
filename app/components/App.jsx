@@ -10,7 +10,7 @@ export default class App extends React.Component {
 			joke: ''
 		};
 	}
-	componentDidMount() {
+	handleClick = () => {
 		getJson('https://api.chucknorris.io/jokes/random')
 			.then(res => this.setState({
 				joke: res.value
@@ -18,14 +18,10 @@ export default class App extends React.Component {
 	}
 	render() {
 		return (
-			<div>
-				<button className={styles.button} onClick={this.test}>Test</button>
+			<div className={styles.container}>
+				<button className={styles.button} onClick={this.handleClick}>Test</button>
 				<MyButton>{ this.state.joke }</MyButton>
 			</div>
 		);
-	}
-
-	test = () => {
-		console.error('test')
 	}
 }
