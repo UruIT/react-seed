@@ -44,7 +44,9 @@
 		"webpack-merge": "^4.1.0"
 	},
 	"dependencies": {
+		"es6-promise": "^4.1.0",
 		"react": "^15.5.4",
-		"react-dom": "^15.5.4"
+		"react-dom": "^15.5.4",
+		"whatwg-fetch": "^2.0.3"
 	}
 }
