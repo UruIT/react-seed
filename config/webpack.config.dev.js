@@ -9,7 +9,7 @@ module.exports = merge(common, {
 	devtool: 'eval-source-map',
 	devServer: {
 		historyApiFallback: true,
-		hot: true,
+		hotOnly: true,
 		inline: true,
 		stats: 'errors-only',
 		host: process.env.HOST,
