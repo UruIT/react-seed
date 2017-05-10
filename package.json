@@ -10,7 +10,7 @@
 		"build": "webpack",
 		"start": "webpack-dev-server",
 		"test": "jest",
-		"tdd": "karma start --auto-watch --no-single-run",
+		"tdd": "jest --watchAll",
 		"lint": "eslint . --ext .js --ext .jsx",
 		"serve": "http-server build/ -p 8081"
 	},
