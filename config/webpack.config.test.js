@@ -12,7 +12,7 @@ module.exports = merge(common, {
 	module: {
 		rules: [{
 			test: /\.jsx?$/,
-			use: ['isparta-instrumenter-loader'],
+			use: ['istanbul-instrumenter-loaderr'],
 			include: PATHS.app,
 			enforce: 'pre'
 		},
