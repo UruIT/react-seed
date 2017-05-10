@@ -5,13 +5,22 @@ import styles from './App.scss';
 export default class App extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			joke: ''
+		};
 	}
-
+	componentDidMount() {
+		fetch('https://api.chucknorris.io/jokes/random')
+			.then(response => response.json())
+			.then(res => this.setState({
+				joke: res.value
+			}));
+	}
 	render() {
 		return (
 			<div>
 				<button className={styles.button} onClick={this.test}>Test</button>
-				<MyButton></MyButton>
+				<MyButton>{ this.state.joke }</MyButton>
 			</div>
 		);
 	}

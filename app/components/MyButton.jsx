@@ -1,12 +1,11 @@
 import React from 'react';
 
-export default class MyButton extends React.Component {
+const MyButton = ({ children }) => (
+	<div>
+		<button className='button'>
+			{ children || '...' }
+		</button>
+	</div>
+);
 
-	render() {
-		return (
-			<div>
-				<button className='button'>My Button</button>
-			</div>
-		);
-	}
-}
+export default MyButton;
