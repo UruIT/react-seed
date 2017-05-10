@@ -14,9 +14,6 @@
 ## Frameworks/technologies
 
 * webpack
-    * webpack-dev-server
-    * browersync
-    * html-webpack-plugin
 * ES6/7
 * ESLint
 * React
