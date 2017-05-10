@@ -1,5 +1,5 @@
 import React from 'react';
-import MyButton from './MyButton';
+import MyButton from './MyButton/MyButton';
 import styles from './App.scss';
 
 export default class App extends React.Component {
