@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 import App from '../components/App';
 import About from '../components/about/About';
+import NotFound from '../components/notFound/NotFound';
 
 const Root = () => (
 	<BrowserRouter>
@@ -12,8 +13,11 @@ const Root = () => (
 				<li><Link to='/about'>About</Link></li>
 			</ul>
 
-			<Route exact path='/' component={App} />
-			<Route path='/about' component={About} />
+			<Switch>
+				<Route exact path='/' component={App} />
+				<Route path='/about' component={About} />
+				<Route component={NotFound} />
+			</Switch>
 		</div>
 	</BrowserRouter>
 );
