@@ -11,16 +11,15 @@ module.exports = merge(common, {
 	},
 	module: {
 		rules: [{
-				test: /\.jsx?$/,
-				use: ['isparta-instrumenter-loader'],
-				include: PATHS.app,
-				enforce: 'pre'
-			},
-			{
-				test: /\.jsx?$/,
-				use: ['babel-loader?cacheDirectory'],
-				include: PATHS.app
-			}
-		]
+			test: /\.jsx?$/,
+			use: ['isparta-instrumenter-loader'],
+			include: PATHS.app,
+			enforce: 'pre'
+		},
+		{
+			test: /\.jsx?$/,
+			use: ['babel-loader?cacheDirectory'],
+			include: PATHS.app
+		}]
 	}
 });
