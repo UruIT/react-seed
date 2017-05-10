@@ -10,6 +10,7 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<div>
+				<h1>Home</h1>
 				<button className={styles.button} onClick={this.test}>Test</button>
 				<MyButton></MyButton>
 			</div>
