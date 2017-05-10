@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const MyButton = ({ children }) => (
 	<div>
@@ -7,5 +8,9 @@ const MyButton = ({ children }) => (
 		</button>
 	</div>
 );
+
+MyButton.propTypes = {
+	children: PropTypes.string
+};
 
 export default MyButton;
