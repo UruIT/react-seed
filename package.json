@@ -9,7 +9,7 @@
 		"stats": "webpack --profile --json > stats.json",
 		"build": "webpack",
 		"start": "webpack-dev-server",
-		"test": "karma start",
+		"test": "jest",
 		"tdd": "karma start --auto-watch --no-single-run",
 		"lint": "eslint . --ext .js --ext .jsx",
 		"serve": "http-server build/ -p 8081"
@@ -33,6 +33,7 @@
 		"html-webpack-template": "^6.0.1",
 		"http-server": "^0.10.0",
 		"istanbul-instrumenter-loader": "^2.0.0",
+		"jest": "^20.0.0",
 		"json-loader": "^0.5.4",
 		"node-sass": "^4.5.2",
 		"npm-install-webpack-plugin": "^4.0.4",
@@ -51,5 +52,10 @@
 		"react-dom": "^15.5.4",
 		"react-router-dom": "^4.1.1",
 		"whatwg-fetch": "^2.0.3"
+	},
+	"jest": {
+		"testPathIgnorePatterns": [
+			"webpack"
+		]
 	}
 }
