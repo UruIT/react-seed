@@ -1,6 +1,7 @@
 import React from 'react';
 import MyButton from './MyButton';
 import styles from './App.scss';
+import { getJson } from '../utils/fetch';
 
 export default class App extends React.Component {
 	constructor(props) {
@@ -10,8 +11,7 @@ export default class App extends React.Component {
 		};
 	}
 	componentDidMount() {
-		fetch('https://api.chucknorris.io/jokes/random')
-			.then(response => response.json())
+		getJson('https://api.chucknorris.io/jokes/random')
 			.then(res => this.setState({
 				joke: res.value
 			}));
