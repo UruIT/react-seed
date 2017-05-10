@@ -12,16 +12,15 @@
 `yarn run serve`
 
 ## Frameworks/technologies
-
 * webpack
 * ES6/7
 * ESLint
 * React
 * fetch
 * React-Router
+* counter example
 * Jest (with snapshots)
 * scss
-* counter example
 * Pre-commit hook to run linter
 
 ## Secondary features (dev branches)
@@ -45,5 +44,4 @@ seeds/
     ./storybook
     ./travis
     ./bootstrap
-
 ```
