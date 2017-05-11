@@ -20,7 +20,7 @@ class Counter extends Component {
 	}
 	render() {
 		return (
-			<div className={styles.container}>
+			<div className={styles.container} >
 				<div>{ this.state.value }</div>
 				<button onClick={this.handleDecClick}>&#x2212;</button>
 				<button onClick={this.handleIncClick}>&#x2b;</button>

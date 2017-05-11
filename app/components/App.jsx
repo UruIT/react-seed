@@ -18,10 +18,12 @@ export default class App extends React.Component {
 			}));
 	}
 	render() {
+		let { container, shadow, button } = styles;
+
 		return (
-			<div className={styles.container}>
+			<div className={`${container} ${shadow}`}>
 				<Counter />
-				<button className={styles.button} onClick={this.handleClick}>Test</button>
+				<button className={`${button} ${shadow}`} onClick={this.handleClick}>Test</button>
 				<MyButton>{ this.state.joke }</MyButton>
 			</div>
 		);
