@@ -9,7 +9,7 @@ module.exports = merge(common, {
 	devtool: 'eval-source-map',
 	devServer: {
 		historyApiFallback: true,
-		hotOnly: true,
+		hot: true,
 		inline: true,
 		stats: 'errors-only',
 		host: process.env.HOST,
@@ -34,6 +34,7 @@ module.exports = merge(common, {
 		}]
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NamedModulesPlugin()
 	]
 });
