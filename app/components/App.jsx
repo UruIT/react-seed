@@ -1,7 +1,7 @@
 import React from 'react';
-import MyButton from './MyButton';
-import styles from './App.scss';
+import MyButton from './MyButton/MyButton';
 import { getJson } from '../utils/fetch';
+import styles from './App.scss';
 
 export default class App extends React.Component {
 	constructor(props) {
@@ -23,5 +23,9 @@ export default class App extends React.Component {
 				<MyButton>{ this.state.joke }</MyButton>
 			</div>
 		);
+	}
+
+	test = () => {
+		console.error('test')
 	}
 }
