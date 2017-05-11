@@ -20,6 +20,7 @@
 * React-Router
 * counter example
 * Jest (with snapshots)
+* counter example
 * scss
 * Pre-commit hook to run linter
 
