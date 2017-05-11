@@ -2,6 +2,7 @@ import React from 'react';
 import MyButton from './MyButton';
 import styles from './App.scss';
 import { getJson } from '../utils/fetch';
+import Counter from './counter/Counter';
 
 export default class App extends React.Component {
 	constructor(props) {
@@ -19,6 +20,7 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<div className={styles.container}>
+				<Counter />
 				<button className={styles.button} onClick={this.handleClick}>Test</button>
 				<MyButton>{ this.state.joke }</MyButton>
 			</div>

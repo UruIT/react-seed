@@ -1,0 +1,25 @@
+.container {
+	background: #fbfb09;
+	-moz-box-shadow: 1px 1px 4px 4px #ccc;
+	-webkit-box-shadow: 1px 1px 4px 4px #ccc;
+	box-shadow: 1px 1px 4px 4px #ccc;
+	border: 2px solid #222;
+	width: 15rem;
+	margin: auto;
+
+	div {
+		font-size: 7rem;
+	}
+
+	button {
+		display: inline-block;
+		font-weight: bold;
+		font-size: 3rem;
+		cursor: pointer;
+		border: 2px solid #222;
+		background:inherit;
+		padding: 0.2rem;
+		margin: 1rem;
+		width: 3.5rem;
+	}
+}
