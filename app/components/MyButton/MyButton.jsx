@@ -1,13 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './MyButton.scss';
 
-export default class MyButton extends React.Component {
+const log = e => console.warn(e.target.textContent);
 
-	render() {
-		return (
-			<div className={styles.container}>
-				<button className='button'>My Button</button>
-			</div>
-		);
-	}
-}
+const MyButton = ({ children }) => (
+	<div className={styles.container}>
+		<button className='button' onClick={log}>
+			{ children || '...' }
+		</button>
+	</div>
+);
+
+MyButton.propTypes = {
+	children: PropTypes.string
+};
+
+export default MyButton;
