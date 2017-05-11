@@ -1,3 +1,13 @@
 .container {
-	border: 1px solid black;
+	display: inline-block;
+	border: 0.1px solid #000;
+	padding: 0.2rem;
+	background: #fbfb09;
+	cursor: pointer;
+	transition: all .4s cubic-bezier(0.7, -0.55, 0.3, 1.55);
+
+	&:hover {
+		transform: scale(1.1, 1.1);
+		font-weight: 600;
+	}
 }

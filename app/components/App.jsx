@@ -19,13 +19,13 @@ export default class App extends React.Component {
 	}
 	render() {
 		let { container, shadow, button } = styles;
+		let { joke } = this.state;
 
 		return (
 			<div className={`${container} ${shadow}`}>
-				<h1>Home</h1>
 				<Counter />
 				<button className={`${button} ${shadow}`} onClick={this.handleClick}>Test</button>
-				<MyButton>{ this.state.joke }</MyButton>
+				{ !!joke && <MyButton text={joke} /> }
 			</div>
 		);
 	}

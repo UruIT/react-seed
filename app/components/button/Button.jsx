@@ -4,16 +4,19 @@ import styles from './Button.scss';
 
 const log = e => console.warn(e.target.textContent);
 
-const MyButton = ({ children }) => (
-	<div className={styles.container}>
-		<button className='button' onClick={log}>
-			{ children || '...' }
-		</button>
+const Button = ({ text, onClick }) => (
+	<div className={styles.container} onClick={onClick} >
+		{ text }
 	</div>
 );
 
-MyButton.propTypes = {
-	children: PropTypes.string
+Button.propTypes = {
+	onClick: PropTypes.func,
+	text: PropTypes.string
 };
+Button.defaultProps = {
+	onClick: log,
+	text: '...'
+}
 
-export default MyButton;
+export default Button;

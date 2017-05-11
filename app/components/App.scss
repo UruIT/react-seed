@@ -5,8 +5,8 @@
 }
 
 .container {
-	width: 420px;
-	padding: 10px;
+	max-width: 420px;
+	padding: 2rem 1rem;
 	margin: 32px auto;
 	text-align: center;
 }
@@ -17,6 +17,6 @@
 	cursor: pointer;
 	font-weight: 600;
 	font-size: 2rem;
-	width: 200px;
+	width: 15rem;
 	margin: 2rem;
 }
