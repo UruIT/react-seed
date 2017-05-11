@@ -8,18 +8,22 @@
 	margin: auto;
 
 	div {
-		font-size: 7rem;
+		font-size: 9rem;
+		user-select: none;
+		cursor: default;
 	}
 
-	button {
+	a {
 		display: inline-block;
+		user-select: none;
 		font-weight: bold;
 		font-size: 3rem;
 		cursor: pointer;
-		border: 2px solid #222;
-		background:inherit;
+		border-radius: 0.2rem;
 		padding: 0.2rem;
 		margin: 1rem;
 		width: 3.5rem;
+		background: #222;
+		color: #fbfb09;
 	}
 }
