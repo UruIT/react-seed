@@ -19,6 +19,7 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<div className={styles.container}>
+				<h1>Home</h1>
 				<button className={styles.button} onClick={this.handleClick}>Test</button>
 				<MyButton>{ this.state.joke }</MyButton>
 			</div>
