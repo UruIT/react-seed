@@ -2,6 +2,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import './index.scss';
 
-import App from './components/App.jsx';
+import Root from './config/Root';
 
-render(<App />, document.getElementById('app'));
+render(<Root />, document.getElementById('app'));
