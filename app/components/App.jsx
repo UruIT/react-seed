@@ -11,7 +11,7 @@ export default class App extends React.Component {
 		};
 	}
 	handleClick = () => {
-		getJson('https://api.chucknorris.io/jokes/random')
+		return getJson('https://api.chucknorris.io/jokes/random')
 			.then(res => this.setState({
 				joke: res.value
 			}));
