@@ -16,22 +16,29 @@ module.exports = merge(common, {
 		port: process.env.PORT
 	},
 	module: {
-		rules: [{
-			test: /\.scss$/,
-			use: [{
-				loader: 'style-loader'
+		rules: [
+			{
+				test: /\.jsx?$/,
+				use: ['eslint-loader'],
+				include: PATHS.app,
+				enforce: 'pre'
 			}, {
-				loader: 'css-loader',
-				options: {
-					modules: true,
-					localIdentName: '[path][name]__[local]'
-				}
-			}, {
-				loader: 'resolve-url-loader'
-			}, {
-				loader: 'sass-loader'
-			}]
-		}]
+				test: /\.scss$/,
+				use: [{
+					loader: 'style-loader'
+				}, {
+					loader: 'css-loader',
+					options: {
+						modules: true,
+						localIdentName: '[path][name]__[local]'
+					}
+				}, {
+					loader: 'resolve-url-loader'
+				}, {
+					loader: 'sass-loader'
+				}]
+			}
+		]
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
