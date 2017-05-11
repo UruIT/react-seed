@@ -5,7 +5,7 @@ jest.mock('../../utils/fetch', () => ({
 
 import React from 'react';
 import App from '../App';
-import MyButton from '../MyButton/MyButton';
+import Button from '../button/Button';
 import { shallow } from 'enzyme';
 import { getJson } from '../../utils/fetch';
 
@@ -17,10 +17,10 @@ describe('On click in button', () => {
 		expect(getJson).toBeCalledWith('https://api.chucknorris.io/jokes/random');
 	});
 
-	it('should update MyButton children', () => {
+	it('should update Button children', () => {
 		return app.instance().handleClick()
 			.then(() => {
-				expect(app.find(MyButton).childAt(0).text()).toEqual('Chuck Norris joke');
+				expect(app.find(Button).childAt(0).text()).toEqual('Chuck Norris joke');
 			});
 	});
 });
