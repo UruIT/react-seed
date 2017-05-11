@@ -55,6 +55,9 @@
 		"whatwg-fetch": "^2.0.3"
 	},
 	"jest": {
+		"moduleNameMapper": {
+			"\\.(scss)$": "<rootDir>/app/components/__mocks__/styles.js"
+		},
 		"testPathIgnorePatterns": [
 			"webpack"
 		]
