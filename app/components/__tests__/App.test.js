@@ -20,7 +20,8 @@ describe('On click in button', () => {
 	it('should update Button children', () => {
 		return app.instance().handleClick()
 			.then(() => {
-				expect(app.find(Button).childAt(0).text()).toEqual('Chuck Norris joke');
+				expect(app.find(Button).props().text)
+					.toEqual('Chuck Norris joke');
 			});
 	});
 });
