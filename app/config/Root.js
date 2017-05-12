@@ -1,18 +1,16 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import App from '../components/App';
 import About from '../components/about/About';
 import NotFound from '../components/notFound/NotFound';
 
+import Nav from '../components/nav/Nav';
+
 const Root = () => (
 	<BrowserRouter>
 		<div>
-			<ul>
-				<li><Link to='/'>Home</Link></li>
-				<li><Link to='/about'>About</Link></li>
-			</ul>
-
+			<Nav />
 			<Switch>
 				<Route exact path='/' component={App} />
 				<Route path='/about' component={About} />
