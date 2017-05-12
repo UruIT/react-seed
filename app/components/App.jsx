@@ -25,8 +25,4 @@ export default class App extends React.Component {
 			</div>
 		);
 	}
-
-	test = () => {
-		console.error('test')
-	}
 }
