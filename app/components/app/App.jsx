@@ -1,7 +1,7 @@
 import React from 'react';
-import MyButton from './button/Button';
-import { getJson } from '../utils/fetch';
-import Counter from './counter/Counter';
+import MyButton from '../button/Button';
+import { getJson } from '../../utils/fetch';
+import Counter from '../counter/Counter';
 import styles from './App.scss';
 
 export default class App extends React.Component {

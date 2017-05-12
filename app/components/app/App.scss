@@ -1,4 +1,4 @@
-@import '../styles/box-shadow.scss';
+@import '../../styles/box-shadow.scss';
 
 .shadow {
 	@include box-shadow(1px, 1px, 4px,#4c4a4a);
