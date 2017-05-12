@@ -7,8 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = merge(common, {
 	entry: {
-		vendor: Object.keys(pkg.dependencies),
-		style: PATHS.style
+		vendor: Object.keys(pkg.dependencies)
 	},
 	output: {
 		path: PATHS.build,
