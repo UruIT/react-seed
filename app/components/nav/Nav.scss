@@ -1,0 +1,20 @@
+ul.nav {
+	border: 1px solid;
+	border-width: 1px 0;
+	list-style: none;
+	text-align: center;
+
+	li {
+		display: inline;
+	}
+
+	a {
+		display: inline-block;
+		padding: 10px;
+	}
+}
+
+.active {
+	background: #fbfb09;
+	font-weight: 600;
+}

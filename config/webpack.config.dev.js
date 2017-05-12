@@ -3,9 +3,6 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 
 module.exports = merge(common, {
-	entry: {
-		style: PATHS.style
-	},
 	devtool: 'eval-source-map',
 	devServer: {
 		historyApiFallback: true,
