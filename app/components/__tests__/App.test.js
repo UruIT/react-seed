@@ -5,7 +5,7 @@ jest.mock('../../utils/fetch', () => ({
 
 import React from 'react';
 import App from '../App';
-import MyButton from '../MyButton';
+import MyButton from '../MyButton/MyButton';
 import { shallow } from 'enzyme';
 import { getJson } from '../../utils/fetch';
 
