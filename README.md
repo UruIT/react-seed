@@ -2,20 +2,27 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/UruIT/react-seed/develop/LICENSE)
 
-## Frameworks/technologies
+## Start the project
+`yarn start`
 
+## Build
+`yarn run build`
+
+## Serve built version
+`yarn run serve`
+
+## Frameworks/technologies
 * webpack
-    * webpack-dev-server
-    * browersync
-    * html-webpack-plugin
 * ES6/7
 * ESLint
 * React
 * fetch
 * React-Router
-* Jest (with snapshots)
-* scss
 * counter example
+* Jest (with snapshots)
+* counter example
+* scss
+* Pre-commit hook to run linter
 
 ## Secondary features (dev branches)
 * Redux
@@ -38,5 +45,4 @@ seeds/
     ./storybook
     ./travis
     ./bootstrap
-
 ```

@@ -1,0 +1,16 @@
+.container {
+	display: inline-block;
+	padding: 0.2rem;
+	border: 0.1px solid #000;
+	background: #fbfb09;
+	color: #000;
+	cursor: pointer;
+	transition: all .4s cubic-bezier(0.36, -1, 1, 2.65);
+
+	&:hover {
+		transform: scale(1.05, 1.15);
+		font-weight: 600;
+		background: #000;
+		color: #fbfb09;
+	}
+}
