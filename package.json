@@ -12,7 +12,7 @@
 		"test": "jest",
 		"tdd": "jest --watchAll",
 		"lint": "eslint . --ext .js --ext .jsx",
-		"serve": "http-server build/ -p 8081"
+		"serve": "npm run build && http-server build/ -p 8081"
 	},
 	"devDependencies": {
 		"babel-core": "^6.24.1",
