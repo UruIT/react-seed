@@ -1,13 +1,13 @@
-jest.mock('../../utils/fetch', () => ({
+jest.mock('../utils/fetch', () => ({
 	getJson: jest.fn(url => new Promise((resolve, reject) => !!url ?
 		resolve({ value: 'Chuck Norris joke' }) : reject()))
 }));
 
 import React from 'react';
-import App from '../App';
-import MyButton from '../MyButton/MyButton';
+import App from './App';
+import MyButton from './MyButton/MyButton';
 import { shallow } from 'enzyme';
-import { getJson } from '../../utils/fetch';
+import { getJson } from '../utils/fetch';
 
 describe('On click in button', () => {
 	const app = shallow(<App />);
