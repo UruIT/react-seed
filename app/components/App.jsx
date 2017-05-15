@@ -1,5 +1,5 @@
 import React from 'react';
-import MyButton from './MyButton/MyButton';
+import MyButton from './button/Button';
 import { getJson } from '../utils/fetch';
 import styles from './App.scss';
 
