@@ -6,6 +6,7 @@
 	"author": "UruIT",
 	"license": "MIT",
 	"scripts": {
+		"precommit-msg": "echo 'Pre-commit checks...' && exit 0",
 		"stats": "webpack --profile --json > stats.json",
 		"build": "webpack",
 		"start": "webpack-dev-server --open",
@@ -15,6 +16,7 @@
 		"serve": "npm run build && http-server build/ -p 8081"
 	},
 	"pre-commit": [
+		"precommit-msg",
 		"test"
 	],
 	"devDependencies": {
