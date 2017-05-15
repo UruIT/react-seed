@@ -6,7 +6,7 @@
 	"author": "UruIT",
 	"license": "MIT",
 	"scripts": {
-		"precommit": "echo 'pre-commit checks..' && npm run lint",
+		"precommit": "echo 'linting...' && npm run lint",
 		"prepush": "npm run test",
 		"stats": "webpack --profile --json > stats.json",
 		"build": "webpack",
