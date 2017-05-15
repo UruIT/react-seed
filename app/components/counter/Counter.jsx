@@ -2,12 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from './Counter.scss';
-import { counterIncrement, counterDecrement } from './CounterActions';
-
-const mapDispatchToProps = {
-	counterIncrement,
-	counterDecrement
-};
+import * as CounterActions from './CounterActions';
 
 const mapStateToProps = ({ value }) => ({
 	value
@@ -29,5 +24,5 @@ Counter.propTypes = {
 
 export default connect(
 	mapStateToProps,
-	mapDispatchToProps
+	CounterActions
 )(Counter);
