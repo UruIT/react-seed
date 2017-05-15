@@ -1,5 +1,5 @@
 import React from 'react';
-import MyButton from '../button/Button';
+import Button from '../button/Button';
 import { getJson } from '../../utils/fetch';
 import Counter from '../counter/Counter';
 import styles from './App.scss';
@@ -25,7 +25,7 @@ export default class App extends React.Component {
 			<div className={`${container} ${shadow}`}>
 				<Counter />
 				<button className={`${button} ${shadow}`} onClick={this.handleClick}>Test</button>
-				{ !!joke && <MyButton text={joke} /> }
+				{ !!joke && <Button text={joke} /> }
 			</div>
 		);
 	}
