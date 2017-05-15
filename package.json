@@ -12,12 +12,13 @@
 		"start": "webpack-dev-server --open",
 		"test": "jest",
 		"tdd": "jest --watchAll",
-		"lint": "eslint . --ext .js --ext .jsx",
+		"lint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache",
 		"serve": "npm run build && http-server build/ -p 8081"
 	},
 	"pre-commit": [
 		"precommit-msg",
-		"test"
+		"test",
+		"lint"
 	],
 	"devDependencies": {
 		"babel-core": "^6.24.1",

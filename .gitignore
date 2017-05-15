@@ -36,3 +36,6 @@ stats.json
 .DS_Store
 Thumbs.db
 yarn.lock
+
+#cache
+.eslintcache
