@@ -17,7 +17,6 @@
 	},
 	"pre-commit": [
 		"precommit-msg",
-		"test",
 		"lint"
 	],
 	"devDependencies": {
