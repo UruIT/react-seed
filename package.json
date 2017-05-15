@@ -6,10 +6,8 @@
 	"author": "UruIT",
 	"license": "MIT",
 	"scripts": {
-		"precommit-msg": "echo 'Pre-commit checks...' && exit 0",
-		"precommit": "npm run precommit-msg && npm run lint",
-		"prepush-msg": "echo 'Pre-push checks...' && exit 0",
-		"prepush": "npm run prepush-msg && npm run test",
+		"precommit": "echo 'pre-commit checks..' && npm run lint",
+		"prepush": "npm run test",
 		"stats": "webpack --profile --json > stats.json",
 		"build": "webpack",
 		"start": "webpack-dev-server --open",
