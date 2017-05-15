@@ -6,14 +6,20 @@
 	"author": "UruIT",
 	"license": "MIT",
 	"scripts": {
+		"precommit-msg": "echo 'Pre-commit checks...' && exit 0",
 		"stats": "webpack --profile --json > stats.json",
 		"build": "webpack",
 		"start": "webpack-dev-server --open",
 		"test": "jest",
 		"tdd": "jest --watchAll",
-		"lint": "eslint . --ext .js --ext .jsx",
+		"lint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache",
 		"serve": "npm run build && http-server build/ -p 8081"
 	},
+	"pre-commit": [
+		"precommit-msg",
+		"test",
+		"lint"
+	],
 	"devDependencies": {
 		"babel-core": "^6.24.1",
 		"babel-eslint": "^7.2.3",
@@ -38,6 +44,7 @@
 		"json-loader": "^0.5.4",
 		"node-sass": "^4.5.2",
 		"npm-install-webpack-plugin": "^4.0.4",
+		"pre-commit": "^1.2.2",
 		"raw-loader": "^0.5.1",
 		"react-test-renderer": "^15.5.4",
 		"resolve-url-loader": "^2.0.2",
