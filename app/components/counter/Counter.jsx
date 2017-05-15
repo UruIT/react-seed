@@ -1,30 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import styles from './Counter.scss';
+import { counterIncrement, counterDecrement } from './CounterActions';
 
-const increment = step => ({ value }) => ({ value: value + step });
+const mapDispatchToProps = {
+	counterIncrement,
+	counterDecrement
+};
 
-class Counter extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			value: 0
-		};
-	}
-	handleIncClick = () => {
-		this.setState(increment(1));
-	}
-	handleDecClick = () => {
-		this.setState(increment(-1));
-	}
-	render() {
-		return (
-			<div className={styles.container} >
-				<div>{ this.state.value }</div>
-				<a onClick={this.handleDecClick}>&#x2212;</a>
-				<a onClick={this.handleIncClick}>&#x2b;</a>
-			</div>
-		);
-	}
-}
+const mapStateToProps = ({ value }) => ({
+	value
+});
 
-export default Counter;
+export const Counter = ({ value, counterIncrement, counterDecrement }) => (
+	<div className={styles.container} >
+		<div>{ value }</div>
+		<a onClick={counterDecrement}>&#x2212;</a>
+		<a onClick={counterIncrement}>&#x2b;</a>
+	</div>
+);
+
+Counter.propTypes = {
+	value: PropTypes.number.isRequired,
+	counterIncrement: PropTypes.func.isRequired,
+	counterDecrement: PropTypes.func.isRequired
+};
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Counter);
