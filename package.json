@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"scripts": {
 		"precommit-msg": "echo 'Pre-commit checks...' && exit 0",
-		"prepush-msg": "echo 'Pre-push checks...' && exit 1",
+		"prepush-msg": "echo 'Pre-push checks...' && exit 0",
 		"stats": "webpack --profile --json > stats.json",
 		"build": "webpack",
 		"start": "webpack-dev-server --open",
@@ -22,7 +22,6 @@
 	],
 	"pre-push": [
 		"prepush-msg",
-		"lint",
 		"test"
 	],
 	"devDependencies": {
