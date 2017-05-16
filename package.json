@@ -6,7 +6,7 @@
 	"author": "UruIT",
 	"license": "MIT",
 	"scripts": {
-		"precommit": "echo 'linting...' && npm run lint",
+		"precommit": "lint-staged",
 		"prepush": "npm run test",
 		"stats": "webpack --profile --json > stats.json",
 		"build": "webpack",
@@ -15,6 +15,9 @@
 		"tdd": "jest --watchAll",
 		"lint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache",
 		"serve": "npm run build && http-server build/ -p 8081"
+	},
+	"lint-staged": {
+		"*.{js,jsx}": "eslint"
 	},
 	"devDependencies": {
 		"babel-core": "^6.24.1",
@@ -39,6 +42,7 @@
 		"istanbul-instrumenter-loader": "^2.0.0",
 		"jest": "^20.0.0",
 		"json-loader": "^0.5.4",
+		"lint-staged": "^3.4.1",
 		"node-sass": "^4.5.2",
 		"npm-install-webpack-plugin": "^4.0.4",
 		"raw-loader": "^0.5.1",
