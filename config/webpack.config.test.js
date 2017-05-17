@@ -6,20 +6,22 @@ module.exports = merge(common, {
 	devtool: 'inline-source-map',
 	resolve: {
 		alias: {
-			'app': PATHS.app
+			app: PATHS.app
 		}
 	},
 	module: {
-		rules: [{
-			test: /\.jsx?$/,
-			use: ['istanbul-instrumenter-loader'],
-			include: PATHS.app,
-			enforce: 'pre'
-		},
-		{
-			test: /\.jsx?$/,
-			use: ['babel-loader?cacheDirectory'],
-			include: PATHS.app
-		}]
+		rules: [
+			{
+				test: /\.jsx?$/,
+				use: ['istanbul-instrumenter-loader'],
+				include: PATHS.app,
+				enforce: 'pre'
+			},
+			{
+				test: /\.jsx?$/,
+				use: ['babel-loader?cacheDirectory'],
+				include: PATHS.app
+			}
+		]
 	}
 });

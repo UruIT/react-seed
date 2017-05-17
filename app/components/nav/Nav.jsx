@@ -5,12 +5,17 @@ import { nav, active, normal } from './Nav.scss';
 const Nav = () => (
 	<ul className={nav}>
 		<li>
-			<NavLink to='/' activeClassName={active} className={normal} exact>
+			<NavLink to="/" activeClassName={active} className={normal} exact>
 				Home
 			</NavLink>
 		</li>
 		<li>
-			<NavLink to='/about' activeClassName={active} className={normal} exact>
+			<NavLink
+				to="/about"
+				activeClassName={active}
+				className={normal}
+				exact
+			>
 				About
 			</NavLink>
 		</li>

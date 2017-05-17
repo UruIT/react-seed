@@ -12,8 +12,8 @@ const Root = () => (
 		<div>
 			<Nav />
 			<Switch>
-				<Route exact path='/' component={App} />
-				<Route path='/about' component={About} />
+				<Route exact path="/" component={App} />
+				<Route path="/about" component={About} />
 				<Route component={NotFound} />
 			</Switch>
 		</div>
