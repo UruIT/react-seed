@@ -2,7 +2,7 @@
 
 exports[`<Button/> with default props 1`] = `
 <div
-  className={undefined}
+  className="container"
   onClick={[Function]}
 >
   ...
@@ -11,7 +11,7 @@ exports[`<Button/> with default props 1`] = `
 
 exports[`<Button/> with some props 1`] = `
 <div
-  className={undefined}
+  className="container"
   onClick={[Function]}
 >
   TEXT

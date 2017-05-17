@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App/> 1`] = `
+<div
+  className="container shadow"
+>
+  <div
+    className="container"
+  >
+    <div>
+      0
+    </div>
+    <a
+      onClick={[Function]}
+    >
+      −
+    </a>
+    <a
+      onClick={[Function]}
+    >
+      +
+    </a>
+  </div>
+  <button
+    className="button shadow"
+    onClick={[Function]}
+  >
+    Test
+  </button>
+</div>
+`;
