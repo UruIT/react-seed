@@ -1,7 +1,8 @@
 import React from 'react';
+import { about } from './About.scss';
 
 const About = () => (
-	<div>
+	<div className={about}>
 		<h1>About</h1>
 	</div>
 );
