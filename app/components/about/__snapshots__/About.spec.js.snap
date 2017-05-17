@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders About 1`] = `
-<div>
+<div
+  className={undefined}
+>
   <h1>
     About
   </h1>
