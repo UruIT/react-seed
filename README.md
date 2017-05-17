@@ -37,7 +37,23 @@ yarn test  # run front-end tests
 * counter example
 * Jest (with snapshots / enzyme)
 * counter ex (scss)
-* Pre-commit hook to run linter
+* git hooks (pre-commit)
+
+## Formatter (JS)
+We encourage the use of [prettier](https://github.com/prettier/prettier) in your editor for consistent code style.
+
+In Visual Studio Code, we use these user settings for `prettier`
+
+```javascript
+{
+    "prettier.printWidth": 80,
+    "prettier.jsxBracketSameLine": false,
+    "prettier.semi": true,
+    "prettier.singleQuote": true,
+    "prettier.useTabs": true,
+    "prettier.tabWidth": 4
+}
+```
 
 ## Secondary features (dev branches)
 * Redux

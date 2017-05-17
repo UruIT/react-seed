@@ -5,7 +5,7 @@ import styles from './Button.scss';
 const log = e => alert(e.target.textContent);
 
 const Button = ({ text, onClick }) => (
-	<div className={styles.container} onClick={onClick} >
+	<div className={styles.container} onClick={onClick}>
 		{ text }
 	</div>
 );
@@ -17,6 +17,6 @@ Button.propTypes = {
 Button.defaultProps = {
 	onClick: log,
 	text: '...'
-}
+};
 
 export default Button;

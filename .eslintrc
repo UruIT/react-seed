@@ -22,7 +22,7 @@
 		"no-console": [2, {
 			"allow": ["error"]
 		}],
-		"jsx-quotes": [1, "prefer-single"],
+		"jsx-quotes": [1, "prefer-double"],
 		"react/jsx-no-undef": 1,
 		"react/jsx-uses-react": 1,
 		"react/jsx-uses-vars": 1,

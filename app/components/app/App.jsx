@@ -12,11 +12,12 @@ export default class App extends React.Component {
 		};
 	}
 	handleClick = () => {
-		return getJson('https://api.chucknorris.io/jokes/random')
-			.then(res => this.setState({
+		return getJson('https://api.chucknorris.io/jokes/random').then(res =>
+			this.setState({
 				joke: res.value
-			}));
-	}
+			})
+		);
+	};
 	render() {
 		let { container, shadow, button } = styles;
 		let { joke } = this.state;
@@ -24,13 +25,18 @@ export default class App extends React.Component {
 		return (
 			<div className={`${container} ${shadow}`}>
 				<Counter />
-				<button className={`${button} ${shadow}`} onClick={this.handleClick}>Test</button>
-				{ !!joke && <Button text={joke} /> }
+				<button
+					className={`${button} ${shadow}`}
+					onClick={this.handleClick}
+				>
+					Test
+				</button>
+				{!!joke && <Button text={joke} />}
 			</div>
 		);
 	}
 
 	test = () => {
-		console.error('test')
-	}
+		console.error('test');
+	};
 }
