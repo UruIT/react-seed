@@ -17,7 +17,9 @@
 		"serve": "npm run build && http-server build/ -p 8081"
 	},
 	"lint-staged": {
-		"*.{js,jsx}": ["eslint"]
+		"*.{js,jsx}": [
+			"eslint"
+		]
 	},
 	"devDependencies": {
 		"babel-core": "^6.24.1",

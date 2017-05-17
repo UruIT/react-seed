@@ -15,27 +15,34 @@ module.exports = merge(common, {
 		chunkFilename: '[chunkhash].js'
 	},
 	module: {
-		rules: [{
-			test: /\.jsx?$/,
-			use: ['eslint-loader'],
-			include: PATHS.app,
-			enforce: 'pre'
-		}, {
-			test: /\.scss$/,
-			use: ExtractTextPlugin.extract({
-				fallback: 'style-loader',
-				use: [{
-					loader: 'css-loader',
-					options: {
-						modules: true
-					}
-				}, {
-					loader: 'resolve-url-loader'
-				}, {
-					loader: 'sass-loader'
-				}]
-			})
-		}]
+		rules: [
+			{
+				test: /\.jsx?$/,
+				use: ['eslint-loader'],
+				include: PATHS.app,
+				enforce: 'pre'
+			},
+			{
+				test: /\.scss$/,
+				use: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: [
+						{
+							loader: 'css-loader',
+							options: {
+								modules: true
+							}
+						},
+						{
+							loader: 'resolve-url-loader'
+						},
+						{
+							loader: 'sass-loader'
+						}
+					]
+				})
+			}
+		]
 	},
 	plugins: [
 		new CleanPlugin([PATHS.build], {
