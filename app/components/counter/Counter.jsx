@@ -12,16 +12,16 @@ class Counter extends Component {
 	}
 	handleIncClick = () => {
 		this.setState(increment(1));
-	}
+	};
 	handleDecClick = () => {
 		this.setState(increment(-1));
-	}
+	};
 	render() {
 		return (
-			<div className={styles.container} >
+			<div className={styles.container}>
 				<div>{ this.state.value }</div>
-				<a onClick={this.handleDecClick}>&#x2212;</a>
-				<a onClick={this.handleIncClick}>&#x2b;</a>
+				<a onClick={this.handleDecClick}>−</a>
+				<a onClick={this.handleIncClick}>+</a>
 			</div>
 		);
 	}

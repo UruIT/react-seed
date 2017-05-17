@@ -1,6 +1,11 @@
 jest.mock('../../utils/fetch', () => ({
-	getJson: jest.fn(url => new Promise((resolve, reject) => !!url ?
-		resolve({ value: 'Chuck Norris joke' }) : reject()))
+	getJson: jest.fn(
+		url =>
+			new Promise(
+				(resolve, reject) =>
+					!!url ? resolve({ value: 'Chuck Norris joke' }) : reject()
+			)
+	)
 }));
 
 import React from 'react';
@@ -14,14 +19,14 @@ describe('On click in button', () => {
 	app.find('button').simulate('click');
 
 	it('should call ChuckNorris API', () => {
-		expect(getJson).toBeCalledWith('https://api.chucknorris.io/jokes/random');
+		expect(getJson).toBeCalledWith(
+			'https://api.chucknorris.io/jokes/random'
+		);
 	});
 
 	it('should update Button children', () => {
-		return app.instance().handleClick()
-			.then(() => {
-				expect(app.find(Button).props().text)
-					.toEqual('Chuck Norris joke');
-			});
+		return app.instance().handleClick().then(() => {
+			expect(app.find(Button).props().text).toEqual('Chuck Norris joke');
+		});
 	});
 });
