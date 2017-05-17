@@ -2,7 +2,7 @@
 
 exports[`renders About 1`] = `
 <div
-  className={undefined}
+  className="about"
 >
   <h1>
     About

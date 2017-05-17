@@ -1,5 +1,5 @@
 const identityObject = new Proxy({}, {
-	get: (target, name) => name
+	get: (target, prop) => prop
 });
 
 export default identityObject;

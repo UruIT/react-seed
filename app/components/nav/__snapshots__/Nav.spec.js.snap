@@ -2,7 +2,7 @@
 
 exports[`<Nav/> 1`] = `
 <ul
-  className={undefined}
+  className="nav"
 >
   <li>
     <a
