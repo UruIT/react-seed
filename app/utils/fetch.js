@@ -7,7 +7,7 @@ const _errorHandle = response => {
 	}
 
 	let error = new Error(response.statusText);
-	error.status = response.statusText;
+	error.status = response.status;
 	error.response = response;
 
 	throw error;
