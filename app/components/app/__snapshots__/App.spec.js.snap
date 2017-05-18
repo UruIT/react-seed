@@ -4,23 +4,7 @@ exports[`<App/> 1`] = `
 <div
   className="container shadow"
 >
-  <div
-    className="container"
-  >
-    <div>
-      0
-    </div>
-    <a
-      onClick={[Function]}
-    >
-      −
-    </a>
-    <a
-      onClick={[Function]}
-    >
-      +
-    </a>
-  </div>
+  <Connect(Counter) />
   <button
     className="button shadow"
     onClick={[Function]}
