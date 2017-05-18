@@ -12,7 +12,7 @@ import React from 'react';
 import App from './App';
 import Button from '../button/Button';
 import { shallow } from 'enzyme';
-import ReactShallowRenderer from 'react-test-renderer/shallow';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import { getJson } from '../../utils/fetch';
 
 describe('On click in button', () => {
@@ -33,7 +33,8 @@ describe('On click in button', () => {
 });
 
 test('<App/>', () => {
-	const renderer = new ReactShallowRenderer();
+	const renderer = new ShallowRenderer();
+
 	const tree = renderer.render(<App />);
 
 	expect(tree).toMatchSnapshot();

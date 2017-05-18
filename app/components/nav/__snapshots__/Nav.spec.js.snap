@@ -5,24 +5,22 @@ exports[`<Nav/> 1`] = `
   className="nav"
 >
   <li>
-    <a
-      className={undefined}
-      href={undefined}
-      onClick={[Function]}
-      style={undefined}
+    <NavLink
+      activeClassName="active"
+      exact={true}
+      to="/"
     >
       Home
-    </a>
+    </NavLink>
   </li>
   <li>
-    <a
-      className={undefined}
-      href={undefined}
-      onClick={[Function]}
-      style={undefined}
+    <NavLink
+      activeClassName="active"
+      exact={true}
+      to="/about"
     >
       About
-    </a>
+    </NavLink>
   </li>
 </ul>
 `;

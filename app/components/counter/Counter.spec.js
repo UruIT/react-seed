@@ -1,10 +1,10 @@
 import React from 'react';
-import Nav from './Nav';
+import Counter from './Counter';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-test('<Nav/>', () => {
+test('<Counter/>', () => {
 	const renderer = new ShallowRenderer();
-	const tree = renderer.render(<Nav />);
+	const tree = renderer.render(<Counter />);
 
 	expect(tree).toMatchSnapshot();
 });
