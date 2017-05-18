@@ -39,6 +39,24 @@ yarn test  # run front-end tests
 * counter ex (scss)
 * git hooks (pre-commit)
 
+<details>
+
+### Git Hooks (using `husky`)
+
+Using [husky](https://github.com/typicode/husky) with `yarn`:
+
+```bash
+yarn add husky --dev --force  # ensures hooks will be installed
+```
+
+Install hooks manually (using `node`):
+```bash
+node node_modules/husky/bin/install
+```
+
+</details>
+
+
 ## Formatter (JS)
 We encourage the use of [prettier](https://github.com/prettier/prettier) in your editor for consistent code style.
 
