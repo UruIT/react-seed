@@ -5,33 +5,6 @@ exports[`<Nav/> 1`] = `
   className="nav"
 >
   <li>
-    <a
-      className={undefined}
-      href={undefined}
-      onClick={[Function]}
-      style={undefined}
-    >
-      Home
-    </a>
-  </li>
-  <li>
-    <a
-      className={undefined}
-      href={undefined}
-      onClick={[Function]}
-      style={undefined}
-    >
-      About
-    </a>
-  </li>
-</ul>
-`;
-
-exports[`shallow <Nav/> 1`] = `
-<ul
-  className="nav"
->
-  <li>
     <NavLink
       activeClassName="active"
       exact={true}

@@ -5,20 +5,6 @@ exports[`<NotFound/> 1`] = `
   <h3>
     Page not found
   </h3>
-  <a
-    href={undefined}
-    onClick={[Function]}
-  >
-    Return home
-  </a>
-</div>
-`;
-
-exports[`shallow <NotFound/> 1`] = `
-<div>
-  <h3>
-    Page not found
-  </h3>
   <Link
     replace={false}
     to="/"
