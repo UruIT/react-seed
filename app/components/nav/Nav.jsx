@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { nav, active } from './Nav.scss';
+import styles from './Nav.scss';
+
+let { nav, active } = styles;
 
 const Nav = () => (
 	<ul className={nav}>

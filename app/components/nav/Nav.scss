@@ -3,6 +3,7 @@ ul.nav {
 	border-width: 1px 0;
 	list-style: none;
 	text-align: center;
+	padding: 0;
 
 	li {
 		display: inline;
@@ -15,6 +16,5 @@ ul.nav {
 }
 
 .active {
-	background: #fbfb09;
 	font-weight: 600;
 }
