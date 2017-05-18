@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Button.scss';
 
-const log = e => console.warn(e.target.textContent);
+const show = e => alert(e.target.textContent);
 
 const Button = ({ text, onClick }) => (
 	<div className={styles.container} onClick={onClick}>
@@ -15,7 +15,7 @@ Button.propTypes = {
 	text: PropTypes.string
 };
 Button.defaultProps = {
-	onClick: log,
+	onClick: show,
 	text: '...'
 };
 

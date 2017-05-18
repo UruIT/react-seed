@@ -12,6 +12,7 @@ import React from 'react';
 import App from './App';
 import Button from '../button/Button';
 import { shallow } from 'enzyme';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import { getJson } from '../../utils/fetch';
 
 describe('On click in button', () => {
@@ -29,4 +30,11 @@ describe('On click in button', () => {
 			expect(app.find(Button).props().text).toEqual('Chuck Norris joke');
 		});
 	});
+});
+
+test('<App/>', () => {
+	const renderer = new ShallowRenderer();
+	const tree = renderer.render(<App />);
+
+	expect(tree).toMatchSnapshot();
 });

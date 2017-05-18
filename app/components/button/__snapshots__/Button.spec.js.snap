@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button/> with default props 1`] = `
+<div
+  className="container"
+  onClick={[Function]}
+>
+  ...
+</div>
+`;
+
+exports[`<Button/> with some props 1`] = `
+<div
+  className="container"
+  onClick={[Function]}
+>
+  TEXT
+</div>
+`;
