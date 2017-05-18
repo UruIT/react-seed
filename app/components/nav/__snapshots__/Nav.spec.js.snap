@@ -26,3 +26,28 @@ exports[`<Nav/> 1`] = `
   </li>
 </ul>
 `;
+
+exports[`shallow <Nav/> 1`] = `
+<ul
+  className="nav"
+>
+  <li>
+    <NavLink
+      activeClassName="active"
+      exact={true}
+      to="/"
+    >
+      Home
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      activeClassName="active"
+      exact={true}
+      to="/about"
+    >
+      About
+    </NavLink>
+  </li>
+</ul>
+`;

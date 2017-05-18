@@ -13,3 +13,17 @@ exports[`<NotFound/> 1`] = `
   </a>
 </div>
 `;
+
+exports[`shallow <NotFound/> 1`] = `
+<div>
+  <h3>
+    Page not found
+  </h3>
+  <Link
+    replace={false}
+    to="/"
+  >
+    Return home
+  </Link>
+</div>
+`;
