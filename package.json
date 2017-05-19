@@ -10,7 +10,7 @@
 		"prepush": "npm run test",
 		"stats": "webpack --profile --json > stats.json",
 		"build": "webpack",
-		"start": "NODE_ENV=development node server/app.js",
+		"start": "export NODE_ENV=development|| set NODE_ENV=development&& node server/app.js",
 		"test": "jest",
 		"tdd": "jest --watchAll",
 		"lint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache",
