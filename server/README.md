@@ -6,6 +6,11 @@ When adding new packages to the server, specify the modules folder:
 yarn add winston --modules-folder ../node_modules
 ```
 
+Restoring server packages dependencies:
+```bash
+yarn install --modules-folder ../node_modules
+```
+
 ## Migrations
 
 ### Create migration file
@@ -23,3 +28,9 @@ yarn run migrate:latest
 ```
 yarn run migrate:rollback
 ```
+
+## Tools and Config.
+* [PostgreSQL](https://www.postgresql.org/download/)
+* [paAdmin](https://www.pgadmin.org/)
+
+Create a `reactSeedDB` database. Also add user `postgres`, with password `Password.01`.
