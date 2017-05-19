@@ -9,7 +9,7 @@ UruIT seed project for ReactJS applications
 
 ### Start the project
 ```bash
-yarn start  # start a dev-server and open a new browser tab
+yarn start  # start an express server
 ```
 
 ### Build
@@ -77,3 +77,15 @@ seeds/
     ./travis
     ./bootstrap
 ```
+
+## Development
+
+Restore all packages (backend & frontend):
+
+```bash
+yarn install  # in `react-seed` project directory
+cd server
+yarn install --modules-folder ../node_modules
+```
+
+Execute `yarn start` and open browser on [localhost:3000](http://localhost:3000/)
