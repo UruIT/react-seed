@@ -11,6 +11,7 @@
 		"stats": "webpack --profile --json > stats.json",
 		"build": "webpack",
 		"start": "export NODE_ENV=development|| set NODE_ENV=development&& node server/app.js",
+		"prod": "export NODE_ENV=production|| set NODE_ENV=production&& npm run build && node server/app.js",
 		"test": "jest",
 		"tdd": "jest --watchAll",
 		"lint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache",
@@ -62,7 +63,6 @@
 	},
 	"dependencies": {
 		"es6-promise": "^4.1.0",
-		"express": "^4.15.3",
 		"prop-types": "^15.5.9",
 		"react": "^15.5.4",
 		"react-dom": "^15.5.4",

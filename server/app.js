@@ -3,22 +3,27 @@ const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
-const config = require('../webpack.config');
+const wpConfig = require('../webpack.config');
 const bodyParser = require('body-parser');
 const compression = require('compression');
 const http = require('http');
 
-const app = express(),
-	DIST_DIR = path.join(__dirname, 'dist'),
+const appConfig = require('./config');
+const logger = require('./utils/logger');
+
+const app = express();
+
+const DIST_DIR = path.join(__dirname, '../build'),
 	HTML_FILE = path.join(DIST_DIR, 'index.html'),
-	isDev = process.env.NODE_ENV !== 'production',
-	compiler = webpack(config),
-    appCfg = require('./config'),
-    logger = require('./utils/logger');
+	isDev = process.env.NODE_ENV !== 'production';
+
 
 if (isDev) {
+	const compiler = webpack(wpConfig);
+
 	app.use(webpackDevMiddleware(compiler, {
-		publicPath: config.output.publicPath
+		publicPath: '/',
+		stats: { colors: true }
 	}));
 
 	app.use(webpackHotMiddleware(compiler));
@@ -35,7 +40,7 @@ if (isDev) {
 		});
 	});
 
-	http.createServer(app).listen(appCfg.port);
+	http.createServer(app).listen(appConfig.port);
 } else {
 	app.use(express.static(DIST_DIR));
 
@@ -47,8 +52,8 @@ if (isDev) {
 
 function setupServer(app) {
     app.set('x-powered-by', false);
-    http.createServer(app).listen(appCfg.port);
-    logger.info('http://localhost:' + appCfg.port);
+    http.createServer(app).listen(appConfig.port);
+    logger.info('http://localhost:' + appConfig.port);
 }
 
 function configureCors(app) {
