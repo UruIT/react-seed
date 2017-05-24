@@ -18,8 +18,9 @@ if (isDev) {
 	const webpack = require('webpack');
 	const webpackDevMiddleware = require('webpack-dev-middleware');
 	const webpackHotMiddleware = require('webpack-hot-middleware');
-	const wpConfig = require('../webpack.config');
 
+	const wpConfig = require('../webpack.config');
+	wpConfig.entry.app.unshift('webpack/hot/dev-server', 'webpack-hot-middleware/client');
 	const compiler = webpack(wpConfig);
 
 	app.use(webpackDevMiddleware(compiler, {
