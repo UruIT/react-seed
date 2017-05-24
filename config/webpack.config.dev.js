@@ -3,16 +3,12 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 
 module.exports = merge(common, {
-	entry: ['webpack/hot/dev-server', 'webpack-hot-middleware/client', PATHS.app],
+	entry: [
+		'webpack/hot/dev-server',
+		'webpack-hot-middleware/client',
+		PATHS.app
+	],
 	devtool: 'eval-source-map',
-	devServer: {
-		historyApiFallback: true,
-		hot: true,
-		inline: true,
-		stats: 'errors-only',
-		host: process.env.HOST,
-		port: process.env.PORT
-	},
 	module: {
 		rules: [
 			{

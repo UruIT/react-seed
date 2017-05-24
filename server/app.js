@@ -1,9 +1,6 @@
 const path = require('path');
 const express = require('express');
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
-const wpConfig = require('../webpack.config');
+
 const bodyParser = require('body-parser');
 const compression = require('compression');
 const http = require('http');
@@ -17,12 +14,16 @@ const DIST_DIR = path.join(__dirname, '../build'),
 	HTML_FILE = path.join(DIST_DIR, 'index.html'),
 	isDev = process.env.NODE_ENV !== 'production';
 
-
 if (isDev) {
+	const webpack = require('webpack');
+	const webpackDevMiddleware = require('webpack-dev-middleware');
+	const webpackHotMiddleware = require('webpack-hot-middleware');
+	const wpConfig = require('../webpack.config');
+
 	const compiler = webpack(wpConfig);
 
 	app.use(webpackDevMiddleware(compiler, {
-		publicPath: '/',
+		publicPath: wpConfig.output.publicPath || '/',
 		stats: { colors: true }
 	}));
 
