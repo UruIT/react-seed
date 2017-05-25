@@ -1,0 +1,63 @@
+const path = require('path');
+const express = require('express');
+
+const bodyParser = require('body-parser');
+const compression = require('compression');
+const http = require('http');
+
+const appConfig = require('./config');
+const logger = require('./utils/logger');
+
+const DIST_DIR = path.join(__dirname, '../build');
+const HTML_FILE = path.join(DIST_DIR, 'index.html');
+
+const app = express();
+
+app.use(express.static(DIST_DIR));
+
+setupServer(app);
+
+init(app);
+
+app.get('*', (req, res) => res.sendFile(HTML_FILE));
+
+
+function setupServer(app) {
+    app.set('x-powered-by', false);
+    http.createServer(app).listen(appConfig.port);
+    logger.info('http://localhost:' + appConfig.port);
+}
+
+function configureCors(app) {
+    app.use(function (req, res, next) {
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
+        res.header('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Authorization');
+        res.header('Access-Control-Max-Age', '600');
+        next();
+    });
+}
+
+function configureBodyParser(app) {
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: false }));
+}
+
+function configureErrorHandler(app) {
+    app.use(function (err, req, res, next) {
+        logger.error(err.stack);
+        res.status(500).send('Unexpected error!');
+        return next();
+    });
+}
+
+function init(app) {
+    configureCors(app);
+    configureBodyParser(app);
+    configureErrorHandler(app);
+
+    app.use(compression());
+    require('./routes')(app);
+}
+
+module.exports = app;
