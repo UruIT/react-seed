@@ -6,6 +6,11 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const webpack = require('webpack');
 
+const {
+	configureCors,
+	configureDevErrorHandler
+} = require('./utils/app.configure');
+
 const DEVELOPMENT = 'development';
 
 if (process.env.NODE_ENV !== DEVELOPMENT) {
@@ -30,10 +35,8 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler));
 
-app.use(function (err, req, res, next) {
-	res.status(500).send('Error ' + err);
-	return next();
-});
+configureCors(app);
+configureDevErrorHandler(app);
 
 require('./routes')(app);
 
