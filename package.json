@@ -10,11 +10,15 @@
 		"prepush": "npm run test",
 		"stats": "webpack --profile --json > stats.json",
 		"build": "webpack",
-		"start": "webpack-dev-server --open",
+		"start": "export NODE_ENV=development|| set NODE_ENV=development&& node server/app.dev.js",
+		"prod": "export NODE_ENV=production|| set NODE_ENV=production&& npm run build && node server/app.prod.js",
 		"test": "jest",
 		"tdd": "jest --watchAll",
 		"lint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache",
-		"serve": "npm run build && http-server build/ -p 8081"
+		"serve": "npm run build && http-server build/ -p 8081",
+		"migrate:make": "./node_modules/.bin/knex migrate:make --knexfile ./server/datastore/postgres/knexfile.js",
+		"migrate:latest": "./node_modules/.bin/knex migrate:latest --knexfile ./server/datastore/postgres/knexfile.js",
+		"migrate:rollback": "./node_modules/.bin/knex migrate:rollback --knexfile ./server/datastore/postgres/knexfile.js"
 	},
 	"lint-staged": {
 		"*.{js,jsx}": [
@@ -53,7 +57,6 @@
 		"sass-loader": "^6.0.4",
 		"style-loader": "^0.17.0",
 		"webpack": "^2.5.1",
-		"webpack-dev-server": "^2.4.5",
 		"webpack-merge": "^4.1.0"
 	},
 	"dependencies": {
@@ -71,5 +74,8 @@
 		"testPathIgnorePatterns": [
 			"webpack"
 		]
+	},
+	"engines": {
+		"node": ">=6.9.1"
 	}
 }

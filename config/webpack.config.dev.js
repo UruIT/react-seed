@@ -4,14 +4,6 @@ const webpack = require('webpack');
 
 module.exports = merge(common, {
 	devtool: 'eval-source-map',
-	devServer: {
-		historyApiFallback: true,
-		hot: true,
-		inline: true,
-		stats: 'errors-only',
-		host: process.env.HOST,
-		port: process.env.PORT
-	},
 	module: {
 		rules: [
 			{

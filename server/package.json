@@ -1,0 +1,23 @@
+{
+	"name": "react-seed-api",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "https://github.com/UruIT/react-seed.git",
+	"author": "UruIT",
+	"license": "MIT",
+	"devDependencies": {
+		"webpack-dev-middleware": "^1.10.2",
+		"webpack-hot-middleware": "^2.18.0"
+	},
+	"dependencies": {
+		"body-parser": "^1.17.2",
+		"compression": "^1.6.2",
+		"express": "^4.15.3",
+		"knex": "^0.13.0",
+		"pg": "^6.2.2",
+		"winston": "^2.3.1"
+	},
+	"engines": {
+		"node": ">=6.9.1"
+	}
+}
