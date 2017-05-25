@@ -17,9 +17,9 @@ yarn start  # start an express server
 yarn run build  # build assets for production
 ```
 
-### Serve built version
+### Start production
 ```bash
-yarn run serve  # start http-server (production)
+yarn run prod  # start production server
 ```
 
 ### Test
@@ -34,9 +34,8 @@ yarn test  # run front-end tests
 * React
 * fetch
 * React-Router
-* counter example
 * Jest (with snapshots / enzyme)
-* counter ex (scss)
+* counter example (scss)
 * git hooks (pre-commit)
 
 ## Formatter (JS)

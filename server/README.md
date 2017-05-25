@@ -31,6 +31,6 @@ yarn run migrate:rollback
 
 ## Tools and Config.
 * [PostgreSQL](https://www.postgresql.org/download/)
-* [paAdmin](https://www.pgadmin.org/)
+* [pgAdmin](https://www.pgadmin.org/)
 
 Create a `reactSeedDB` database. Also add user `postgres`, with password `Password.01`.
