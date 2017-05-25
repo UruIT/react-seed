@@ -20,7 +20,7 @@
 	],
 	"rules": {
 		"no-console": [2, {
-			"allow": ["error"]
+			"allow": ["error", "warn"]
 		}],
 		"jsx-quotes": [1, "prefer-double"],
 		"react/jsx-no-undef": 1,

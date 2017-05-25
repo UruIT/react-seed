@@ -20,13 +20,13 @@ const HTML_FILE = path.join(DIST_DIR, 'index.html');
 
 const app = express();
 
-app.use(express.static(DIST_DIR));
-
-setupServer(app);
-
 init(app);
 
+app.use(express.static(DIST_DIR));
+
 app.get('*', (req, res) => res.sendFile(HTML_FILE));
+
+setupServer(app);
 
 function setupServer(app) {
     app.set('x-powered-by', false);
@@ -38,7 +38,7 @@ function init(app) {
     configureCors(app);
     configureBodyParser(app, bodyParser);
     configureErrorHandler(app, logger);
-	configureCompression(app);
+	configureCompression(app, compression);
 
     require('./routes')(app);
 }

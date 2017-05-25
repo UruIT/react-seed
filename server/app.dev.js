@@ -28,6 +28,8 @@ const compiler = webpack(wpConfig);
 
 const app = express();
 
+configureCors(app);
+
 app.use(webpackDevMiddleware(compiler, {
 	publicPath: wpConfig.output.publicPath || '/',
 	stats: { colors: true }
@@ -35,14 +37,13 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler));
 
-configureCors(app);
-configureDevErrorHandler(app);
-
 require('./routes')(app);
 
 app.get('*', (req, res, next) => {
 	compiler.outputFileSystem.readFile(HTML_FILE, (err, result) => {
-		if (err) { return next(); }
+		if (err) {
+			return next(err);
+		}
 
 		res.set('content-type', 'text/html');
 		res.send(result);
@@ -50,6 +51,10 @@ app.get('*', (req, res, next) => {
 	});
 });
 
-http.createServer(app).listen(appConfig.port);
+configureDevErrorHandler(app);
+
+http.createServer(app).listen(appConfig.port, () => {
+	console.info('server listening at http://localhost:%s', appConfig.port);
+});
 
 module.exports = app;

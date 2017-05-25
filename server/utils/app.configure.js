@@ -5,6 +5,7 @@ function configureCors(app) {
         res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
         res.header('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Authorization');
         res.header('Access-Control-Max-Age', '600');
+
         next();
     });
 }
@@ -18,19 +19,19 @@ function configureErrorHandler(app, logger = require('./logger')) {
     app.use(function (err, req, res, next) {
         logger.error(err.stack);
         res.status(500).send('Unexpected error!');
-        return next();
+		return next();
     });
 }
 
 function configureDevErrorHandler(app) {
 	app.use(function (err, req, res, next) {
-		res.status(500).send('Error ' + err);
-		return next();
+		let message = `Error Stack: ${err.stack}`;
+		res.status(500).send(message);
+		return next(err);
 	});
 }
 
-function configureCompression(app) {
-	const compression = require('compression');
+function configureCompression(app, compression = require('compression')) {
 	app.use(compression());
 }
 
