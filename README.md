@@ -5,29 +5,8 @@
 
 UruIT seed project for ReactJS applications
 
-## Scripts
-
-### Start the project
-```bash
-yarn start  # start an express server
-```
-
-### Build
-```bash
-yarn run build  # build assets for production
-```
-
-### Start production
-```bash
-yarn run prod  # start production server
-```
-
-### Test
-```bash
-yarn test  # run front-end tests
-```
-
 ## Frameworks/technologies
+
 * webpack 
 * ES6/7
 * ESLint
@@ -57,6 +36,7 @@ node node_modules/husky/bin/install
 
 
 ## Formatter (JS)
+
 We encourage the use of [prettier](https://github.com/prettier/prettier) in your editor for consistent code style.
 
 In Visual Studio Code, we use these user settings for `prettier`
@@ -73,6 +53,7 @@ In Visual Studio Code, we use these user settings for `prettier`
 ```
 
 ## Secondary features (dev branches)
+
 * Redux
     * redux-router
     * redux-thunk
@@ -85,6 +66,7 @@ In Visual Studio Code, we use these user settings for `prettier`
 * Bootstrap
 
 ## Seed Branch
+
 ```
 master
 seeds/
@@ -100,9 +82,26 @@ seeds/
 Restore all packages (backend & frontend):
 
 ```bash
-yarn install  # in `react-seed` project directory
-cd server
-yarn install --modules-folder ../node_modules
+yarn install
 ```
 
-Execute `yarn start` and open browser on [localhost:3000](http://localhost:3000/)
+Start development server:
+
+```bash
+yarn start
+```
+
+Open browser on [localhost:3000](http://localhost:3000/)
+
+
+## Other Scripts
+
+```bash
+npm run build  # build assets for production
+
+npm run prod  # start production server
+
+npm run test  # run front-end tests
+
+npm run lint # run linting
+```

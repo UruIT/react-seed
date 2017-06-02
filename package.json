@@ -18,7 +18,8 @@
 		"serve": "npm run build && http-server build/ -p 8081",
 		"migrate:make": "./node_modules/.bin/knex migrate:make --knexfile ./server/datastore/postgres/knexfile.js",
 		"migrate:latest": "./node_modules/.bin/knex migrate:latest --knexfile ./server/datastore/postgres/knexfile.js",
-		"migrate:rollback": "./node_modules/.bin/knex migrate:rollback --knexfile ./server/datastore/postgres/knexfile.js"
+		"migrate:rollback": "./node_modules/.bin/knex migrate:rollback --knexfile ./server/datastore/postgres/knexfile.js",
+		"postinstall": "cd server && yarn install --modules-folder ../node_modules"
 	},
 	"lint-staged": {
 		"*.{js,jsx}": [
