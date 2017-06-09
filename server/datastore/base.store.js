@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 const { MongoErrors } = require('./constants');
-const { GenericException, ValidationException } = require('../exceptions');
+const {
+	BadRequestException,
+	GenericException,
+	ValidationException
+} = require('../exceptions');
 
 class BaseStore {
 	constructor(model) {
@@ -17,13 +21,19 @@ class BaseStore {
 
 	save(entity) {
 		const dbEntity = new this.model(entity);
-		return dbEntity.save().then(response => ({ id: response._id })).catch(err => {
-			if (err.code === MongoErrors.VALIDATION_ERROR) {
-				throw new ValidationException();
-			} else {
-				throw new GenericException(err);
-			}
-		});
+		return dbEntity
+			.save()
+			.then(response => ({ id: response._id }))
+			.catch(err => {
+				if (err.code === MongoErrors.VALIDATION_ERROR) {
+					throw new ValidationException();
+				} else if (err.name === MongoErrorsNames.VALIDATION_ERROR) {
+					const message = Object.values(err.errors || {}).join('\n');
+					throw new BadRequestException(message);
+				} else {
+					throw new GenericException();
+				}
+			});
 	}
 }
 
