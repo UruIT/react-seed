@@ -10,14 +10,17 @@
 		"webpack-hot-middleware": "^2.18.0"
 	},
 	"dependencies": {
+		"bluebird": "^3.5.0",
 		"body-parser": "^1.17.2",
 		"compression": "^1.6.2",
+		"es6-promise": "^4.1.0",
 		"express": "^4.15.3",
 		"knex": "^0.13.0",
+		"mongoose": "^4.10.5",
 		"pg": "^6.2.2",
 		"winston": "^2.3.1"
 	},
 	"engines": {
-		"node": ">=6.9.1"
+		"node": ">=7"
 	}
 }

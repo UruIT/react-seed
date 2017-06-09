@@ -10,8 +10,9 @@
 		"prepush": "npm run test",
 		"stats": "webpack --profile --json > stats.json",
 		"build": "webpack",
-		"start": "export NODE_ENV=development|| set NODE_ENV=development&& node server/app.dev.js",
-		"prod": "export NODE_ENV=production|| set NODE_ENV=production&& npm run build && node server/app.prod.js",
+		"start": "node server/app.prod.js",
+		"dev": "node server/app.dev.js",
+		"prod": "npm run build && node server/app.prod.js",
 		"test": "jest",
 		"tdd": "jest --watchAll",
 		"lint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache",
@@ -77,6 +78,6 @@
 		]
 	},
 	"engines": {
-		"node": ">=6.9.1"
+		"node": ">=7"
 	}
 }
