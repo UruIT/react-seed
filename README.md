@@ -76,6 +76,7 @@ seeds/
     ./storybook
     ./travis
     ./bootstrap
+    ./mongo
 ```
 
 ## Development
