@@ -1,4 +1,4 @@
-# React Seed Api
+# React Seed Server
 
 ## Dependencies installation
 When adding new packages to the server, specify the modules folder:

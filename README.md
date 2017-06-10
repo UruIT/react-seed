@@ -7,15 +7,15 @@ UruIT seed project for ReactJS applications
 
 ## Frameworks/technologies
 
-* webpack 
+* Webpack
 * ES6/7
 * ESLint
 * React
-* fetch
+* Fetch
 * React-Router
 * Jest (with snapshots / enzyme)
-* counter example (scss)
-* git hooks (pre-commit)
+* example (scss)
+* git hooks
 
 <details>
 
@@ -88,7 +88,7 @@ yarn install
 Start development server:
 
 ```bash
-yarn start
+yarn run dev
 ```
 
 Open browser on [localhost:3000](http://localhost:3000/)
