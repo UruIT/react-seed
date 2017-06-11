@@ -79,29 +79,18 @@ seeds/
 
 ## Development
 
-Restore all packages (backend & frontend):
+Restore all packages and start development server:
 
 ```bash
 yarn install
-```
-
-Start development server:
-
-```bash
 yarn run dev
 ```
 
 Open browser on [localhost:3000](http://localhost:3000/)
 
+More info [here](docs/setup.md)
 
-## Other Scripts
+## App structure
 
-```bash
-npm run build  # build assets for production
-
-npm run prod  # start production server
-
-npm run test  # run front-end tests
-
-npm run lint # run linting
-```
+* [client](client/README.md)
+* [server](server/README.md)

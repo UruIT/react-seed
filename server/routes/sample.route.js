@@ -1,6 +1,5 @@
 const express = require('express'),
     router = express.Router(),
-    path = require('path'),
 	sampleSvc = require('../services/sample.service');
 
 router.get('/', (request, response) => {
@@ -10,6 +9,11 @@ router.get('/', (request, response) => {
 
 router.get('/:id', (request, response) => {
 	sampleSvc.get(request.params.id)
+        .then((result) => response.send(result));
+});
+
+router.post('/', (request, response) => {
+	sampleSvc.insert(request.body)
         .then((result) => response.send(result));
 });
 
