@@ -74,21 +74,21 @@ seeds/
     ./redux
     ./server-side-rendering
     ./storybook
-    ./travis
     ./bootstrap
+    ./mongo
 ```
 
 ## Development
 
-Restore all packages (backend & frontend):
+Restore all packages (backend and frontend):
 
 ```bash
-yarn install  # in root directory
+yarn # in root directory
 ```
 Execute application
 
 ```bash
-yarn start
+yarn run dev
 ```
 
 Open browser on [localhost:3000](http://localhost:3000/)

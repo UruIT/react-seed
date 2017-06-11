@@ -1,5 +1,3 @@
-const Knex = require('knex');
-
 exports.up = function (knex) {
 	return Promise.resolve(
 		knex.schema.createTable('sample', function (table) {

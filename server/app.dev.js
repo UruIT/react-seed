@@ -7,18 +7,16 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const webpack = require('webpack');
 
 const {
+	configureBodyParser,
 	configureCors,
-	configureDevErrorHandler
+	configureDevErrorHandler,
+	configureRequestLogger
 } = require('./utils/app.configure');
 
 const DEVELOPMENT = 'development';
+process.env.NODE_ENV = DEVELOPMENT;
 
-if (process.env.NODE_ENV !== DEVELOPMENT) {
-	console.warn(`incorrect NODE_ENV=${process.env.NODE_ENV}... change to ${DEVELOPMENT}`);
-	process.env.NODE_ENV = DEVELOPMENT;
-}
-
-const wpConfig = require('../webpack.config');
+const wpConfig = require('../client/webpack.config');
 const appConfig = require('./config');
 
 wpConfig.entry.app.unshift('webpack/hot/dev-server', 'webpack-hot-middleware/client');
@@ -28,6 +26,8 @@ const compiler = webpack(wpConfig);
 
 const app = express();
 
+configureRequestLogger(app);
+configureBodyParser(app);
 configureCors(app);
 
 app.use(webpackDevMiddleware(compiler, {

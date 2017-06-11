@@ -4,10 +4,10 @@ const glob = require('glob');
 
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
-	app: path.join(__dirname, '../app'),
-	build: path.join(__dirname, '../build'),
-	style: glob.sync('./app/**/*.scss'),
-	test: glob.sync('./app/**/*.spec.js')
+	app: path.join(__dirname, '..'),
+	build: path.join(__dirname, '../../build'),
+	style: glob.sync('./**/*.scss'),
+	test: glob.sync('./**/*.spec.js')
 };
 
 process.env.BABEL_ENV = TARGET;
@@ -28,7 +28,7 @@ const common = {
 			{
 				test: /\.html$/,
 				use: 'raw-loader',
-				exclude: ['../app/index.html']
+				exclude: ['../index.html']
 			},
 			{
 				test: /\.(jpg|png|gif|svg)$/,
@@ -47,7 +47,7 @@ const common = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: 'node_modules/html-webpack-template/index.ejs',
+			template: '../node_modules/html-webpack-template/index.ejs',
 			title: 'UruIT React Seed',
 			appMountId: 'app',
 			inject: false
