@@ -1,9 +1,6 @@
-const path = require('path');
 const express = require('express');
-
-const bodyParser = require('body-parser');
-const compression = require('compression');
 const http = require('http');
+const path = require('path');
 
 const appConfig = require('./config');
 const logger = require('./utils/logger');
@@ -36,9 +33,9 @@ function setupServer(app) {
 
 function init(app) {
     configureCors(app);
-    configureBodyParser(app, bodyParser);
-    configureErrorHandler(app, logger);
-	configureCompression(app, compression);
+    configureBodyParser(app);
+    configureErrorHandler(app);
+	configureCompression(app);
 
     require('./routes')(app);
 }

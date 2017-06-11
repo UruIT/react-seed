@@ -1,4 +1,13 @@
+const bodyParser = require('body-parser');
+const compression = require('compression');
+const logger = require('./logger');
 
+function configureRequestLogger(app) {
+    app.use((req, res, next) => {
+        logger.info(req.method, req.originalUrl);
+        next();
+    });
+}
 function configureCors(app) {
     app.use(function (req, res, next) {
         res.header('Access-Control-Allow-Origin', '*');
@@ -13,12 +22,12 @@ function configureCors(app) {
     });
 }
 
-function configureBodyParser(app, bodyParser = require('body-parser')) {
+function configureBodyParser(app) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
 }
 
-function configureErrorHandler(app, logger = require('./logger')) {
+function configureErrorHandler(app) {
     app.use(function (err, req, res, next) {
         logger.error(err.stack);
         res.status(500).send('Unexpected error!');
@@ -34,7 +43,7 @@ function configureDevErrorHandler(app) {
 	});
 }
 
-function configureCompression(app, compression = require('compression')) {
+function configureCompression(app) {
 	app.use(compression());
 }
 
@@ -43,5 +52,6 @@ module.exports = {
 	configureCompression,
 	configureCors,
 	configureDevErrorHandler,
-	configureErrorHandler
+	configureErrorHandler,
+	configureRequestLogger
 };
