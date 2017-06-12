@@ -24,7 +24,7 @@
 		"serve": "npm run build && http-server build/ -p 8081",
 		"migrate:make": "cd server && npm run migrate:make",
 		"migrate:latest": "cd server && npm run migrate:latest",
-		"migrate:rollback": ".cd server && npm run migrate:rollback",
+		"migrate:rollback": "cd server && npm run migrate:rollback",
 		"postinstall": "npm run install:client && npm run install:server",
 		"install:client": "cd client && yarn",
 		"install:server": "cd server && yarn"
