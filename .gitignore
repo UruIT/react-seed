@@ -7,6 +7,8 @@
 
 # dependencies
 /node_modules
+/client/node_modules
+/server/node_modules
 /bower_components
 yarn.lock
 
@@ -24,6 +26,7 @@ yarn.lock
 /coverage/*
 /libpeerconnection.log
 npm-debug.log
+yarn-error.log
 testem.log
 /typings
 stats.json

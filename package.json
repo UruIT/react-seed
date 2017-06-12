@@ -3,24 +3,32 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"repository": "https://github.com/UruIT/react-seed.git",
+	"bugs": {
+		"url": "https://github.com/UruIT/react-seed/issues"
+	},
+	"homepage": "https://github.com/UruIT/react-seed#readme",
+	"keywords": [],
 	"author": "UruIT",
 	"license": "MIT",
 	"scripts": {
 		"precommit": "lint-staged",
-		"prepush": "npm run test",
-		"stats": "webpack --profile --json > stats.json",
-		"build": "webpack",
-		"start": "node server/app.prod.js",
-		"dev": "node server/app.dev.js",
-		"prod": "npm run build && node server/app.prod.js",
-		"test": "jest",
-		"tdd": "jest --watchAll",
+		"prepush": "npm test",
+		"test": "cd client && npm test",
+		"tdd": "cd client && npm run tdd",
 		"lint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache",
-		"serve": "npm run build && http-server build/ -p 8081",
-		"migrate:make": "./node_modules/.bin/knex migrate:make --knexfile ./server/datastore/postgres/knexfile.js",
-		"migrate:latest": "./node_modules/.bin/knex migrate:latest --knexfile ./server/datastore/postgres/knexfile.js",
-		"migrate:rollback": "./node_modules/.bin/knex migrate:rollback --knexfile ./server/datastore/postgres/knexfile.js",
-		"postinstall": "cd server && yarn install --modules-folder ../node_modules"
+		"stats": "cd client && npm run stats",
+		"build": "cd client && npm run build",
+		"start": "cd server && npm start",
+		"dev": "cd server && npm run dev",
+		"prod": "npm run build && npm start",
+		"migrate:make": "cd server && npm run migrate:make",
+		"migrate:latest": "cd server && npm run migrate:latest",
+		"migrate:rollback": "cd server && npm run migrate:rollback",
+		"seed:make": "cd server && npm run seed:make",
+		"seed:run": "cd server && npm run seed:run",
+		"install:client": "cd client && yarn",
+		"install:server": "cd server && yarn",
+		"postinstall": "npm run install:client && npm run install:server"
 	},
 	"lint-staged": {
 		"*.{js,jsx}": [
@@ -59,23 +67,9 @@
 		"sass-loader": "^6.0.4",
 		"style-loader": "^0.17.0",
 		"webpack": "^2.5.1",
+		"webpack-dev-middleware": "^1.10.2",
+		"webpack-hot-middleware": "^2.18.0",
 		"webpack-merge": "^4.1.0"
-	},
-	"dependencies": {
-		"es6-promise": "^4.1.0",
-		"prop-types": "^15.5.9",
-		"react": "^15.5.4",
-		"react-dom": "^15.5.4",
-		"react-router-dom": "^4.1.1",
-		"whatwg-fetch": "^2.0.3"
-	},
-	"jest": {
-		"moduleNameMapper": {
-			"\\.(scss)$": "<rootDir>/app/components/__mocks__/styles.js"
-		},
-		"testPathIgnorePatterns": [
-			"webpack"
-		]
 	},
 	"engines": {
 		"node": ">=7"

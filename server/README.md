@@ -1,14 +1,16 @@
 # React Seed Api
 
 ## Dependencies installation
+
 When adding new packages to the server, specify the modules folder:
+
 ```bash
-yarn add winston --modules-folder ../node_modules
+yarn add winston
 ```
 
 Restoring server packages dependencies:
 ```bash
-yarn install --modules-folder ../node_modules
+yarn
 ```
 
 ## Migrations
