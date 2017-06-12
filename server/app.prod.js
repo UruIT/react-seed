@@ -1,8 +1,5 @@
-const path = require('path');
 const express = require('express');
-
-const bodyParser = require('body-parser');
-const compression = require('compression');
+const path = require('path');
 const http = require('http');
 
 const appConfig = require('./config');
@@ -29,18 +26,18 @@ app.get('*', (req, res) => res.sendFile(HTML_FILE));
 setupServer(app);
 
 function setupServer(app) {
-    app.set('x-powered-by', false);
-    http.createServer(app).listen(appConfig.port);
-    logger.info('http://localhost:' + appConfig.port);
+	app.set('x-powered-by', false);
+	http.createServer(app).listen(appConfig.port);
+	logger.info('http://localhost:' + appConfig.port);
 }
 
 function init(app) {
-    configureCors(app);
-    configureBodyParser(app, bodyParser);
-    configureErrorHandler(app, logger);
-	configureCompression(app, compression);
+	configureCors(app);
+	configureBodyParser(app);
+	configureErrorHandler(app);
+	configureCompression(app);
 
-    require('./routes')(app);
+	require('./routes')(app);
 }
 
 module.exports = app;

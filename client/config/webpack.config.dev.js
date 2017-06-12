@@ -10,6 +10,7 @@ module.exports = merge(common, {
 				test: /\.jsx?$/,
 				use: ['eslint-loader'],
 				include: PATHS.app,
+				exclude: /node_modules/,
 				enforce: 'pre'
 			},
 			{

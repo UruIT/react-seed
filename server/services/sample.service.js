@@ -8,6 +8,10 @@ class SampleService {
 	get(id) {
 		return sampleStore.get(id);
 	}
+
+	insert(sample) {
+		return sampleStore.insert(sample);
+	}
 }
 
 module.exports = new SampleService();

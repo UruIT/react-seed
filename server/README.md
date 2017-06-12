@@ -1,14 +1,21 @@
-# React Seed Api
+# React Seed Server
+
 
 ## Dependencies installation
-When adding new packages to the server, specify the modules folder:
+
+Adding new packages to the server:
+
+Development dependencies must be installed in project `root` folder:
+
 ```bash
-yarn add winston --modules-folder ../node_modules
+cd ..
+yarn add <package>
 ```
 
-Restoring server packages dependencies:
+Only install in `server` production dependencies: 
+
 ```bash
-yarn install --modules-folder ../node_modules
+yarn add <package>
 ```
 
 ## Migrations
@@ -17,7 +24,8 @@ yarn install --modules-folder ../node_modules
 ```
 yarn run migrate:make -- <migration_name>
 ```
-Example: `yarn run migrate:make -- create_person_table`
+Example: 
+`yarn run migrate:make -- create_person_table`
 
 ### Execute migration
 ```
@@ -30,7 +38,8 @@ yarn run migrate:rollback
 ```
 
 ## Tools and Config.
+
 * [PostgreSQL](https://www.postgresql.org/download/)
 * [pgAdmin](https://www.pgadmin.org/)
 
-Create a `reactSeedDB` database. Also add user `postgres`, with password `Password.01`.
+Create a `ReactSeedDB` database with user `postgres` and password `Password.01`.

@@ -5,18 +5,17 @@
 
 UruIT seed project for ReactJS applications
 
-
 ## Frameworks/technologies
 
-* webpack 
+* Webpack
 * ES6/7
 * ESLint
 * React
-* fetch
+* Fetch
 * React-Router
 * Jest (with snapshots / enzyme)
-* counter example (scss)
-* git hooks (pre-commit)
+* example (scss)
+* git hooks
 
 <details>
 
@@ -80,29 +79,18 @@ seeds/
 
 ## Development
 
-Restore all packages (backend & frontend):
+Restore all packages and start development server:
 
 ```bash
-yarn install  # in root directory
-```
-Execute application
-
-```bash
-yarn start
+yarn install
+yarn run dev
 ```
 
 Open browser on [localhost:3000](http://localhost:3000/)
 
+More info [here](docs/setup.md)
 
-## Scripts
+## App structure
 
-
-```bash
-yarn start  # start an express server
-
-yarn run build  # build assets for production
-
-yarn run prod  # start production server
-
-yarn test  # run front-end tests
-```
+* [client](client/README.md)
+* [server](server/README.md)
