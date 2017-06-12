@@ -5,11 +5,11 @@
 
 Adding new packages to the client:
 
-Development dependencies must be installed in project `root` folder:
+Development dependencies must be installed in project root folder:
 
 ```bash
 cd ..
-yarn add --save <package>
+yarn add <package>
 ```
 
 Only install in `client` production dependencies: 

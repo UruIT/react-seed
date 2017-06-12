@@ -9,7 +9,7 @@ Development dependencies must be installed in project `root` folder:
 
 ```bash
 cd ..
-yarn add --save <package>
+yarn add <package>
 ```
 
 Only install in `server` production dependencies: 

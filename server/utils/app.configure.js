@@ -31,16 +31,18 @@ function configureBodyParser(app) {
 function configureErrorHandler(app) {
     app.use(function (err, req, res, next) {
         logger.error(err.stack);
-        res.status(500).send('Unexpected error!');
+		const status = (err && err.status) || 500;
+        res.status(status);
 		return next();
     });
 }
 
 function configureDevErrorHandler(app) {
 	app.use(function (err, req, res, next) {
-		logger.error(err.stack);
 		let message = `Error Stack: ${err.stack}`;
-		res.status(500).send(message);
+		logger.error('Something went wrong: ', err.stack);
+		const status = (err && err.status) || 500;
+		res.status(status).send(message);
 		return next(err);
 	});
 }

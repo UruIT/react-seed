@@ -37,11 +37,11 @@ Open browser on [localhost:3000](http://localhost:3000/)
 ## Other Scripts
 
 ```bash
-npm run build  # build assets for production
+yarn run build  # build assets for production
 
-npm run start  # start production server
+yarn run start  # start production server
 
-npm run test  # run front-end tests
+yarn run test  # run front-end tests
 
-npm run lint # run linting
+yarn run lint # run linting
 ```
