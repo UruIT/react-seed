@@ -4,7 +4,7 @@
 	"description": "react seed - client",
 	"main": "index.js",
 	"repository": "https://github.com/UruIT/react-seed.git",
-	"author": "UruIT",
+	"author": "UruIT (https://github.com/UruIT)",
 	"license": "MIT",
 	"scripts": {
 		"lint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache",
@@ -21,6 +21,12 @@
 		"react-router-dom": "^4.1.1",
 		"whatwg-fetch": "^2.0.3"
 	},
+	"devDependencies": {
+		"babel-preset-react-hmre": "^1.1.1",
+		"enzyme": "^2.8.2",
+		"jest": "^20.0.0",
+		"react-test-renderer": "^15.5.4"
+	},
 	"jest": {
 		"moduleNameMapper": {
 			"\\.(scss)$": "<rootDir>/components/__mocks__/styles.js"
@@ -29,8 +35,5 @@
 			"/node_modules/",
 			"webpack"
 		]
-	},
-	"engines": {
-		"node": ">=6.9.1"
 	}
 }
