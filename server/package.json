@@ -9,9 +9,9 @@
 	"scripts": {
 		"start": "node index.js",
 		"dev": "nodemon app.dev.js",
-		"migrate:make": "./node_modules/.bin/knex migrate:make --knexfile ./datastore/postgres/knexfile.js",
-		"migrate:latest": "./node_modules/.bin/knex migrate:latest --knexfile ./datastore/postgres/knexfile.js",
-		"migrate:rollback": "./node_modules/.bin/knex migrate:rollback --knexfile ./datastore/postgres/knexfile.js",
+		"migrate:make": "knex migrate:make --knexfile ./datastore/postgres/knexfile.js",
+		"migrate:latest": "knex migrate:latest --knexfile ./datastore/postgres/knexfile.js",
+		"migrate:rollback": "knex migrate:rollback --knexfile ./datastore/postgres/knexfile.js",
 		"seed:make": "knex seed:make --knexfile ./datastore/postgres/knexfile.js",
 		"seed:run": "knex seed:run --knexfile ./datastore/postgres/knexfile.js",
 		"test": "tape tests/*.js | tap-spec"
