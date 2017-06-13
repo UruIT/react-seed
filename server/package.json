@@ -1,7 +1,11 @@
 {
-	"name": "react-seed-api",
+	"name": "react-seed-server",
 	"version": "1.0.0",
+	"description": "react seed - server",
 	"main": "index.js",
+	"repository": "https://github.com/UruIT/react-seed.git",
+	"author": "UruIT (https://github.com/UruIT)",
+	"license": "MIT",
 	"scripts": {
 		"start": "node app.prod.js",
 		"dev": "nodemon app.dev.js",
@@ -9,9 +13,6 @@
 		"migrate:latest": "./node_modules/.bin/knex migrate:latest --knexfile ./datastore/postgres/knexfile.js",
 		"migrate:rollback": "./node_modules/.bin/knex migrate:rollback --knexfile ./datastore/postgres/knexfile.js"
 	},
-	"repository": "https://github.com/UruIT/react-seed.git",
-	"author": "UruIT (https://github.com/UruIT)",
-	"license": "MIT",
 	"dependencies": {
 		"body-parser": "^1.17.2",
 		"compression": "^1.6.2",
@@ -19,8 +20,5 @@
 		"knex": "^0.13.0",
 		"pg": "^6.2.2",
 		"winston": "^2.3.1"
-	},
-	"engines": {
-		"node": ">=6.9.1"
 	}
 }
