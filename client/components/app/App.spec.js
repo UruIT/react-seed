@@ -3,7 +3,7 @@ jest.mock('../../utils/fetch', () => ({
 		url =>
 			new Promise(
 				(resolve, reject) =>
-					!!url ? resolve({ value: 'Chuck Norris joke' }) : reject()
+					url ? resolve({ value: 'Chuck Norris joke' }) : reject()
 			)
 	)
 }));

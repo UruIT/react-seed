@@ -1,0 +1,25 @@
+{
+	"extends": [
+		"eslint:recommended", "plugin:react/recommended"
+	],
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"env": {
+		"browser": true,
+		"jest": true
+	},
+	"plugins": [
+		"react"
+	],
+	"rules": {
+		"jsx-quotes": [1, "prefer-double"],
+
+		"react/jsx-no-undef": 1,
+		"react/jsx-uses-react": 1,
+		"react/jsx-uses-vars": 1
+	}
+}
