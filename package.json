@@ -7,7 +7,13 @@
 		"url": "https://github.com/UruIT/react-seed/issues"
 	},
 	"homepage": "https://github.com/UruIT/react-seed#readme",
-	"keywords": [],
+	"keywords": [
+		"react",
+		"seed",
+		"node",
+		"mongo",
+		"uruit"
+	],
 	"author": "UruIT",
 	"license": "MIT",
 	"scripts": {
@@ -21,11 +27,6 @@
 		"start": "cd server && npm start",
 		"dev": "cd server && npm run dev",
 		"prod": "npm run build && npm start",
-		"migrate:make": "cd server && npm run migrate:make",
-		"migrate:latest": "cd server && npm run migrate:latest",
-		"migrate:rollback": "cd server && npm run migrate:rollback",
-		"seed:make": "cd server && npm run seed:make",
-		"seed:run": "cd server && npm run seed:run",
 		"install:client": "cd client && yarn",
 		"install:server": "cd server && yarn",
 		"postinstall": "npm run install:client && npm run install:server"
@@ -68,6 +69,6 @@
 		"webpack-merge": "^4.1.0"
 	},
 	"engines": {
-		"node": ">=7"
+		"node": ">=8"
 	}
 }

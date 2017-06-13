@@ -3,6 +3,8 @@
 	"version": "1.0.0",
 	"description": "React Seed Client",
 	"main": "index.js",
+	"author": "UruIT (https://github.com/UruIT)",
+	"license": "MIT",
 	"scripts": {
 		"test": "jest",
 		"tdd": "jest --watchAll",
@@ -14,9 +16,6 @@
 		"type": "git",
 		"url": "git+https://github.com/UruIT/react-seed.git"
 	},
-	"keywords": [],
-	"author": "UruIT (https://github.com/UruIT)",
-	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/UruIT/react-seed/issues"
 	},
