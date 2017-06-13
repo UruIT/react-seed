@@ -34,6 +34,8 @@
 		"migrate:make": "cd server && npm run migrate:make",
 		"migrate:latest": "cd server && npm run migrate:latest",
 		"migrate:rollback": "cd server && npm run migrate:rollback",
+		"seed:make": "cd server && npm run seed:make",
+		"seed:run": "cd server && npm run seed:run",
 		"postinstall": "npm run install:client && npm run install:server",
 		"install:client": "cd client && yarn",
 		"install:server": "cd server && yarn"
