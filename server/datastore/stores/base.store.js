@@ -1,6 +1,9 @@
 const knexfile = require('../postgres/knexfile');
 const Knex = require('knex')(knexfile);
 
+const PostgresErrors = require('../constants/postgres-errors');
+const { BadRequestException, ValidationException } = require('../../exceptions');
+
 class BaseStore {
 	constructor(tableName) {
 		this.tableName = tableName;
@@ -13,8 +16,7 @@ class BaseStore {
 	get(id) {
 		return this.table
 			.first('*')
-			.where('id', id)
-			.then((data) => (data || {}));
+			.where('id', id);
 	}
 
 	getAll() {
@@ -25,7 +27,16 @@ class BaseStore {
 	insert(entity, trx, returning = 'id') {
 		return this.table
 			.transacting(trx)
-			.insert(entity, returning);
+			.insert(entity, returning)
+			.catch(err => {
+				if (err.code === PostgresErrors.NOT_NULL_VIOLATION) {
+					throw new BadRequestException();
+				}
+				if (err.code === PostgresErrors.FOREIGN_KEY_VIOLATION) {
+					throw new ValidationException();
+				}
+				throw err;
+			});
 	}
 
 	update(id, entity, trx, returning = 'id') {

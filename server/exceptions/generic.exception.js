@@ -1,7 +1,7 @@
 
 class GenericException extends Error {
 	constructor() {
-		super();
+		super('Unexpected error');
 
 		Error.captureStackTrace(this, GenericException);
 		this.name = this.constructor.name;
