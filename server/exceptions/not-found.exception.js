@@ -7,6 +7,6 @@ class NotFoundException extends Error {
 		this.name = this.constructor.name;
 		this.status = 404;
 	}
-};
+}
 
 module.exports = NotFoundException;

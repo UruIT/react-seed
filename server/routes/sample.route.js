@@ -24,7 +24,7 @@ router.post('/', (request, response, next) => {
 		.catch(err => next(err));
 });
 
-router.put('/', (request, response) => {
+router.put('/', () => {
 	throw new NotFoundException();
 });
 
