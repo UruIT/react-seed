@@ -59,6 +59,7 @@
 		"json-loader": "^0.5.4",
 		"lint-staged": "^3.4.1",
 		"node-sass": "^4.5.2",
+		"nodemon": "^1.11.0",
 		"npm-install-webpack-plugin": "^4.0.4",
 		"raw-loader": "^0.5.1",
 		"react-test-renderer": "^15.5.4",
@@ -66,9 +67,9 @@
 		"sass-loader": "^6.0.4",
 		"style-loader": "^0.17.0",
 		"webpack": "^2.5.1",
-		"webpack-merge": "^4.1.0",
 		"webpack-dev-middleware": "^1.10.2",
-		"webpack-hot-middleware": "^2.18.0"
+		"webpack-hot-middleware": "^2.18.0",
+		"webpack-merge": "^4.1.0"
 	},
 	"dependencies": {
 		"es6-promise": "^4.1.0",
