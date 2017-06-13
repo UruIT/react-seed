@@ -50,7 +50,14 @@ const common = {
 			template: '../node_modules/html-webpack-template/index.ejs',
 			title: 'UruIT React Seed',
 			appMountId: 'app',
-			inject: false
+			inject: false,
+			minify: {
+				collapseWhitespace: true,
+				conservativeCollapse: true,
+				preserveLineBreaks: true,
+				useShortDoctype: true,
+				html5: true
+			}
 		})
 	]
 };

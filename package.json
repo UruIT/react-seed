@@ -71,6 +71,14 @@
 		"webpack-hot-middleware": "^2.18.0",
 		"webpack-merge": "^4.1.0"
 	},
+	"dependencies": {
+		"es6-promise": "^4.1.0",
+		"prop-types": "^15.5.10",
+		"react": "^15.5.4",
+		"react-dom": "^15.5.4",
+		"react-router-dom": "^4.1.1",
+		"whatwg-fetch": "^2.0.3"
+	},
 	"engines": {
 		"node": ">=7"
 	}
