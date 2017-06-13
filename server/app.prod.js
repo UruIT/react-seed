@@ -26,18 +26,18 @@ app.get('*', (req, res) => res.sendFile(HTML_FILE));
 setupServer(app);
 
 function setupServer(app) {
-    app.set('x-powered-by', false);
-    http.createServer(app).listen(appConfig.port);
-    logger.info('http://localhost:' + appConfig.port);
+	app.set('x-powered-by', false);
+	http.createServer(app).listen(appConfig.port);
+	logger.info('http://localhost:' + appConfig.port);
 }
 
 function init(app) {
-    configureCors(app);
-    configureBodyParser(app);
-    configureErrorHandler(app);
+	configureCors(app);
+	configureBodyParser(app);
+	configureErrorHandler(app);
 	configureCompression(app);
 
-    require('./routes')(app);
+	require('./routes')(app);
 }
 
 module.exports = app;

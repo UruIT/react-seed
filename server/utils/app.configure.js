@@ -54,15 +54,15 @@ function configureErrorHandler(app) {
 	app.use(function(err, req, res, next) {
 		logger.error(err.stack);
 		const status = (err && err.status) || 500;
-		res.status(status);
+		res.status(status).send('Something went wrong!');
 		return next();
 	});
 }
 
 function configureDevErrorHandler(app) {
 	app.use(function(err, req, res, next) {
-		let message = `Error Stack: ${err.stack}`;
-		logger.error('Something went wrong: ', message);
+		let message = `Something went wrong! ${err.stack}`;
+		logger.error(message);
 		const status = (err && err.status) || 500;
 		res.status(status).send(message);
 		return next(err);
