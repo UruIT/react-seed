@@ -55,7 +55,7 @@ app.get('*', (req, res, next) => {
 configureDevErrorHandler(app);
 
 http.createServer(app).listen(appConfig.port, () => {
-	logger.info('server listening at http://localhost:' + appConfig.port);
+	logger.info(`server listening at http://localhost:${appConfig.port}`);
 });
 
 module.exports = app;

@@ -7,11 +7,12 @@
 	"author": "UruIT (https://github.com/UruIT)",
 	"license": "MIT",
 	"scripts": {
-		"start": "node app.prod.js",
+		"start": "node index.js",
 		"dev": "nodemon app.dev.js",
 		"migrate:make": "./node_modules/.bin/knex migrate:make --knexfile ./datastore/postgres/knexfile.js",
 		"migrate:latest": "./node_modules/.bin/knex migrate:latest --knexfile ./datastore/postgres/knexfile.js",
-		"migrate:rollback": "./node_modules/.bin/knex migrate:rollback --knexfile ./datastore/postgres/knexfile.js"
+		"migrate:rollback": "./node_modules/.bin/knex migrate:rollback --knexfile ./datastore/postgres/knexfile.js",
+		"test": "tape tests/*.js | tap-spec"
 	},
 	"dependencies": {
 		"body-parser": "^1.17.2",
@@ -20,5 +21,10 @@
 		"knex": "^0.13.0",
 		"pg": "^6.2.2",
 		"winston": "^2.3.1"
+	},
+	"devDependencies": {
+		"supertest": "^3.0.0",
+		"tap-spec": "^4.1.1",
+		"tape": "^4.6.3"
 	}
 }
