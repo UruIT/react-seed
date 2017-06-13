@@ -13,7 +13,7 @@
 	"env": {
 		"browser": true,
 		"node": true,
-		"mocha": true
+		"es6": true
 	},
 	"plugins": [
 		"react"
@@ -113,7 +113,7 @@
 		"no-undef": 0, // disallow use of undeclared variables unless mentioned in a /*global */ block
 		"no-undef-init": 0, // disallow use of undefined when initializing variables
 		"no-undefined": 0, // disallow use of undefined variable (off by default)
-		"no-unused-vars": 1, // disallow declaration of variables that are not used in the code
+		"no-unused-vars": 2, // disallow declaration of variables that are not used in the code
 		"no-use-before-define": 0, // disallow use of variables before they are defined
 		// Stylistic Issues
 		"brace-style": 1, // enforce one true brace style (off by default)
