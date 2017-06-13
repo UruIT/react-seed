@@ -7,6 +7,6 @@ class GenericException extends Error {
 		this.name = this.constructor.name;
 		this.status = 500;
 	}
-};
+}
 
 module.exports = GenericException;

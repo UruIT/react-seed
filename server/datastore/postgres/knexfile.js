@@ -1,5 +1,4 @@
 const path = require('path');
-const Knex = require('knex');
 const config = require('../../config');
 
 const connection = {
@@ -7,6 +6,9 @@ const connection = {
 	connection: `${config.database.connectionString}${config.database.name}`,
 	migrations: {
 		directory: path.resolve(__dirname, '../migrations')
+	},
+	seeds: {
+		directory: path.resolve(__dirname, '../seeds')
 	}
 };
 

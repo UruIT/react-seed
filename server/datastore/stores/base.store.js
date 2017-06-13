@@ -1,4 +1,3 @@
-const Bluebird = require('bluebird');
 const knexfile = require('../postgres/knexfile');
 const Knex = require('knex')(knexfile);
 

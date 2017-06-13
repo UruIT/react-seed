@@ -1,4 +1,3 @@
-const Knex = require('knex');
 
 exports.up = function (knex) {
 	return Promise.resolve(

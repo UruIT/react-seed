@@ -17,7 +17,7 @@ const appConfigurations = {
 	}),
 	production: Object.assign({}, commonConfig, {
 		// Add production configurations here
-	}),
+	})
 };
 
 module.exports = appConfigurations[process.env.NODE_ENV || 'development'];

@@ -8,7 +8,7 @@ test('GET samples', t => {
 		.expect(200)
 		.end((err, res) => {
 			t.error(err, 'Expectations fullfilled');
-			t.same(res.body.length, 1, 'samples as expected');
+			t.same(res.body.length, 3, 'samples as expected');
 			t.end();
 		});
 });
@@ -19,7 +19,7 @@ test('GET sample one', t => {
 		.expect('Content-Type', /json/)
 		.expect(200)
 		.end((err, res) => {
-			const expected = { id: 1, description: 'description' };
+			const expected = { id: 1, description: 'UruIT' };
 			t.error(err, 'Expectations fullfilled');
 			t.same(res.body, expected, 'sample as expected');
 			t.end();
