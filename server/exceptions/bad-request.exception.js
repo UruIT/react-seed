@@ -1,7 +1,6 @@
-
 class BadRequestException extends Error {
 	constructor() {
-		super();
+		super('Inconsistent data');
 
 		Error.captureStackTrace(this, BadRequestException);
 		this.name = this.constructor.name;
