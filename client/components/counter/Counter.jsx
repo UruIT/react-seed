@@ -4,12 +4,13 @@ import { connect } from 'react-redux';
 import { counterIncrement, counterDecrement } from './CounterActions';
 import styles from './Counter.scss';
 
-export const Counter = ({ value, counterIncrement, counterDecrement }) =>
+export const Counter = ({ value, counterIncrement, counterDecrement }) => (
 	<div className={styles.container}>
-		<div>{value}</div>
+		<div>{ value }</div>
 		<a onClick={counterDecrement}>-</a>
 		<a onClick={counterIncrement}>+</a>
-	</div>;
+	</div>
+);
 
 Counter.propTypes = {
 	value: PropTypes.number.isRequired,
@@ -19,8 +20,8 @@ Counter.propTypes = {
 
 const mapStateToProps = value => ({ value });
 const mapDispatchToProps = dispatch => ({
-	counterIncrement: () => dispatch(counterIncrement(2)),
-	counterDecrement: () => dispatch(counterDecrement(2))
+	counterIncrement: () => dispatch(counterIncrement()),
+	counterDecrement: () => dispatch(counterDecrement())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
