@@ -12,7 +12,7 @@ exports[`<Counter/> render primitives 1`] = `
   <a
     onClick={[Function]}
   >
-    −
+    -
   </a>
   <a
     onClick={[Function]}
