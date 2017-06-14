@@ -38,14 +38,14 @@ function configureErrorHandler(app) {
 	app.use(function(err, req, res, next) {
 		logger.error(err.stack);
 		const status = (err && err.status) || 500;
-		res.status(status);
+		res.status(status).send(err.message);
 		return next();
 	});
 }
 
 function configureDevErrorHandler(app) {
 	app.use(function(err, req, res, next) {
-		let message = `Error Stack: ${err.stack}`;
+		let message = `${err.message || ''}\nError Stack: ${err.stack}`;
 		logger.error('Something went wrong: ', err.stack);
 		const status = (err && err.status) || 500;
 		res.status(status).send(message);

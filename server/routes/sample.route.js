@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const sampleSvc = require('../services/sample.service');
-const { NotFoundException } = require('../exceptions');
 
 router.get('/', (request, response, next) => {
 	sampleSvc
@@ -22,10 +21,6 @@ router.post('/', (request, response, next) => {
 		.insert(request.body)
 		.then(result => response.send(result))
 		.catch(err => next(err));
-});
-
-router.put('/', () => {
-	throw new NotFoundException();
 });
 
 module.exports = router;

@@ -1,12 +1,18 @@
 const sampleStore = require('../datastore/stores/sample.store');
+const { NotFoundException } = require('../exceptions');
 
 class SampleService {
 	getAll() {
-		return Promise.resolve(sampleStore.getAll());
+		return sampleStore.getAll();
 	}
 
 	get(id) {
-		return sampleStore.get(id);
+		return sampleStore.get(id).then(sample => {
+			if (!sample) {
+				throw new NotFoundException();
+			}
+			return sample;
+		});
 	}
 
 	insert(sample) {
