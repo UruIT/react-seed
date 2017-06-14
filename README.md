@@ -5,6 +5,7 @@
 
 UruIT seed project for ReactJS applications
 
+
 ## Frameworks/technologies
 
 * Webpack
@@ -13,9 +14,9 @@ UruIT seed project for ReactJS applications
 * React
 * Fetch
 * React-Router
-* Jest (with snapshots / enzyme)
-* example (scss)
-* git hooks
+* Jest
+* Sass
+* Express
 
 <details>
 
@@ -32,10 +33,7 @@ Install hooks manually (using `node`):
 node node_modules/husky/bin/install
 ```
 
-</details>
-
-
-## Formatter (JS)
+### Formatter (JS)
 
 We encourage the use of [prettier](https://github.com/prettier/prettier) in your editor for consistent code style.
 
@@ -52,28 +50,30 @@ In Visual Studio Code, we use these user settings for `prettier`
 }
 ```
 
-## Secondary features (dev branches)
+</details>
 
+
+## Secondary features
+
+* Bootstrap
 * Redux
     * redux-router
     * redux-thunk
     * saga
     * redux-mock-store
-* Enzyme
-* Server-side rendering
-* Storybook
 * TravisCI integration
-* Bootstrap
+* Storybook
+* SSR
 
-## Seed Branch
+## Seed Branches
 
 ```
 master
-seeds/
+seed/
     ./redux
+    ./mongo
     ./server-side-rendering
     ./storybook
-    ./travis
     ./bootstrap
 ```
 
@@ -82,15 +82,15 @@ seeds/
 Restore all packages and start development server:
 
 ```bash
-yarn install
+yarn
 yarn run dev
 ```
 
 Open browser on [localhost:3000](http://localhost:3000/)
 
-More info [here](docs/setup.md)
 
-## App structure
+## Docs
 
-* [client](client/README.md)
-* [server](server/README.md)
+* ### [Project setup info here](docs/setup.md)
+* ### [Client Readme](client/README.md)
+* ### [Server Readme](server/README.md)

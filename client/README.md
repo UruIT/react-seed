@@ -1,18 +1,9 @@
 # React Seed Client
 
 
-## Dependencies installation
+## Dependencies
 
-Adding new packages to the client:
-
-Development dependencies must be installed in project root folder:
-
-```bash
-cd ..
-yarn add <package>
-```
-
-Only install in `client` production dependencies: 
+Add new packages to the `client` project:
 
 ```bash
 yarn add <package>

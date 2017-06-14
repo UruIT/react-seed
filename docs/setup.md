@@ -1,47 +1,78 @@
-# React seed 
+# React Seed - Setup 
 
 ## Install dependencies
 
+Restore all packages
+
 ```bash
-yarn install
+yarn # root folder
 ```
+
 
 ## Database
 
-Download and install [PostrgreSQL](https://www.postgresql.org/download/) and [pgAdmin4](https://www.postgresql.org/ftp/pgadmin/pgadmin4/v1.5/).
+* Install [postgres](https://www.postgresql.org/) and [pgAdmin](https://www.pgadmin.org/)
+* Create new database called *ReactSeedDB*. Use following credentials: 
+    * user: `postgres`
+    * password: `Password.01`
+* For more information about setting up the server see [official docs](https://wiki.postgresql.org/wiki/First_steps)
+* Create tables running migrations: 
+    * `yarn run migrate:latest`
+* Populate database running the seeds: 
+    * `yarn run seed:run`
 
-Create server `localhost` (port `5432`) with
 
-* username: `postgres` 
-* password: `Password.01`
+## Start the app
 
-## Start
+### Execute the express server
 
-Running express server
-
-### Development
+#### Development (with nodemon)
 
 ```bash
 yarn run dev
 ```
 
-### Production
+#### Production
 
 ```bash
-yarn run prod
+yarn run prod # build and start
 ```
 
 Open browser on [localhost:3000](http://localhost:3000/)
 
 
-## Other Scripts
+## NPM Scripts
 
 ```bash
-yarn run build  # build assets for production
+yarn run build  # build production assets
 
-yarn run start  # start production server
+yarn run start  # execute production server
 
-yarn run test  # run front-end tests
+yarn run test  # execute all tests
 
-yarn run lint # run linting
+yarn run lint # execute linting
 ```
+
+<details>
+
+#### More scripts
+
+* `test`: exec all test (client uses `jest`, server uses `tape`)
+    * `test:client`: exec client test
+    * `test:server`: exec server test
+* `tdd`: exec test (on watch mode)
+* `lint`: exec linting (`eslint`)
+* `migrate:*`: knex migrations
+    * `migrate:make`: create migration script
+    * `migrate:latest`: exec migrations
+    * `migrate:rollback`: rollback migration
+* `seed:*`: data seeds
+    * `seed:make`: create seed script
+    * `seed:run`: exec seeds
+* `stats`: run `npm` stats
+* `build`: build production assets
+* `start`: exec production server
+* `dev`: exec development server
+* `prod`: build production assets and exec production server
+
+</details>
