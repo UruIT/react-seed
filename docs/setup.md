@@ -76,3 +76,21 @@ yarn run lint # execute linting
 * `prod`: build production assets and exec production server
 
 </details>
+
+
+## Development 
+
+### Git Hooks (using `husky`)
+
+In develop we use [git hooks](https://git-scm.com/docs/githooks) for automate linting and testing.
+
+Using [husky](https://github.com/typicode/husky) with `yarn`:
+
+```bash
+yarn add husky --dev --force  # ensures hooks will be installed
+```
+
+Install hooks manually (using `node`):
+```bash
+node node_modules/husky/bin/install
+```

@@ -17,40 +17,7 @@ UruIT seed project for ReactJS applications
 * Jest
 * Sass
 * Express
-
-<details>
-
-### Git Hooks (using `husky`)
-
-Using [husky](https://github.com/typicode/husky) with `yarn`:
-
-```bash
-yarn add husky --dev --force  # ensures hooks will be installed
-```
-
-Install hooks manually (using `node`):
-```bash
-node node_modules/husky/bin/install
-```
-
-### Formatter (JS)
-
-We encourage the use of [prettier](https://github.com/prettier/prettier) in your editor for consistent code style.
-
-In Visual Studio Code, we use these user settings for `prettier`
-
-```javascript
-{
-    "prettier.printWidth": 80,
-    "prettier.jsxBracketSameLine": false,
-    "prettier.semi": true,
-    "prettier.singleQuote": true,
-    "prettier.useTabs": true,
-    "prettier.tabWidth": 4
-}
-```
-
-</details>
+* Git hooks
 
 
 ## Secondary features
@@ -64,6 +31,7 @@ In Visual Studio Code, we use these user settings for `prettier`
 * TravisCI integration
 * Storybook
 * SSR
+
 
 ## Seed Branches
 
@@ -94,3 +62,4 @@ Open browser on [localhost:3000](http://localhost:3000/)
 * ### [Project setup info here](docs/setup.md)
 * ### [Client Readme](client/README.md)
 * ### [Server Readme](server/README.md)
+* ### [VS Code](docs/vscode.md)
