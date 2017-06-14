@@ -5,93 +5,61 @@
 
 UruIT seed project for ReactJS applications
 
-## Scripts
-
-### Start the project
-```bash
-yarn start  # start a dev-server and open a new browser tab
-```
-
-### Build
-```bash
-yarn run build  # build assets for production
-```
-
-### Serve built version
-```bash
-yarn run serve  # start http-server (production)
-```
-
-### Test
-```bash
-yarn test  # run front-end tests
-```
 
 ## Frameworks/technologies
-* webpack 
+
+* Webpack
 * ES6/7
 * ESLint
 * React
-* fetch
+* Fetch
 * React-Router
-* counter example
-* Jest (with snapshots / enzyme)
-* counter ex (scss)
-* git hooks (pre-commit)
-
-<details>
-
-### Git Hooks (using `husky`)
-
-Using [husky](https://github.com/typicode/husky) with `yarn`:
-
-```bash
-yarn add husky --dev --force  # ensures hooks will be installed
-```
-
-Install hooks manually (using `node`):
-```bash
-node node_modules/husky/bin/install
-```
-
-</details>
+* Jest
+* Sass
+* Express
+* Git hooks
 
 
-## Formatter (JS)
-We encourage the use of [prettier](https://github.com/prettier/prettier) in your editor for consistent code style.
+## Secondary features
 
-In Visual Studio Code, we use these user settings for `prettier`
-
-```javascript
-{
-    "prettier.printWidth": 80,
-    "prettier.jsxBracketSameLine": false,
-    "prettier.semi": true,
-    "prettier.singleQuote": true,
-    "prettier.useTabs": true,
-    "prettier.tabWidth": 4
-}
-```
-
-## Secondary features (dev branches)
+* Bootstrap
 * Redux
     * redux-router
     * redux-thunk
     * saga
     * redux-mock-store
-* Enzyme
-* Server-side rendering
-* Storybook
 * TravisCI integration
-* Bootstrap
+* Storybook
+* SSR
 
-## Seed Branch
+
+## Seed Branches
+
 ```
 master
-seeds/
+seed/
     ./redux
+    ./mongo
     ./server-side-rendering
     ./storybook
-    ./travis
     ./bootstrap
 ```
+
+## Development
+
+Restore all packages and start development server:
+
+```bash
+yarn
+yarn run dev
+```
+
+Open browser on [localhost:3000](http://localhost:3000/)
+
+
+## Docs
+
+* ### [Project setup info here](docs/setup.md)
+* ### [Client Readme](client/README.md)
+* ### [Server Readme](server/README.md)
+* ### [VS Code](docs/vscode.md)

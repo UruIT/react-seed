@@ -2,8 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import './index.scss';
 
-import Root from './config/Root';
-import store from './components/store';
+import Root from './routes/Root';
+import store from './store';
 
 render(
 	<Root store={store} />,

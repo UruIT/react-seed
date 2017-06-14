@@ -1,0 +1,32 @@
+{
+	"name": "react-seed-server",
+	"version": "1.0.0",
+	"description": "react seed - server",
+	"main": "index.js",
+	"repository": "https://github.com/UruIT/react-seed.git",
+	"author": "UruIT (https://github.com/UruIT)",
+	"license": "MIT",
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon app.dev.js",
+		"migrate:make": "knex migrate:make --knexfile ./datastore/postgres/knexfile.js",
+		"migrate:latest": "knex migrate:latest --knexfile ./datastore/postgres/knexfile.js",
+		"migrate:rollback": "knex migrate:rollback --knexfile ./datastore/postgres/knexfile.js",
+		"seed:make": "knex seed:make --knexfile ./datastore/postgres/knexfile.js",
+		"seed:run": "knex seed:run --knexfile ./datastore/postgres/knexfile.js",
+		"test": "tape tests/*.js | tap-spec"
+	},
+	"dependencies": {
+		"body-parser": "^1.17.2",
+		"compression": "^1.6.2",
+		"express": "^4.15.3",
+		"knex": "^0.13.0",
+		"pg": "^6.2.2",
+		"winston": "^2.3.1"
+	},
+	"devDependencies": {
+		"supertest": "^3.0.0",
+		"tap-spec": "^4.1.1",
+		"tape": "^4.6.3"
+	}
+}

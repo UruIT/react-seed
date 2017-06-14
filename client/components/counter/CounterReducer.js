@@ -13,7 +13,7 @@ const reducer = (state = DEFAULT_STATE, action) => {
 				value: state.value - 1
 			};
 		default:
-			return DEFAULT_STATE;
+			return state;
 	}
 };
 

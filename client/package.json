@@ -1,0 +1,41 @@
+{
+	"name": "react-seed-client",
+	"version": "1.0.0",
+	"description": "react seed - client",
+	"main": "index.js",
+	"repository": "https://github.com/UruIT/react-seed.git",
+	"author": "UruIT (https://github.com/UruIT)",
+	"license": "MIT",
+	"scripts": {
+		"lint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache",
+		"stats": "webpack --profile --json > stats.json",
+		"test": "jest",
+		"tdd": "jest --watchAll",
+		"build": "webpack"
+	},
+	"dependencies": {
+		"es6-promise": "^4.1.0",
+		"prop-types": "^15.5.9",
+		"react": "^15.5.4",
+		"react-dom": "^15.5.4",
+		"react-redux": "^5.0.5",
+		"react-router-dom": "^4.1.1",
+		"redux": "^3.6.0",
+		"whatwg-fetch": "^2.0.3"
+	},
+	"devDependencies": {
+		"babel-preset-react-hmre": "^1.1.1",
+		"enzyme": "^2.8.2",
+		"jest": "^20.0.0",
+		"react-test-renderer": "^15.5.4"
+	},
+	"jest": {
+		"moduleNameMapper": {
+			"\\.(scss)$": "<rootDir>/components/__mocks__/styles.js"
+		},
+		"testPathIgnorePatterns": [
+			"/node_modules/",
+			"webpack"
+		]
+	}
+}
