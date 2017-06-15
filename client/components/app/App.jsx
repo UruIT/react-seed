@@ -7,27 +7,22 @@ import styles from './App.scss';
 import { connect } from 'react-redux';
 import { jokeFetchRequested } from './app.action';
 
-export class App extends React.Component {
-	render() {
-		let { container, shadow, button } = styles;
-		let { joke, loading, error } = this.props;
-		let text = (loading && 'loading...') || error|| joke;
+const { container, shadow, button } = styles;
 
-		return (
-			<div className={`${container} ${shadow}`}>
-				<Counter />
-				<button
-					className={`${button} ${shadow}`}
-					onClick={this.props.fetchJoke}
-				>
-					Test
-				</button>
-				<div>
-					{ !!text && <Button text={text} /> }
-				</div>
+export function App({ joke, loading, error, fetchJoke }) {
+	let text = (loading && 'loading...') || error || joke;
+
+	return (
+		<div className={`${container} ${shadow}`}>
+			<Counter />
+			<button className={`${button} ${shadow}`} onClick={fetchJoke}>
+				Test
+			</button>
+			<div>
+				{ !!text && <Button text={text} /> }
 			</div>
-		);
-	}
+		</div>
+	);
 }
 
 App.propTypes = {
@@ -43,4 +38,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-

@@ -40,6 +40,26 @@ exports[`<App/> render error 1`] = `
 </div>
 `;
 
+exports[`<App/> render error before joke 1`] = `
+<div
+  className="container shadow"
+>
+  <Connect(Counter) />
+  <button
+    className="button shadow"
+    onClick={[Function]}
+  >
+    Test
+  </button>
+  <div>
+    <Button
+      onClick={[Function]}
+      text="error!"
+    />
+  </div>
+</div>
+`;
+
 exports[`<App/> render loading before joke 1`] = `
 <div
   className="container shadow"
