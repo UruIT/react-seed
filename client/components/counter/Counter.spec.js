@@ -6,7 +6,7 @@ import withContext from '../__mocks__/context-hoc';
 
 const CONTEXT = {
 	store: {
-		getState: jest.fn(() => 0),
+		getState: jest.fn(() => ({ counter: 0 })),
 		subscribe: jest.fn(),
 		dispatch: jest.fn()
 	}

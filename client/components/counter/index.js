@@ -1,9 +1,6 @@
-import * as CounterActions from './CounterActions';
-import CounterReducer from './CounterReducer';
 import Counter from './Counter';
 
-export {
-	CounterActions,
-	CounterReducer,
-	Counter
-};
+export * from './counter.action';
+export * from './counter.reducer';
+
+export default Counter;

@@ -9,33 +9,57 @@ jest.mock('../../utils/fetch', () => ({
 }));
 
 import React from 'react';
-import App from './App';
-import Button from '../button/Button';
+import { App } from './App';
 import { shallow } from 'enzyme';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import { getJson } from '../../utils/fetch';
 
-describe('On click in button', () => {
-	const app = shallow(<App />);
-	app.find('button').simulate('click');
+const PROPS = {
+	fetchJoke: jest.fn(),
+	joke: '',
+	loading: false,
+	error: ''
+};
 
-	it('should call ChuckNorris API', () => {
-		expect(getJson).toBeCalledWith(
-			'https://api.chucknorris.io/jokes/random'
-		);
+describe('<App/>', () => {
+	const renderer = new ShallowRenderer();
+
+	it('render no joke, no loading and no error', () => {
+		const tree = renderer.render(<App { ...PROPS } />);
+
+		expect(tree).toMatchSnapshot();
 	});
 
-	it('should update Button children', () => {
-		return app.instance().handleClick().then(() => {
-			expect(app.find(Button).props().text).toEqual('Chuck Norris joke');
-		});
+	it('render a joke', () => {
+		const tree = renderer.render(<App { ...PROPS } joke="joke!" />);
+
+		expect(tree).toMatchSnapshot();
+	});
+
+	it('render loading...', () => {
+		const tree = renderer.render(<App { ...PROPS } loading />);
+
+		expect(tree).toMatchSnapshot();
+	});
+
+	it('render error', () => {
+		const tree = renderer.render(<App { ...PROPS } error="something went wrong!" />);
+
+		expect(tree).toMatchSnapshot();
+	});
+
+	it('render loading before joke', () => {
+		const tree = renderer.render(<App { ...PROPS } joke="joke!" loading />);
+
+		expect(tree).toMatchSnapshot();
 	});
 });
 
-test('<App/>', () => {
-	const renderer = new ShallowRenderer();
+test('click on button should call props.fetchJoke func', () => {
 
-	const tree = renderer.render(<App />);
 
-	expect(tree).toMatchSnapshot();
+	const app = shallow(<App { ...PROPS } />);
+
+	app.find('button').simulate('click');
+
+	expect(PROPS.fetchJoke).toBeCalled();
 });

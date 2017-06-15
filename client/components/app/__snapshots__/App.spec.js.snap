@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<App/> 1`] = `
+exports[`<App/> render a joke 1`] = `
 <div
   className="container shadow"
 >
@@ -11,5 +11,86 @@ exports[`<App/> 1`] = `
   >
     Test
   </button>
+  <div>
+    <Button
+      onClick={[Function]}
+      text="joke!"
+    />
+  </div>
+</div>
+`;
+
+exports[`<App/> render error 1`] = `
+<div
+  className="container shadow"
+>
+  <Connect(Counter) />
+  <button
+    className="button shadow"
+    onClick={[Function]}
+  >
+    Test
+  </button>
+  <div>
+    <Button
+      onClick={[Function]}
+      text="something went wrong!"
+    />
+  </div>
+</div>
+`;
+
+exports[`<App/> render loading before joke 1`] = `
+<div
+  className="container shadow"
+>
+  <Connect(Counter) />
+  <button
+    className="button shadow"
+    onClick={[Function]}
+  >
+    Test
+  </button>
+  <div>
+    <Button
+      onClick={[Function]}
+      text="loading..."
+    />
+  </div>
+</div>
+`;
+
+exports[`<App/> render loading... 1`] = `
+<div
+  className="container shadow"
+>
+  <Connect(Counter) />
+  <button
+    className="button shadow"
+    onClick={[Function]}
+  >
+    Test
+  </button>
+  <div>
+    <Button
+      onClick={[Function]}
+      text="loading..."
+    />
+  </div>
+</div>
+`;
+
+exports[`<App/> render no joke, no loading and no error 1`] = `
+<div
+  className="container shadow"
+>
+  <Connect(Counter) />
+  <button
+    className="button shadow"
+    onClick={[Function]}
+  >
+    Test
+  </button>
+  <div />
 </div>
 `;

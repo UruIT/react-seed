@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { counterIncrement, counterDecrement } from './CounterActions';
+import { counterIncrement, counterDecrement } from './counter.action';
 import styles from './Counter.scss';
 
 export const Counter = ({ value, counterIncrement, counterDecrement }) => (
@@ -18,7 +18,7 @@ Counter.propTypes = {
 	counterDecrement: PropTypes.func.isRequired
 };
 
-const mapStateToProps = value => ({ value });
+const mapStateToProps = ({ counter }) => ({ value: counter });
 const mapDispatchToProps = dispatch => ({
 	counterIncrement: () => dispatch(counterIncrement()),
 	counterDecrement: () => dispatch(counterDecrement())

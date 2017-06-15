@@ -1,38 +1,46 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from '../button/Button';
-import { getJson } from '../../utils/fetch';
-import { Counter } from '../counter';
+import Counter from '../counter';
 import styles from './App.scss';
 
-export default class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			joke: ''
-		};
-	}
-	handleClick = () => {
-		return getJson('https://api.chucknorris.io/jokes/random').then(res =>
-			this.setState({
-				joke: res.value
-			})
-		);
-	};
+import { connect } from 'react-redux';
+import { jokeFetchRequested } from './app.action';
+
+export class App extends React.Component {
 	render() {
 		let { container, shadow, button } = styles;
-		let { joke } = this.state;
+		let { joke, loading, error } = this.props;
+		let text = (loading && 'loading...') || error|| joke;
 
 		return (
 			<div className={`${container} ${shadow}`}>
 				<Counter />
 				<button
 					className={`${button} ${shadow}`}
-					onClick={this.handleClick}
+					onClick={this.props.fetchJoke}
 				>
 					Test
 				</button>
-				{!!joke && <Button text={joke} />}
+				<div>
+					{ !!text && <Button text={text} /> }
+				</div>
 			</div>
 		);
 	}
 }
+
+App.propTypes = {
+	fetchJoke: PropTypes.func.isRequired,
+	joke: PropTypes.string.isRequired,
+	loading: PropTypes.bool.isRequired,
+	error: PropTypes.string.isRequired
+};
+
+const mapStateToProps = ({ app }) => app;
+const mapDispatchToProps = dispatch => ({
+	fetchJoke: () => dispatch(jokeFetchRequested())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+

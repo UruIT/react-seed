@@ -1,8 +1,20 @@
-import { createStore, applyMiddleware } from 'redux';
-import { CounterReducer } from '../components/counter';
-import loggerMiddlewaare from './middlewares/logger';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { counterReducer as counter } from '../components/counter';
+import { appReducer as app } from '../components/app';
+import loggerMiddleware from './middlewares/logger';
+import { sagaMiddleware, runSagas } from '../saga';
+
+const reducer = combineReducers({
+	counter,
+	app
+});
 
 export default createStore(
-	CounterReducer,
-	applyMiddleware(loggerMiddlewaare)
+	reducer,
+	applyMiddleware(
+		loggerMiddleware,
+		sagaMiddleware
+	)
 );
+
+runSagas();

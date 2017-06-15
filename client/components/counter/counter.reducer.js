@@ -1,8 +1,8 @@
-import { COUNTER_INCREMENT, COUNTER_DECREMENT } from './CounterActions';
+import { COUNTER_INCREMENT, COUNTER_DECREMENT } from './counter.action';
 
 const DEFAULT_STATE = 0;
 
-const reducer = (state = DEFAULT_STATE, action) => {
+export const counterReducer = (state = DEFAULT_STATE, action) => {
 	switch (action.type) {
 		case COUNTER_INCREMENT:
 			return state + action.payload;
@@ -12,5 +12,3 @@ const reducer = (state = DEFAULT_STATE, action) => {
 			return state;
 	}
 };
-
-export default reducer;
