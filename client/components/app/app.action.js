@@ -8,14 +8,25 @@ export const jokeFetchRequested = () => ({
 });
 
 export const JOKE_FETCH_SUCCEEDED = 'JOKE_FETCH_SUCCEEDED';
+
+export const jokeFetchSucceeded = joke => ({
+	type: JOKE_FETCH_SUCCEEDED,
+	joke
+});
+
 export const JOKE_FETCH_FAILED='JOKE_FETCH_FAILED';
+
+export const jokeFetchFailed = error => ({
+	type: JOKE_FETCH_FAILED,
+	message: error.message || error
+});
 
 export function* fetchJoke() {
 	try {
 		const joke = yield call(getJson, 'https://api.chucknorris.io/jokes/random');
-		yield put({ type: JOKE_FETCH_SUCCEEDED, joke });
-	} catch (e) {
-		yield put({ type: JOKE_FETCH_FAILED, message: e.message });
+		yield put(jokeFetchSucceeded(joke));
+	} catch (err) {
+		yield put(jokeFetchFailed(err));
 	}
 }
 
