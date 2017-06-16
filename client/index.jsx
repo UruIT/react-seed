@@ -3,8 +3,10 @@ import { render } from 'react-dom';
 import 'babel-polyfill';
 import './index.scss';
 
+import configureStore from './store';
 import Root from './routes/Root';
-import store from './store';
+
+const store = configureStore();
 
 render(
 	<Root store={store} />,

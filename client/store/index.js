@@ -4,17 +4,23 @@ import { appReducer as app } from '../components/app';
 import loggerMiddleware from './middlewares/logger';
 import { sagaMiddleware, runSagas } from '../saga';
 
-const reducer = combineReducers({
+const rootReducer = combineReducers({
 	counter,
 	app
 });
 
-export default createStore(
-	reducer,
-	applyMiddleware(
-		loggerMiddleware,
-		sagaMiddleware
-	)
-);
+function configureStore() {
+	const store = createStore(
+		rootReducer,
+		applyMiddleware(
+			loggerMiddleware,
+			sagaMiddleware
+		)
+	);
 
-runSagas();
+	runSagas();
+
+	return store;
+}
+
+export default configureStore;
