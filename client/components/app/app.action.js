@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { getJson } from '../../utils/fetch';
 
 export const JOKE_FETCH_REQUESTED = 'JOKE_FETCH_REQUESTED';
@@ -20,5 +20,5 @@ export function* fetchJoke() {
 }
 
 export default function *jokeSaga() {
-	yield takeEvery(JOKE_FETCH_REQUESTED, fetchJoke);
+	yield takeLatest(JOKE_FETCH_REQUESTED, fetchJoke);
 }
