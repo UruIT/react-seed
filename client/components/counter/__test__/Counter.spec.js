@@ -1,8 +1,8 @@
 import React from 'react';
-import Counter from './Counter';
+import Counter from '../Counter';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import renderer from 'react-test-renderer';
-import withContext from '../__mocks__/context-hoc';
+import withContext from '../../__mocks__/context-hoc';
 
 const CONTEXT = {
 	store: {
