@@ -16,6 +16,10 @@
 		"react"
 	],
 	"rules": {
+		"no-console": [2, {
+			"allow": ["error", "warn", "info", "group", "groupEnd"]
+		}],
+
 		"jsx-quotes": [1, "prefer-double"],
 
 		"react/jsx-no-undef": 1,

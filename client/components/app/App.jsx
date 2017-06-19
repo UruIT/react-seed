@@ -1,42 +1,40 @@
 import React from 'react';
-import MyButton from '../button/Button';
-import { getJson } from '../../utils/fetch';
-import Counter from '../counter/Counter';
+import PropTypes from 'prop-types';
+import Button from '../button/Button';
+import Counter from '../counter';
 import styles from './App.scss';
 
-export default class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			joke: ''
-		};
-	}
-	handleClick = () => {
-		return getJson('https://api.chucknorris.io/jokes/random').then(res =>
-			this.setState({
-				joke: res.value
-			})
-		);
-	};
-	render() {
-		let { container, shadow, button } = styles;
-		let { joke } = this.state;
+import { connect } from 'react-redux';
+import { jokeFetchRequested } from './app.action';
 
-		return (
-			<div className={`${container} ${shadow}`}>
-				<Counter />
-				<button
-					className={`${button} ${shadow}`}
-					onClick={this.handleClick}
-				>
-					Test
-				</button>
-				{!!joke && <MyButton text={joke} />}
+const { container, shadow, button } = styles;
+
+export function App({ joke, loading, error, fetchJoke }) {
+	let text = (loading && 'loading...') || error || joke;
+
+	return (
+		<div className={`${container} ${shadow}`}>
+			<Counter />
+			<button className={`${button} ${shadow}`} onClick={fetchJoke}>
+				Test
+			</button>
+			<div>
+				{ !!text && <Button text={text} /> }
 			</div>
-		);
-	}
-
-	test = () => {
-		console.error('test');
-	};
+		</div>
+	);
 }
+
+App.propTypes = {
+	fetchJoke: PropTypes.func.isRequired,
+	joke: PropTypes.string.isRequired,
+	loading: PropTypes.bool.isRequired,
+	error: PropTypes.string.isRequired
+};
+
+const mapStateToProps = ({ app }) => app;
+const mapDispatchToProps = dispatch => ({
+	fetchJoke: () => dispatch(jokeFetchRequested())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
