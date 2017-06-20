@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const glob = require('glob');
+const webpack = require('webpack');
 
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
@@ -58,7 +59,8 @@ const common = {
 				useShortDoctype: true,
 				html5: true
 			}
-		})
+		}),
+		new webpack.optimize.ModuleConcatenationPlugin()
 	]
 };
 
