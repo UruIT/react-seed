@@ -23,6 +23,7 @@ module.exports = merge(common, {
 						loader: 'css-loader',
 						options: {
 							modules: true,
+							camelCase: 'dashes',
 							localIdentName: '[path][name]__[local]'
 						}
 					},
