@@ -30,6 +30,6 @@ export function* fetchJoke() {
 	}
 }
 
-export default function *jokeSaga() {
+export default function *watchFetchJoke() {
 	yield takeLatest(JOKE_FETCH_REQUESTED, fetchJoke);
 }
