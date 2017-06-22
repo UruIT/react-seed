@@ -21,7 +21,7 @@ export const jokeFetchFailed = error => ({
 	message: error.message || error
 });
 
-export function* fetchJoke() {
+export function *fetchJoke() {
 	try {
 		const joke = yield call(getJson, 'https://api.chucknorris.io/jokes/random');
 		yield put(jokeFetchSucceeded(joke));
@@ -30,6 +30,6 @@ export function* fetchJoke() {
 	}
 }
 
-export default function *jokeSaga() {
+export default function *watchFetchJoke() {
 	yield takeLatest(JOKE_FETCH_REQUESTED, fetchJoke);
 }

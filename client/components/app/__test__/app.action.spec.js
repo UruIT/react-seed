@@ -57,10 +57,16 @@ describe('sagas effects: fecthJoke', () => {
 			.toEqual(put({ type: JOKE_FETCH_SUCCEEDED }));
 	});
 
-	it('fetch success', () => {
+	it('fetch failed', () => {
 		const error = { message: 'unexpected error!' };
 
 		expect(iterator.throw(error).value)
 			.toEqual(put({ type: JOKE_FETCH_FAILED, message: error.message }));
+	});
+
+	it('end sagas', () => {
+		const end = { value: undefined, done: true };
+
+		expect(iterator.next()).toEqual(end);
 	});
 });

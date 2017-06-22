@@ -1,14 +1,10 @@
 const { common, PATHS } = require('./webpack.config.common');
-const pkg = require('../package.json');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = merge(common, {
-	entry: {
-		vendor: Object.keys(pkg.dependencies)
-	},
 	output: {
 		path: PATHS.build,
 		filename: '[name].[chunkhash].js',
@@ -46,11 +42,12 @@ module.exports = merge(common, {
 	},
 	plugins: [
 		new CleanPlugin([PATHS.build], {
-			root: process.cwd(),
+			root: PATHS.root,
 			verbose: false
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
-			names: ['vendor', 'manifest']
+			names: ['vendor'],
+			minChunks: module => /node_modules/.test(module.resource)
 		}),
 		new ExtractTextPlugin('[name].[chunkhash].css'),
 		new webpack.DefinePlugin({
