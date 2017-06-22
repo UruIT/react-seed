@@ -5,6 +5,7 @@ const webpack = require('webpack');
 
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
+	root: path.join(__dirname, '..', '..'),
 	app: path.join(__dirname, '..'),
 	build: path.join(__dirname, '../../build'),
 	style: glob.sync('./**/*.scss'),
