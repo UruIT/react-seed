@@ -22,16 +22,9 @@ UruIT seed project for ReactJS applications
 
 ## Secondary features
 
-* Bootstrap
 * Redux
     * redux-router
-    * redux-thunk
-    * saga
-    * redux-mock-store
-* TravisCI integration
-* Storybook
-* SSR
-
+    * redux-saga
 
 ## Seed Branches
 
@@ -40,10 +33,12 @@ master
 seed/
     ./redux
     ./mongo
-    ./server-side-rendering
-    ./storybook
-    ./bootstrap
 ```
+
+### Coming up next
+* server side rendering
+* storybook
+* bootstrap
 
 ## Development
 
