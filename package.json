@@ -80,5 +80,10 @@
 	},
 	"engines": {
 		"node": ">=8"
+	},
+	"dependencies": {
+		"accept-language": "^3.0.17",
+		"cookie-parser": "^1.4.3",
+		"js-cookie": "^2.1.4"
 	}
 }

@@ -9,7 +9,11 @@ exports[`<App/> 1`] = `
     className="button shadow"
     onClick={[Function]}
   >
-    Test
+    <FormattedMessage
+      defaultMessage="Test"
+      id="test"
+      values={Object {}}
+    />
   </button>
 </div>
 `;

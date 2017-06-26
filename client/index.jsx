@@ -2,6 +2,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import './index.scss';
 
-import Root from './routes/Root';
+import Translations from './translations/Translations';
 
-render(<Root />, document.getElementById('app'));
+render( <Translations />, document.getElementById('app'));
