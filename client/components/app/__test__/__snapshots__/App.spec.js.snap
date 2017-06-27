@@ -9,7 +9,11 @@ exports[`<App/> render a joke 1`] = `
     className="button shadow"
     onClick={[Function]}
   >
-    Test
+    <FormattedMessage
+      defaultMessage="Test"
+      id="test"
+      values={Object {}}
+    />
   </button>
   <div>
     <Button
@@ -29,7 +33,11 @@ exports[`<App/> render error 1`] = `
     className="button shadow"
     onClick={[Function]}
   >
-    Test
+    <FormattedMessage
+      defaultMessage="Test"
+      id="test"
+      values={Object {}}
+    />
   </button>
   <div>
     <Button
@@ -49,7 +57,11 @@ exports[`<App/> render error before joke 1`] = `
     className="button shadow"
     onClick={[Function]}
   >
-    Test
+    <FormattedMessage
+      defaultMessage="Test"
+      id="test"
+      values={Object {}}
+    />
   </button>
   <div>
     <Button
@@ -69,7 +81,11 @@ exports[`<App/> render loading before joke 1`] = `
     className="button shadow"
     onClick={[Function]}
   >
-    Test
+    <FormattedMessage
+      defaultMessage="Test"
+      id="test"
+      values={Object {}}
+    />
   </button>
   <div>
     <Button
@@ -89,7 +105,11 @@ exports[`<App/> render loading... 1`] = `
     className="button shadow"
     onClick={[Function]}
   >
-    Test
+    <FormattedMessage
+      defaultMessage="Test"
+      id="test"
+      values={Object {}}
+    />
   </button>
   <div>
     <Button
@@ -109,7 +129,11 @@ exports[`<App/> render no joke, no loading and no error 1`] = `
     className="button shadow"
     onClick={[Function]}
   >
-    Test
+    <FormattedMessage
+      defaultMessage="Test"
+      id="test"
+      values={Object {}}
+    />
   </button>
   <div />
 </div>

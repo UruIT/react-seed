@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from '../button/Button';
 import Counter from '../counter';
 import styles from './App.scss';
-
+import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { jokeFetchRequested } from './app.action';
 
@@ -16,7 +16,7 @@ export function App({ joke, loading, error, fetchJoke }) {
 		<div className={`${container} ${shadow}`}>
 			<Counter />
 			<button className={`${button} ${shadow}`} onClick={fetchJoke}>
-				Test
+				<FormattedMessage id="test" defaultMessage="Test" />
 			</button>
 			<div>
 				{ !!text && <Button text={text} /> }
