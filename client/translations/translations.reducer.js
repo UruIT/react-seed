@@ -18,7 +18,8 @@ export function translationsReducer(state = DEFAULT_STATE, action) {
 			};
 		case TRANSLATIONS_FAILED:
 			return {
-				...DEFAULT_STATE,
+				...state,
+				loading: false,
 				error: action.message
 			};
 		default:
