@@ -21,7 +21,7 @@ export default class Translations extends React.Component {
 	}
 
 	render() {
-		if (JSON.stringify(this.state.translations) === JSON.stringify({})) {
+		if (Object.keys(this.state.translations).length === 0) {
 			return <div> Loading ... </div>;
 		}
 		return (
