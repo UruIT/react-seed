@@ -1,3 +1,4 @@
+import { EventTypes } from 'redux-segment';
 import {
 	COUNTER_INCREMENT,
 	COUNTER_DECREMENT,
@@ -32,7 +33,8 @@ describe('counter action creators', () => {
 	it('counterDecrement creates COUNTER_DECREMENT action', () => {
 		const expectedAction = {
 			type: COUNTER_DECREMENT,
-			payload: 1
+			payload: 1,
+			meta: {analytics: EventTypes.track},
 		};
 
 		const action = counterDecrement();
@@ -44,7 +46,8 @@ describe('counter action creators', () => {
 		const payload = 11;
 		const expectedAction = {
 			type: COUNTER_DECREMENT,
-			payload
+			payload,
+			meta: {analytics: EventTypes.track},
 		};
 
 		const action = counterDecrement(payload);

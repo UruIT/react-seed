@@ -3,6 +3,9 @@ import { counterReducer as counter } from '../components/counter';
 import { appReducer as app } from '../components/app';
 import loggerMiddleware from './middlewares/logger';
 import { sagaMiddleware, runSagas } from '../saga';
+import { createTracker } from 'redux-segment';
+
+const tracker = createTracker();
 
 const rootReducer = combineReducers({
 	counter,
@@ -14,7 +17,8 @@ function configureStore() {
 		rootReducer,
 		applyMiddleware(
 			loggerMiddleware,
-			sagaMiddleware
+			sagaMiddleware,
+			tracker
 		)
 	);
 
