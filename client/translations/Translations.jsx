@@ -16,12 +16,13 @@ export default class Translations extends React.Component {
 	constructor() {
 		super();
 		this.state = {
+			fetching: true,
 			translations: {}
 		};
 	}
 
 	render() {
-		if (Object.keys(this.state.translations).length === 0) {
+		if (this.state.fetching) {
 			return <div> Loading ... </div>;
 		}
 		return (
@@ -32,10 +33,18 @@ export default class Translations extends React.Component {
 	}
 
 	componentDidMount() {
-		getJson('/api/translations/' + language).then(res => {
-			this.setState({
-				translations: res
+		getJson('/api/translations/' + language)
+			.then(res => {
+				this.setState({
+					fetching: false,
+					translations: res
+				});
+			})
+			.catch(() => {
+				this.setState({
+					fetching: false
+				});
+				console.error('Error loading translations. Default language will be used.');
 			});
-		});
 	}
 }
