@@ -1,22 +1,22 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Nav.scss';
+import { FormattedMessage } from 'react-intl';
 
 let { nav, active } = styles;
 
-const Nav = () => (
+const Nav = () =>
 	<ul className={nav}>
 		<li>
 			<NavLink to="/" activeClassName={active} exact>
-				Home
+				<FormattedMessage id="home" defaultMessage="Home" />
 			</NavLink>
 		</li>
 		<li>
 			<NavLink to="/about" activeClassName={active} exact>
-				About
+				<FormattedMessage id="about" defaultMessage="About" />
 			</NavLink>
 		</li>
-	</ul>
-);
+	</ul>;
 
 export default Nav;

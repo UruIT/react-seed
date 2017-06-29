@@ -5,7 +5,29 @@ exports[`renders About 1`] = `
   className="about"
 >
   <h1>
-    About
+    <FormattedMessage
+      defaultMessage="About"
+      id="about"
+      values={Object {}}
+    />
   </h1>
+  <h3>
+     Time: 
+    <FormattedTime
+      value={2017-06-27T19:43:05.905Z}
+    />
+  </h3>
+  <h3>
+     Date: 
+    <FormattedDate
+      value={2016-04-05T05:09:51.883Z}
+    />
+  </h3>
+  <h3>
+     Number: 
+    <FormattedNumber
+      value={1000.5}
+    />
+  </h3>
 </div>
 `;

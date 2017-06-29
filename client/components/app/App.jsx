@@ -3,6 +3,7 @@ import MyButton from '../button/Button';
 import { getJson } from '../../utils/fetch';
 import Counter from '../counter/Counter';
 import styles from './App.scss';
+import { FormattedMessage } from 'react-intl';
 
 export default class App extends React.Component {
 	constructor(props) {
@@ -29,7 +30,8 @@ export default class App extends React.Component {
 					className={`${button} ${shadow}`}
 					onClick={this.handleClick}
 				>
-					Test
+					<FormattedMessage id="test" defaultMessage="Test"/>
+
 				</button>
 				{!!joke && <MyButton text={joke} />}
 			</div>
