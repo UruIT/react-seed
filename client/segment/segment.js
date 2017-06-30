@@ -48,6 +48,8 @@
 			};
 			analytics.SNIPPET_VERSION = '4.0.0';
 			analytics.load('Lzcx1WYIeuHhi1mEA6odscWC0VRSZY4S');
-			//analytics.page();
+			// analytics.page() sends the event Page to analytics on first page load.
+			// navigating throw the application does not send this event again.
+			analytics.page();
 		}
 })();
