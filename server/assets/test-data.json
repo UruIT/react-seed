@@ -1,0 +1,62 @@
+{
+	"company": "UruIT",
+	"title": "Our first WM report!",
+	"section": "First table with data",
+	"data": [
+		{
+			"year": 2017,
+			"column1": 564565,
+			"column2": 5645.6,
+			"column3": 5645665,
+			"column4": 56465665,
+			"column5": 564565550,
+			"column6": 5645650000
+		},
+		{
+			"year": 2018,
+			"column1": 6664565,
+			"column2": 66645.6,
+			"column3": 66645665,
+			"column4": 666465665,
+			"column5": 6664565550,
+			"column6": 66645650000
+		},
+		{
+			"year": 2019,
+			"column1": 7764565,
+			"column2": 77645.6,
+			"column3": 77645665,
+			"column4": 776465665,
+			"column5": 7764565550,
+			"column6": 77645650000
+		},
+		{
+			"year": 2020,
+			"column1": 8864565,
+			"column2": 88645.6,
+			"column3": 88645665,
+			"column4": 886465665,
+			"column5": 8864565550,
+			"column6": 88645650000
+		},
+		{
+			"year": 2021,
+			"column1": 8864565,
+			"column2": 88645.6,
+			"column3": 88645665,
+			"column4": 886465665,
+			"column5": 8864565550,
+			"column6": 88645650000
+		},
+		{
+			"year": 2022,
+			"column1": 9964565,
+			"column2": 99645.6,
+			"column3": 99645665,
+			"column4": 996465665,
+			"column5": 9964565550,
+			"column6": 99645650000
+		}
+	],
+	"summary": "This information goes below the table: 123456"
+}
