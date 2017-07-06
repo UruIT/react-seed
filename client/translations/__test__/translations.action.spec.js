@@ -7,7 +7,8 @@ import {
 	translationsRequested,
 	translationsSucceeded,
 	translationsFailed,
-	fetchTranslations } from '../translations.action';
+	fetchTranslations
+} from '../translations.action';
 
 describe('translations action creators', () => {
 	it('translationsRequested', () => {
@@ -24,10 +25,10 @@ describe('translations action creators', () => {
 	it('jokeFetchSucceeded', () => {
 		const expectedAction = {
 			type: TRANSLATIONS_SUCCEEDED,
-			translations: {"test": "Test", "home":"Home"}
+			translations: { test: 'Test', home: 'Home' }
 		};
 
-		const result = translationsSucceeded({"test": "Test", "home":"Home"});
+		const result = translationsSucceeded({ test: 'Test', home: 'Home' });
 
 		expect(result).toEqual(expectedAction);
 	});
@@ -45,16 +46,16 @@ describe('translations action creators', () => {
 });
 
 describe('sagas effects: fecthTranslations', () => {
-
-	const iterator = fetchTranslations({language: "en"});
+	const iterator = fetchTranslations({ language: 'en' });
 
 	it('call api', () => {
 		expect(iterator.next().value).toEqual(call(getJson, '/api/translations/en'));
 	});
 
 	it('fetch success', () => {
-		expect(iterator.next({'test':'Test', 'home':'Home'}).value)
-		.toEqual(put({ type: TRANSLATIONS_SUCCEEDED, translations:{'test':'Test', 'home':'Home'} }));
+		expect(iterator.next({ test: 'Test', home: 'Home' }).value).toEqual(
+			put({ type: TRANSLATIONS_SUCCEEDED, translations: { test: 'Test', home: 'Home' } })
+		);
 	});
 
 	it('fetch failed', () => {
