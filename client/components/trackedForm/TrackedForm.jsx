@@ -1,17 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { submitTrackedForm } from './tracked.form.action';
-//import styles from '.TrackedForm.scss';
+import { submitTrackedForm } from './tracked-form.action';
+import styles from './TrackedForm.scss';
 
 class TrackedForm extends React.Component {
 	render() {
 		return (
-			<div>
-				<label> Tax </label>
-				<input type="number" name="tax" ref={tax => (this.tax = tax)} defaultValue={this.props.tax} />
-				<label> Fee </label>
-				<input type="number" name="fee" ref={fee => (this.fee = fee)} defaultValue={this.props.fee} />
+			<div className={styles.container}>
+				<div className={styles.entry}>
+					<label> Tax </label>
+					<input type="number" name="tax" ref={tax => (this.tax = tax)} defaultValue={this.props.tax} />
+				</div>
+				<div className={styles.entry}>
+					<label> Fee </label>
+					<input type="number" name="fee" ref={fee => (this.fee = fee)} defaultValue={this.props.fee} />
+				</div>
 				<input
 					type="button"
 					value="Next"

@@ -1,11 +1,11 @@
-import { FORM_SUBMIT } from './tracked.form.action';
+import { FORM_SUBMIT } from './tracked-form.action';
 
 const DEFAULT_STATE = {
 	tax: 15,
 	fee: 0.5
-}
+};
 
-export const formReducer = ( state = DEFAULT_STATE, action ) => {
+export const formReducer = (state = DEFAULT_STATE, action) => {
 	switch (action.type) {
 		case FORM_SUBMIT:
 			return {

@@ -1,0 +1,27 @@
+.container {
+	text-align: center;
+	margin: 50px auto;
+
+	.entry {
+		display: block;
+		margin: 20px auto;
+
+		label {
+			display: inline-block;
+			width: 50px;
+			text-align: left;
+			font-size: 22px;
+		}
+
+		input {
+			padding: 5px;
+		}
+	}
+
+	input[type="button"] {
+		display: block;
+		padding: 10px 20px;
+		border-radius: 5px;
+		margin: 10px auto;
+	}
+}

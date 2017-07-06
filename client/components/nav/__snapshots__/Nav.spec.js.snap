@@ -22,5 +22,14 @@ exports[`<Nav/> 1`] = `
       About
     </NavLink>
   </li>
+  <li>
+    <NavLink
+      activeClassName="active"
+      exact={true}
+      to="/form"
+    >
+      Form
+    </NavLink>
+  </li>
 </ul>
 `;
