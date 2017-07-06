@@ -1,4 +1,4 @@
-const generatePDF = (json, style) => {
+const generatePDF = (json, style, logo) => {
 	return `<!DOCTYPE html>
 	<html>
 		<head>
@@ -10,6 +10,8 @@ const generatePDF = (json, style) => {
 			<div id="container">
 			<div id="main">
 				<div id="header">
+				<img id='base64image'
+       						src='${logo}' />
 					<div id="header_info black"> ${json.company} <span class="black">|</span> ${new Date()}</div>
 				</div>
 				<h1 class="black" id="quote_name">${json.title}</h1>

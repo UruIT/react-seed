@@ -42,6 +42,8 @@ module.exports = `<style type="text/css">
 
       #header { font-size: 0.5em; text-align: right; margin-top: 6em; }
 
+	  #base64image { display:inline; float: left; width:150px; height:150px; }
+
       #header span.black { font-size: 1em; margin: 0 0.75em; }
 
       #quote_name { margin-top: 3.5em; text-align: right; font-weight: bold; font-size: 1.5em }
