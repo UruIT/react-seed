@@ -10,8 +10,7 @@ const generatePDF = (json, style, logo) => {
 			<div id="container">
 			<div id="main">
 				<div id="header">
-				<img id='base64image'
-       						src='${logo}' />
+				<img id='base64image' src='${logo}' />
 					<div id="header_info black"> ${json.company} <span class="black">|</span> ${new Date()}</div>
 				</div>
 				<h1 class="black" id="quote_name">${json.title}</h1>

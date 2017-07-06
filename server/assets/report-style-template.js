@@ -1,6 +1,7 @@
 module.exports = `<style type="text/css">
-      /*resets from YUI*/
-      body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0; padding:0;}
+
+      body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,
+	  fieldset,input,textarea,p,blockquote,th,td {margin:0; padding:0;}
       table {border-collapse:collapse; border-spacing:0;}
       fieldset,img {border:0;}
       address,caption,cite,code,dfn,em,strong,th,var {font-style:normal; font-weight:normal;}
@@ -23,7 +24,7 @@ module.exports = `<style type="text/css">
       .clear { clear:both; }
 
       /* layout */
-      #container { font-family: Omnes Light, Trebuchet MS, Calibri, Futura, Geneva, Tahoma; font-size: 14pt; color: #a7a7a7; position: relative; }
+      #container { font-family: 'Jolly Lodger', cursive; font-size: 14pt; color: #a7a7a7; position: relative; }
 
       /* footer shenanigans! */
       #footer { text-align: center; display: block; }
