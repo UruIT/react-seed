@@ -1,0 +1,18 @@
+{
+	"name": "react-seed",
+	"repository": "https://github.com/UruIT/react-seed",
+	"buildpacks": [
+		{
+			"url": "https://github.com/heroku/exec-buildpack"
+		},
+		{
+			"url": "heroku/nodejs"
+		},
+		{
+			"url": "https://github.com/carloluis/heroku-bp-node-build"
+		},
+		{
+			"url": "https://github.com/homelight/wkhtmltox-buildpack"
+		}
+	]
+}
