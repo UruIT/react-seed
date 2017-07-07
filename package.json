@@ -79,6 +79,7 @@
 		"webpack-merge": "^4.1.0"
 	},
 	"engines": {
-		"node": ">=8"
+		"node": ">=8",
+		"yarn": ">=0.27.5"
 	}
 }
