@@ -3,7 +3,7 @@ import style from './Report.scss';
 
 const Report = () =>
 	<form action="api/report" className={style.report}>
-		<h3> Click below to generate a pdf report using docraptor </h3>
+		<h3> Click below to generate a pdf report using wkhtmltopdf </h3>
 		<input type="submit" value="Download pdf" />
 	</form>
 

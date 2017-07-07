@@ -6,7 +6,7 @@ exports[`renders Report 1`] = `
   className="report"
 >
   <h3>
-     Click below to generate a pdf report using docraptor 
+     Click below to generate a pdf report using wkhtmltopdf 
   </h3>
   <input
     type="submit"
