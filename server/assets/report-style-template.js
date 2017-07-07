@@ -89,4 +89,6 @@ module.exports = `<style type="text/css">
       #total_price { text-align: right; margin-right: 6.75em; margin-top: 0.5em; }
       #total_price h2 { color: black; font-size: 0.6em; font-weight: bold; }
       #total_price .price { margin-left: 0.75em; }
+
+	  #new_page { page-break-before: always; }
 </style>`;

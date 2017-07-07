@@ -31,6 +31,15 @@ const generatePDF = (json, style, logo) => {
 			<div id="total_price">
 				<h2>${json.summary}</h2>
 			</div>
+			<p class="black" id="new_page"> THIS TEXT AND THE FOLLOWING TABLE ARE RENDERER IN A NEW PAGE </p>
+			<table id="phase_details">
+				<thead>
+					<tr>
+					${getColumnHeaders(json.data[0])}
+					</tr>
+				</thead>
+				${getRows(json.data)}
+			</table>
 			</div>
 		</body>
 	</html>`;
