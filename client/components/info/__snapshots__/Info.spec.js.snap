@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Info 1`] = `
+<div
+  className="info"
+>
+  <label>
+    Close modal on background clicking:
+    <input
+      checked={true}
+      name="enableCloseOnBackgroundClick"
+      onChange={[Function]}
+      type="checkbox"
+    />
+  </label>
+  <label>
+    Conent WIDTH (in px):
+    <input
+      name="contentWidth"
+      onChange={[Function]}
+      placeholder="width (px)"
+      type="text"
+      value={100}
+    />
+  </label>
+  <label>
+    Conent HEIGHT (in px):
+    <input
+      name="contentHeight"
+      onChange={[Function]}
+      placeholder="height (px)"
+      type="text"
+      value={100}
+    />
+  </label>
+  <input
+    onClick={[Function]}
+    type="submit"
+    value="OPEN DIALOG"
+  />
+</div>
+`;

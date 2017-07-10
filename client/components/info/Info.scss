@@ -1,0 +1,34 @@
+.info {
+	text-align: center;
+
+	input[type="submit"] {
+		display: block;
+		padding: 10px 20px;
+		border-radius: 5px;
+		margin: 10px auto;
+	}
+
+	label {
+		display: block;
+		font-size: 20px;
+		padding: 10px;
+		margin: 10px;
+
+		input {
+			padding: 10px;
+			margin: 0 10px;
+			border-radius: 5px;
+		}
+
+		input[type="checkbox"] {
+			width: 25px;
+			height: 25px;
+		}
+	}
+
+	.content {
+		border: solid 1px #0A0817;
+		text-align: center;
+		background-color: #5882FA;
+	}
+}

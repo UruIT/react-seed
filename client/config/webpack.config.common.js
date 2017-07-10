@@ -59,7 +59,8 @@ const common = {
 				preserveLineBreaks: true,
 				useShortDoctype: true,
 				html5: true
-			}
+			},
+			mobile: true,
 		}),
 		new webpack.optimize.ModuleConcatenationPlugin()
 	]
