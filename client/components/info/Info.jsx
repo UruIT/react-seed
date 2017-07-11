@@ -8,10 +8,11 @@ export default class Info extends React.Component {
 		this.state = {
 			isModalOpen: false,
 			enableCloseOnBackgroundClick: true,
-			contentWidth: 100,
-			contentHeight: 100
+			contentWidth: 350,
+			contentHeight: 400
 		};
 		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	render() {
@@ -56,9 +57,15 @@ export default class Info extends React.Component {
 						className={style.content}
 						style={{ width: this.state.contentWidth, height: this.state.contentHeight }}
 					>
-						{' '}CONTENT BOX <br /> Size: {this.state.contentWidth} px X {this.state.contentHeight} px{' '}
+						Size: {this.state.contentWidth} px X {this.state.contentHeight} px
+						<form onSubmit={this.handleSubmit}>
+							<label> Form label
+								<input type="text" value="Form input - fix value" />
+							</label>
+							<input type="submit" value="ok" />
+						</form>
+						<button onClick={() => this.closeModal()}>Close</button>
 					</div>
-					<button onClick={() => this.closeModal()}>Close</button>
 				</Modal>
 			</div>
 		);
@@ -72,6 +79,11 @@ export default class Info extends React.Component {
 			value = e.target.value;
 		}
 		this.setState({ [e.target.name]: value });
+	}
+
+	handleSubmit(e) {
+		// preventDefault will prevent modal from closing
+		e.preventDefault();
 	}
 
 	openModal() {
