@@ -20,7 +20,7 @@ exports[`renders Info 1`] = `
       onChange={[Function]}
       placeholder="width (px)"
       type="text"
-      value={100}
+      value={350}
     />
   </label>
   <label>
@@ -30,7 +30,7 @@ exports[`renders Info 1`] = `
       onChange={[Function]}
       placeholder="height (px)"
       type="text"
-      value={100}
+      value={400}
     />
   </label>
   <input

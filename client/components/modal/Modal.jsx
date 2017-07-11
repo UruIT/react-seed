@@ -56,4 +56,9 @@ Modal.propTypes = {
 	closeClickingOutside: PropTypes.bool
 };
 
+Modal.defaultProps = {
+	closeClickingOutside: true
+};
+
+
 export default Modal;
