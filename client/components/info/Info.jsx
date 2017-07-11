@@ -48,7 +48,7 @@ export default class Info extends React.Component {
 				</label>
 				<input type="submit" onClick={() => this.openModal()} value="OPEN DIALOG" />
 				<Modal
-					isOpen={this.state.isModalOpen}
+					open={this.state.isModalOpen}
 					onClose={() => this.closeModal()}
 					closeClickingOutside={this.state.enableCloseOnBackgroundClick}
 				>
