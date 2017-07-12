@@ -17,8 +17,8 @@ const Nav = () => (
 			</NavLink>
 		</li>
 		<li>
-			<NavLink to="/info" activeClassName={active} exact>
-				Info
+			<NavLink to="/dialog" activeClassName={active} exact>
+				Dialog
 			</NavLink>
 		</li>
 	</ul>

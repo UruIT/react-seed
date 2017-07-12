@@ -1,8 +1,8 @@
 import React from 'react';
-import style from './Info.scss';
+import style from './Dialog.scss';
 import Modal from '../modal/Modal';
 
-export default class Info extends React.Component {
+export default class Dialog extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -17,7 +17,7 @@ export default class Info extends React.Component {
 
 	render() {
 		return (
-			<div className={style.info}>
+			<div className={style.dialog}>
 				<label>
 					Close modal on background clicking:
 					<input

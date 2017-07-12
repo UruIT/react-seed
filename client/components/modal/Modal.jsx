@@ -18,14 +18,34 @@ class Modal extends React.Component {
 		}
 		return (
 			<div>
-				<div className={this.state.modalClassName}>
-					{this.props.children}
+				<div className={style.backdrop} onClick={this.handleOutterClick}>
+					<div
+						className={this.state.modalClassName}
+						onClick={e => e.stopPropagation()}
+						/*ref={div => {
+							this.modal = div;
+						}}*/
+					>
+						<div className={style.closeIcon} onClick={this.props.onClose} />
+						{this.props.children}
+					</div>
 				</div>
-				<div className={style.backdrop} onClick={this.handleOutterClick} />
 			</div>
 		);
 	}
+/*
+	componentDidMount() {
+		const modal = this.modal;
+		//const modal = document.querySelector(this.state.modalClassName);
 
+		if (modal) {
+			window.onresize = e => {
+				console.info(e);
+				console.info('resize --->', modal, modal.clientHeight);
+			};
+		}
+	}
+*/
 	handleOutterClick = () => {
 		if (this.props.closeClickingOutside) {
 			this.props.onClose();
@@ -43,7 +63,7 @@ class Modal extends React.Component {
 			this.setState({ modalClassName: style.modal + ' ' + style.fadeOut }, () => {
 				setTimeout(() => {
 					this.setState({ open: false });
-				}, 1000);
+				}, 400);
 			});
 		}
 	};
@@ -59,6 +79,5 @@ Modal.propTypes = {
 Modal.defaultProps = {
 	closeClickingOutside: true
 };
-
 
 export default Modal;
