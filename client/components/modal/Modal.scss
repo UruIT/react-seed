@@ -14,6 +14,7 @@
 	// position
 	position: absolute;
 	left: 50%;
+	top: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 9999;
 	// size
@@ -23,12 +24,16 @@
 	overflow-x: auto;
 	// animation in
 	animation: in 0.4s ease-out;
-	animation-fill-mode: forwards;
 	// style
 	border-radius: 6px;
 	background-color: #ffffff;
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 	padding: 24px;
+
+	.fade-out {
+		animation: translation-out 0.4s ease-out, opacity-out 0.2s ease-out 0.05s;
+		animation-fill-mode: forwards;
+	}
 
 	.closeIcon {
 		width: 16px;
@@ -65,12 +70,21 @@
 	}
 }
 
-.fadeOut {
-	animation: translationOut 0.4s ease-out, opacityOut 0.2s ease-out 0.05s;
-	animation-fill-mode: forwards;
+@keyframes trello-in {
+	0% {
+		opacity: 0;
+		top: -8%;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		top: 8%;
+	}
 }
 
-@keyframes translationOut {
+@keyframes translation-out {
 	from {
 		top: 50%;
 	}
@@ -79,7 +93,16 @@
 	}
 }
 
-@keyframes opacityOut {
+@keyframes trello-translation-out {
+	from {
+		top: 8%;
+	}
+	to {
+		top: 38%;
+	}
+}
+
+@keyframes opacity-out {
 	from {
 		opacity: 1;
 	}
@@ -94,5 +117,24 @@
 		height: auto;
 		max-height: 90%;
 		padding: 48px;
+
+		&.trello-modal {
+			left: 50%;
+			top: 8%;
+			transform: translate(-50%, 0);
+			max-height: none;
+			margin-bottom: 5%;
+			animation: trello-in 0.4s ease-out;
+
+			&.trello-fade-out {
+				animation: trello-translation-out 0.4s ease-out, opacity-out 0.2s ease-out 0.05s;
+				animation-fill-mode: forwards;
+			}
+		}
+	}
+	.backdrop {
+		&.trello-backdrop {
+			overflow-y: scroll;
+		}
 	}
 }

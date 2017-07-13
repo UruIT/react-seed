@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import App from '../components/app/App';
 import About from '../components/about/About';
 import NotFound from '../components/notFound/NotFound';
-import Dialog from '../components/info/Dialog';
+import Dialog from '../components/dialog/Dialog';
 
 import Nav from '../components/nav/Nav';
 

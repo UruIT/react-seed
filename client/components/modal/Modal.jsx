@@ -6,7 +6,7 @@ class Modal extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			modalClassName: style.modal,
+			modalClassName: style.modal + " " + style.trelloModal,
 			open: false
 		};
 		this.handleOutterClick = this.handleOutterClick.bind(this);
@@ -18,7 +18,7 @@ class Modal extends React.Component {
 		}
 		return (
 			<div>
-				<div className={style.backdrop} onClick={this.handleOutterClick}>
+				<div className={style.backdrop + " " + style.trelloBackdrop} onClick={this.handleOutterClick}>
 					<div
 						className={this.state.modalClassName}
 						onClick={e => e.stopPropagation()}
@@ -56,11 +56,11 @@ class Modal extends React.Component {
 		if (nextProps.open && !this.props.open) {
 			this.setState({
 				open: true,
-				modalClassName: style.modal
+				modalClassName: style.modal + " " + style.trelloModal
 			});
 		}
 		if (!nextProps.open && this.props.open) {
-			this.setState({ modalClassName: style.modal + ' ' + style.fadeOut }, () => {
+			this.setState({ modalClassName: style.modal + ' ' + style.trelloModal + " " + style.trelloFadeOut }, () => {
 				setTimeout(() => {
 					this.setState({ open: false });
 				}, 400);
