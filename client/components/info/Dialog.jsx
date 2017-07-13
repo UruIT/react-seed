@@ -62,9 +62,9 @@ export default class Dialog extends React.Component {
 							<label> Form label
 								<input type="text" value="Form input - fix value" />
 							</label>
-							<input type="submit" value="ok" />
+							<input type="submit" value="Submit form" />
 						</form>
-						<button onClick={() => this.closeModal()}>Close</button>
+						<button onClick={() => this.closeModal()}>Close modal (order by content)</button>
 					</div>
 				</Modal>
 			</div>
