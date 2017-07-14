@@ -18,7 +18,7 @@
 		"es6-promise": "^4.1.0",
 		"prop-types": "^15.5.9",
 		"react": "^15.5.4",
-		"react-chartjs": "^0.8.0",
+		"react-chartjs-2": "^2.4.1",
 		"react-dom": "^15.5.4",
 		"react-router-dom": "^4.1.1",
 		"whatwg-fetch": "^2.0.3"

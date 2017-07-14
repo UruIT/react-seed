@@ -1,0 +1,26 @@
+.graphic {
+	text-align: center;
+	display: flex;
+
+	.chart-container {
+		width: 70%;
+		display: inline-block;
+	}
+
+	.info-container {
+		border: solid 1px;
+		display: inline-block;
+		width: 25%;
+		margin: auto;
+		padding: 25px;
+		text-align: left;
+
+		.title {
+			font-size: 40px;
+			text-align: center;
+			width: 100%;
+			text-decoration: underline;
+			margin-bottom: 25px;
+		}
+	}
+}
