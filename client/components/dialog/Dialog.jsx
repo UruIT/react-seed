@@ -14,6 +14,8 @@ export default class Dialog extends React.Component {
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.openModal = this.openModal.bind(this);
+		this.closeModal = this.closeModal.bind(this);
 	}
 
 	render() {
@@ -57,11 +59,11 @@ export default class Dialog extends React.Component {
 						onChange={this.handleChange}
 					/>
 				</label>
-				<input type="submit" onClick={() => this.openModal()} value="OPEN DIALOG" />
+				<input type="submit" onClick={this.openModal} value="OPEN DIALOG" />
 				<Modal
 					open={this.state.isModalOpen}
 					limitHeight={this.state.limitHeight}
-					onClose={() => this.closeModal()}
+					onClose={this.closeModal}
 					closeClickingOutside={this.state.enableCloseOnBackgroundClick}
 				>
 					<div
@@ -76,7 +78,7 @@ export default class Dialog extends React.Component {
 							</label>
 							<input type="submit" value="Submit form" />
 						</form>
-						<button onClick={() => this.closeModal()}>Close modal (order by content)</button>
+						<button onClick={this.closeModal}>Close modal (order by content)</button>
 					</div>
 				</Modal>
 			</div>
