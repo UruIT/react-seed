@@ -9,7 +9,7 @@
 			"url": "heroku/nodejs"
 		},
 		{
-			"url": "https://github.com/carloluis/heroku-bp-node-build#fix/compile-script"
+			"url": "https://github.com/carloluis/heroku-bp-node-build"
 		},
 		{
 			"url": "https://github.com/homelight/wkhtmltox-buildpack"

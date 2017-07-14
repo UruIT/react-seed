@@ -1,9 +1,10 @@
-const generatePDF = (json, style, logo) => {
+const generatePDF = (json, style, logo, fonts) => {
 	return `<!DOCTYPE html>
 	<html>
 		<head>
 			<title>${json.title}</title>
 			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+			${fonts}
 			${style}
 		</head>
 		<body>

@@ -24,7 +24,7 @@ module.exports = `<style type="text/css">
       .clear { clear:both; }
 
       /* layout */
-      #container { font-family: 'Jolly Lodger', cursive; font-size: 14pt; color: #a7a7a7; position: relative; }
+      #container { font-family: 'Comfortaa', cursive; font-size: 14pt; color: #a7a7a7; position: relative; }
 
       /* footer shenanigans! */
       #footer { text-align: center; display: block; }
