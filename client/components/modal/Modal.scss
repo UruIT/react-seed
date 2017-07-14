@@ -11,26 +11,22 @@
 }
 
 .modal {
-	// position
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 9999;
-	// size
 	height: 100%;
 	width: 100%;
 	overflow-y: auto;
 	overflow-x: auto;
-	// animation in
 	animation: in 0.4s ease-out;
-	// style
 	border-radius: 6px;
 	background-color: #ffffff;
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 	padding: 24px;
 
-	.fade-out {
+	&.fade-out {
 		animation: translation-out 0.4s ease-out, opacity-out 0.2s ease-out 0.05s;
 		animation-fill-mode: forwards;
 	}
@@ -125,11 +121,12 @@
 			max-height: none;
 			margin-bottom: 5%;
 			animation: trello-in 0.4s ease-out;
+			z-index: 9998;
+		}
 
-			&.trello-fade-out {
-				animation: trello-translation-out 0.4s ease-out, opacity-out 0.2s ease-out 0.05s;
-				animation-fill-mode: forwards;
-			}
+		&.trello-fade-out {
+			animation: trello-translation-out 0.4s ease-out, opacity-out 0.2s ease-out 0.05s;
+			animation-fill-mode: forwards;
 		}
 	}
 	.backdrop {

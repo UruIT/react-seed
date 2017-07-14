@@ -2,13 +2,22 @@
 
 exports[`renders Info 1`] = `
 <div
-  className="info"
+  className="dialog"
 >
   <label>
     Close modal on background clicking:
     <input
       checked={true}
       name="enableCloseOnBackgroundClick"
+      onChange={[Function]}
+      type="checkbox"
+    />
+  </label>
+  <label>
+    Limit modal height (scrolleable modal):
+    <input
+      checked={true}
+      name="limitHeight"
       onChange={[Function]}
       type="checkbox"
     />

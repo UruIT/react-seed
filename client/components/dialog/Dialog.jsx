@@ -9,7 +9,8 @@ export default class Dialog extends React.Component {
 			isModalOpen: false,
 			enableCloseOnBackgroundClick: true,
 			contentWidth: 350,
-			contentHeight: 400
+			contentHeight: 400,
+			limitHeight: true
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,6 +25,15 @@ export default class Dialog extends React.Component {
 						type="checkbox"
 						name="enableCloseOnBackgroundClick"
 						checked={this.state.enableCloseOnBackgroundClick}
+						onChange={this.handleChange}
+					/>
+				</label>
+				<label>
+					Limit modal height (scrolleable modal):
+					<input
+						type="checkbox"
+						name="limitHeight"
+						checked={this.state.limitHeight}
 						onChange={this.handleChange}
 					/>
 				</label>
@@ -50,6 +60,7 @@ export default class Dialog extends React.Component {
 				<input type="submit" onClick={() => this.openModal()} value="OPEN DIALOG" />
 				<Modal
 					open={this.state.isModalOpen}
+					limitHeight={this.state.limitHeight}
 					onClose={() => this.closeModal()}
 					closeClickingOutside={this.state.enableCloseOnBackgroundClick}
 				>
@@ -59,7 +70,8 @@ export default class Dialog extends React.Component {
 					>
 						Size: {this.state.contentWidth} px X {this.state.contentHeight} px
 						<form onSubmit={this.handleSubmit}>
-							<label> Form label
+							<label>
+								{' '}Form label
 								<input type="text" value="Form input - fix value" />
 							</label>
 							<input type="submit" value="Submit form" />
@@ -82,7 +94,6 @@ export default class Dialog extends React.Component {
 	}
 
 	handleSubmit(e) {
-		// preventDefault will prevent modal from closing
 		e.preventDefault();
 	}
 

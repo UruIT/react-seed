@@ -3,10 +3,11 @@ import style from './Modal.scss';
 import PropTypes from 'prop-types';
 
 class Modal extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
-			modalClassName: style.modal + " " + style.trelloModal,
+			modalClassName: props.limitHeight ? style.modal : style.modal + ' ' + style.trelloModal,
+			backdropClassName: props.limitHeight ? style.backdrop : style.backdrop + ' ' + style.trelloBackdrop,
 			open: false
 		};
 		this.handleOutterClick = this.handleOutterClick.bind(this);
@@ -18,14 +19,8 @@ class Modal extends React.Component {
 		}
 		return (
 			<div>
-				<div className={style.backdrop + " " + style.trelloBackdrop} onClick={this.handleOutterClick}>
-					<div
-						className={this.state.modalClassName}
-						onClick={e => e.stopPropagation()}
-						/*ref={div => {
-							this.modal = div;
-						}}*/
-					>
+				<div className={this.state.backdropClassName} onClick={this.handleOutterClick}>
+					<div className={this.state.modalClassName} onClick={e => e.stopPropagation()}>
 						<div className={style.closeIcon} onClick={this.props.onClose} />
 						{this.props.children}
 					</div>
@@ -33,19 +28,7 @@ class Modal extends React.Component {
 			</div>
 		);
 	}
-/*
-	componentDidMount() {
-		const modal = this.modal;
-		//const modal = document.querySelector(this.state.modalClassName);
 
-		if (modal) {
-			window.onresize = e => {
-				console.info(e);
-				console.info('resize --->', modal, modal.clientHeight);
-			};
-		}
-	}
-*/
 	handleOutterClick = () => {
 		if (this.props.closeClickingOutside) {
 			this.props.onClose();
@@ -56,15 +39,26 @@ class Modal extends React.Component {
 		if (nextProps.open && !this.props.open) {
 			this.setState({
 				open: true,
-				modalClassName: style.modal + " " + style.trelloModal
+				modalClassName: this.props.limitHeight ? style.modal : style.modal + ' ' + style.trelloModal,
+				backdropClassName: this.props.limitHeight ? style.backdrop : style.backdrop + ' ' + style.trelloBackdrop
 			});
 		}
 		if (!nextProps.open && this.props.open) {
-			this.setState({ modalClassName: style.modal + ' ' + style.trelloModal + " " + style.trelloFadeOut }, () => {
-				setTimeout(() => {
-					this.setState({ open: false });
-				}, 400);
-			});
+			this.setState(
+				{
+					modalClassName: this.props.limitHeight
+						? style.modal + ' ' + style.fadeOut
+						: style.modal + ' ' + style.trelloModal + ' ' + style.trelloFadeOut,
+					backdropClassName: this.props.limitHeight
+						? style.backdrop
+						: style.backdrop + ' ' + style.trelloBackdrop
+				},
+				() => {
+					setTimeout(() => {
+						this.setState({ open: false });
+					}, 400);
+				}
+			);
 		}
 	};
 }
@@ -73,11 +67,13 @@ Modal.propTypes = {
 	open: PropTypes.bool.isRequired,
 	onClose: PropTypes.func.isRequired,
 	children: PropTypes.node,
-	closeClickingOutside: PropTypes.bool
+	closeClickingOutside: PropTypes.bool,
+	limitHeight: PropTypes.bool
 };
 
 Modal.defaultProps = {
-	closeClickingOutside: true
+	closeClickingOutside: true,
+	limitHeight: true
 };
 
 export default Modal;

@@ -26,9 +26,9 @@ exports[`<Nav/> 1`] = `
     <NavLink
       activeClassName="active"
       exact={true}
-      to="/info"
+      to="/dialog"
     >
-      Info
+      Dialog
     </NavLink>
   </li>
 </ul>
