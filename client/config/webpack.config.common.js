@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const glob = require('glob');
 const webpack = require('webpack');
 
@@ -59,8 +60,10 @@ const common = {
 				preserveLineBreaks: true,
 				useShortDoctype: true,
 				html5: true
-			}
+			},
+			scripts: ['segment/segment.js']
 		}),
+		new CopyWebpackPlugin([{ from: PATHS.app + '/segment/segment.js', to: PATHS.build + '/segment/segment.js'}]),
 		new webpack.optimize.ModuleConcatenationPlugin()
 	]
 };

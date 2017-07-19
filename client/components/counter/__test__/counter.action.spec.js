@@ -1,9 +1,4 @@
-import {
-	COUNTER_INCREMENT,
-	COUNTER_DECREMENT,
-	counterIncrement,
-	counterDecrement
-} from '../counter.action';
+import { COUNTER_INCREMENT, COUNTER_DECREMENT, counterIncrement, counterDecrement } from '../counter.action';
 
 describe('counter action creators', () => {
 	it('counterIncrement creates COUNTER_INCREMENT action', () => {
