@@ -3,7 +3,7 @@ const commonConfig = {
 		connectionString: 'postgres://postgres:Password.01@localhost:5432/',
 		name: 'ReactSeedDB'
 	},
-	port: 3000,
+	port: process.env.PORT || 3000,
 	sslPort: 4443
 	// Add here settings shared by all the environments
 };
