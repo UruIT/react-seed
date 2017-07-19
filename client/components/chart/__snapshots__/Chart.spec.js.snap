@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Chart 1`] = `
+<div
+  className="chart"
+>
+  <Line
+    data={Object {}}
+    options={
+      Object {
+        "hover": Object {
+          "mode": "point",
+        },
+        "onClick": [Function],
+        "responsive": true,
+        "scales": Object {
+          "yAxes": Array [
+            Object {
+              "ticks": Object {
+                "callback": [Function],
+              },
+            },
+          ],
+        },
+        "title": Object {
+          "display": true,
+          "text": "POC Chart.js using react-chartjs-2",
+        },
+        "tooltips": Object {
+          "backgroundColor": "#f0efef",
+          "bodyFontColor": "#848484",
+          "bodyFontSize": 16,
+          "bodySpacing": 3,
+          "borderColor": "#848484",
+          "borderWidth": 2,
+          "callbacks": Object {
+            "label": [Function],
+          },
+          "caretPadding": 10,
+          "caretSize": 10,
+          "mode": "x",
+          "position": "nearest",
+          "titleFontColor": "#b9b0b0",
+          "titleFontSize": 24,
+          "titleFontStyle": "bold",
+          "titleSpacing": 4,
+          "xPadding": 15,
+          "yPadding": 10,
+        },
+      }
+    }
+  />
+</div>
+`;

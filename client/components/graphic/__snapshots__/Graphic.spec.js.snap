@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Graphic 1`] = `
+<div
+  className="graphic"
+>
+  <div
+    className="chartContainer"
+  >
+    <Chart
+      data={
+        Object {
+          "datasets": Array [
+            Object {
+              "backgroundColor": "#49b9ab",
+              "borderColor": "#49b9ab",
+              "data": Array [
+                0,
+                65500,
+                95000,
+                120000,
+                130000,
+                175000,
+                200000,
+                230000,
+                260000,
+                270000,
+                300000,
+                320000,
+                350000,
+              ],
+              "fill": false,
+              "hoverRadius": 6,
+              "label": "Starting now",
+              "radius": 3,
+            },
+            Object {
+              "backgroundColor": "#FA5858",
+              "borderColor": "#FA5858",
+              "borderDash": Array [
+                5,
+                5,
+              ],
+              "data": Array [
+                null,
+                null,
+                null,
+                null,
+                0,
+                50000,
+                60500,
+                70000,
+                75000,
+                90000,
+                120000,
+                145000,
+                150000,
+              ],
+              "fill": false,
+              "hoverRadius": 6,
+              "label": "Starting in five years",
+              "radius": 3,
+            },
+          ],
+          "labels": Array [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026,
+            2027,
+            2028,
+            2029,
+          ],
+        }
+      }
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="infoContainer"
+  >
+    <div
+      className="title"
+    >
+      2019
+    </div>
+    This is the information related to year 2019
+  </div>
+</div>
+`;
