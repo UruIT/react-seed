@@ -40,7 +40,7 @@ export default class Dialog extends React.Component {
 					/>
 				</label>
 				<label>
-					Conent WIDTH (in px):
+					Content WIDTH (in px):
 					<input
 						type="text"
 						name="contentWidth"
@@ -50,7 +50,7 @@ export default class Dialog extends React.Component {
 					/>
 				</label>
 				<label>
-					Conent HEIGHT (in px):
+					Content HEIGHT (in px):
 					<input
 						type="text"
 						name="contentHeight"
@@ -73,8 +73,8 @@ export default class Dialog extends React.Component {
 						Size: {this.state.contentWidth} px X {this.state.contentHeight} px
 						<form onSubmit={this.handleSubmit}>
 							<label>
-								{' '}Form label
-								<input type="text" value="Form input - fix value" />
+								Form label
+								<input type="text" />
 							</label>
 							<input type="submit" value="Submit form" />
 						</form>
@@ -86,13 +86,9 @@ export default class Dialog extends React.Component {
 	}
 
 	handleChange(e) {
-		let value;
-		if (e.target.type === 'checkbox') {
-			value = e.target.checked;
-		} else {
-			value = e.target.value;
-		}
-		this.setState({ [e.target.name]: value });
+		const target = e.target;
+		const value = target.type === 'checkbox' ? target.checked : target.value;
+		this.setState({ [target.name]: value });
 	}
 
 	handleSubmit(e) {

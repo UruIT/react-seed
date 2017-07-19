@@ -23,7 +23,7 @@ exports[`renders Info 1`] = `
     />
   </label>
   <label>
-    Conent WIDTH (in px):
+    Content WIDTH (in px):
     <input
       name="contentWidth"
       onChange={[Function]}
@@ -33,7 +33,7 @@ exports[`renders Info 1`] = `
     />
   </label>
   <label>
-    Conent HEIGHT (in px):
+    Content HEIGHT (in px):
     <input
       name="contentHeight"
       onChange={[Function]}
