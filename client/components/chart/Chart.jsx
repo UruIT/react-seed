@@ -34,13 +34,27 @@ const options = onClick => ({
 		}
 	},
 	hover: {
-		mode: 'point'
+		mode: 'point',
+		onHover: function(evt, points) {
+			if (evt.toElement.attributes.style) {
+				if (points.length === 0) {
+					evt.toElement.attributes.style.nodeValue = evt.toElement.attributes.style.nodeValue.replace(
+						'cursor: pointer;',
+						''
+					);
+					return;
+				}
+				var res = evt.toElement.attributes.style.nodeValue.match(/cursor: pointer;/);
+				if (res == null) {
+					evt.toElement.attributes.style.nodeValue += 'cursor: pointer;';
+				}
+			}
+		}
 	},
 	scales: {
 		yAxes: [
 			{
 				ticks: {
-					// Include a dollar sign in the ticks and format value
 					callback: function(value) {
 						return 'U$S ' + value.toLocaleString();
 					}
