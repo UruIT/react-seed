@@ -10,6 +10,7 @@ exports[`renders Chart 1`] = `
       Object {
         "hover": Object {
           "mode": "point",
+          "onHover": [Function],
         },
         "onClick": [Function],
         "responsive": true,
