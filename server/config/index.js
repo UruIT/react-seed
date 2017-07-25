@@ -1,6 +1,6 @@
 const commonConfig = {
 	database: {
-		connectionString: 'mongodb://localhost:27017/reactseeddb'
+		connectionString: process.env.DATABASE_URL || 'mongodb://localhost:27017/reactseeddb'
 	},
 	port: process.env.PORT || 3000,
 	sslPort: 4443
