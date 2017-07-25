@@ -5,8 +5,9 @@
 
 UruIT seed project for ReactJS applications
 
+* React with Redux-i18n seed-branch
 
-## Frameworks/technologies
+## Stack
 
 * Webpack
 * ES6/7
@@ -22,15 +23,11 @@ UruIT seed project for ReactJS applications
 
 ## Secondary features
 
-* Bootstrap
 * Redux
-    * redux-router
-    * redux-thunk
-    * saga
-    * redux-mock-store
-* TravisCI integration
-* Storybook
-* SSR
+* Redux-Segment
+* MongoDB
+* i18n
+* PDF
 
 
 ## Seed Branches
@@ -40,10 +37,15 @@ master
 seed/
     ./redux
     ./mongo
-    ./server-side-rendering
-    ./storybook
-    ./bootstrap
+    ./redux-i18n *
+    ./i18n
 ```
+
+### Coming up next
+
+* server side rendering
+* storybook
+* bootstrap
 
 ## Development
 
@@ -51,7 +53,7 @@ Restore all packages and start development server:
 
 ```bash
 yarn
-yarn run dev
+yarn dev
 ```
 
 Open browser on [localhost:3000](http://localhost:3000/)
@@ -59,7 +61,17 @@ Open browser on [localhost:3000](http://localhost:3000/)
 
 ## Docs
 
-* ### [Project setup info here](docs/setup.md)
-* ### [Client Readme](client/README.md)
-* ### [Server Readme](server/README.md)
-* ### [VS Code](docs/vscode.md)
+* [Project setup info here](docs/setup.md)
+* [Client Readme](client/README.md)
+* [Server Readme](server/README.md)
+* [VS Code](docs/vscode.md)
+
+## Author
+
+[UruIT](https://twitter.com/UruIT)
+
+## License
+
+Licensed under the MIT License, Copyright © 2017 UruIT.
+
+See [LICENSE](./LICENSE) for more information.
