@@ -26,8 +26,13 @@ module.exports = merge(common, {
 						{
 							loader: 'css-loader',
 							options: {
-								modules: true
+								modules: true,
+								camelCase: 'dashes',
+								minimize: true
 							}
+						},
+						{
+							loader: 'postcss-loader'
 						},
 						{
 							loader: 'resolve-url-loader'
