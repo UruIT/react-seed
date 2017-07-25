@@ -3,7 +3,7 @@ const config = require('../../config');
 
 const connection = {
 	client: 'postgresql',
-	connection: `${config.database.connectionString}${config.database.name}`,
+	connection: config.database.connectionString,
 	migrations: {
 		directory: path.resolve(__dirname, '../migrations')
 	},
