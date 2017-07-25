@@ -23,22 +23,21 @@ UruIT seed project for ReactJS applications
 ## Secondary features
 
 * Redux
-    * redux-router
-    * redux-saga
+* Redux-Segment
 * MongoDB
 * i18n
+* PDF
 
 
 ## Seed Branches
 
 ```
-master
+master *
 seed/
     ./redux
     ./mongo
     ./redux-i18n
     ./i18n
-    ./redux-segment
 ```
 
 ### Coming up next
@@ -53,7 +52,7 @@ Restore all packages and start development server:
 
 ```bash
 yarn
-yarn run dev
+yarn dev
 ```
 
 Open browser on [localhost:3000](http://localhost:3000/)
