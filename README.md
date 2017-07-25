@@ -39,7 +39,6 @@ seed/
     ./mongo
     ./redux-i18n
     ./i18n
-    ./redux-segment
 ```
 
 ### Coming up next
