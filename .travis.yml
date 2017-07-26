@@ -1,13 +1,12 @@
 sudo: false
 language: node_js
 cache:
-  yarn: true
-  directories:
-  - node_modules
+	directories:
+		- node_modules
 install: true
 node_js:
-  - '8'
+	- '8'
 env:
-  - NODE_ENV=production
+	- NODE_ENV=production
 script:
-  - npm run test:client
+	- npm run test:client
