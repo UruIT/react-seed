@@ -1,13 +1,16 @@
 sudo: false
 language: node_js
 cache:
+  yarn: true
   directories:
     - node_modules
-install:
-  - npm install
 node_js:
   - '8'
 env:
   - NODE_ENV=production
+before_install:
+  - "npm install -g yarn"
+install:
+  - yarn
 script:
   - npm run test:client
