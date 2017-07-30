@@ -1,4 +1,3 @@
-sudo: false
 language: node_js
 cache:
   directories:
@@ -7,6 +6,8 @@ node_js:
   - '8'
 env:
   - NODE_ENV=production
-install: npm install
+before_install:
+  - "npm install -g yarn"
+install: echo Installing && yarn install
 script:
-  - npm run test:client
+  - echo 'running tests...' && echo $(pwd) && yarn test:client
