@@ -9,7 +9,7 @@
 	"scripts": {
 		"lint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache",
 		"stats": "webpack --profile --json > stats.json",
-		"test": "jest",
+		"test": "./node_modules/jest/bin/jest.js",
 		"tdd": "jest --watchAll",
 		"build": "webpack"
 	},
