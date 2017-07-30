@@ -7,7 +7,8 @@ node_js:
 env:
   - NODE_ENV=production
 before_install:
-  - "npm install -g yarn"
-install: echo Installing && yarn install
+  - npm install -g yarn
+install:
+  - echo 'Installing' && yarn
 script:
   - echo 'running tests...' && echo $(pwd) && yarn test:client
