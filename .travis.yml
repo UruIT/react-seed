@@ -10,7 +10,6 @@ env:
   - NODE_ENV=production
 before_install:
   - "npm install -g yarn"
-install:
-  - yarn
+install: yarn
 script:
   - npm run test:client
