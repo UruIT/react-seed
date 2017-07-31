@@ -1,12 +1,10 @@
 language: node_js
-cache:
-  directories:
-    - node_modules
+cache: yarn
 node_js:
   - '8'
 env:
   - NODE_ENV=production
 before_install:
-  - npm install -g yarn jest
+  - npm install -g yarn
 install: yarn
 script: yarn build && yarn test:client
