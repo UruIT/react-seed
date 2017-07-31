@@ -9,4 +9,4 @@ env:
 before_install:
   - npm install -g yarn jest
 install: yarn
-script: yarn test:client
+script: yarn build && yarn test:client
