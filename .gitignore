@@ -10,7 +10,6 @@
 /client/node_modules
 /server/node_modules
 /bower_components
-yarn.lock
 
 # IDEs and editors
 /.idea
@@ -38,7 +37,6 @@ stats.json
 #System Files
 .DS_Store
 Thumbs.db
-yarn.lock
 
 #cache
 .eslintcache
