@@ -3,4 +3,4 @@ cache: yarn
 node_js:
   - 8
 install: yarn
-script: yarn test:client
+script: yarn test
