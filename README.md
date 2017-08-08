@@ -69,7 +69,7 @@ Open browser on [localhost:3000](http://localhost:3000/)
 ## Authors
 
 [<img alt="carloluis" src="https://avatars2.githubusercontent.com/u/6170808?v=4&s=117" width="117">](https://github.com/carloluis) |[<img alt="matiasdelgado" src="https://avatars0.githubusercontent.com/u/5489967?v=4&u=bf0d640f309481519a5052a116929917c2dba8a9&s=117" width="117">](https://github.com/matiasdelgado) |[<img alt="rrivem" src="https://avatars0.githubusercontent.com/u/3043009?v=4&s=117" width="117">](https://github.com/rrivem) |[<img alt="marina-acosta" src="https://avatars3.githubusercontent.com/u/19169042?v=4&s=117" width="117">](https://github.com/marina-acosta) |
-:---: |:---: |:---: |:---: |:---: |:---: |
+:---: |:---: |:---: |:---: |
 [carloluis](https://github.com/carloluis) |[matiasdelgado](https://github.com/matiasdelgado) |[rrivem](https://github.com/rrivem) |[marina-acosta](https://github.com/marina-acosta)
 
 ## License
