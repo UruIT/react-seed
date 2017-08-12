@@ -1,6 +1,6 @@
 const commonConfig = {
 	database: {
-		connectionString: process.env.DATABASE_URL || 'postgres://postgres:Password.01@localhost:5432/reactseeddb'
+		connectionString: process.env.DATABASE_URL || 'mssql://mssql:mssql@localhost:1433/reactseeddb'
 	},
 	port: 3000,
 	sslPort: 4443

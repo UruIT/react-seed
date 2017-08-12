@@ -1,5 +1,4 @@
 import React from 'react';
-import MyButton from '../button/Button';
 import { getJson } from '../../utils/fetch';
 import Counter from '../counter/Counter';
 import styles from './App.scss';
@@ -8,30 +7,32 @@ export default class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			joke: ''
+			samples: []
 		};
 	}
 	handleClick = () => {
-		return getJson('https://api.chucknorris.io/jokes/random').then(res =>
+		return getJson('/api/sample').then(res =>
 			this.setState({
-				joke: res.value
+				samples: res
 			})
 		);
 	};
 	render() {
 		let { container, shadow, button } = styles;
-		let { joke } = this.state;
+		let { samples } = this.state;
 
 		return (
 			<div className={`${container} ${shadow}`}>
 				<Counter />
-				<button
-					className={`${button} ${shadow}`}
-					onClick={this.handleClick}
-				>
+				<button className={`${button} ${shadow}`} onClick={this.handleClick}>
 					Test
 				</button>
-				{!!joke && <MyButton text={joke} />}
+				{!!samples &&
+					samples.map(s =>
+						<div key={s.id}>
+							{s.description}
+						</div>
+					)}
 			</div>
 		);
 	}

@@ -2,7 +2,7 @@ const path = require('path');
 const config = require('../../config');
 
 const connection = {
-	client: 'postgresql',
+	client: 'mssql',
 	connection: config.database.connectionString,
 	migrations: {
 		directory: path.resolve(__dirname, '../migrations')
