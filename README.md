@@ -2,7 +2,14 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/UruIT/react-seed/develop/LICENSE)
 [![Build Status](https://travis-ci.org/UruIT/react-seed.svg)](https://travis-ci.org/UruIT/react-seed?branch=master)
+[![GitHub release](https://img.shields.io/github/release/uruit/react-seed.svg)](https://github.com/UruIT/react-seed/releases)
+[![GitHub stars](https://img.shields.io/github/stars/UruIT/react-seed.svg)](https://github.com/UruIT/react-seed/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/UruIT/react-seed.svg)](https://github.com/UruIT/react-seed/network)
+[![GitHub contributors](https://img.shields.io/github/contributors/uruit/react-seed.svg)](https://github.com/UruIT/react-seed/)
+[![](https://img.shields.io/github/issues-pr-closed-raw/uruit/react-seed.svg)](https://github.com/UruIT/react-seed/pulls?q=is%3Apr+is%3Aclosed)
+[![Github All Releases](https://img.shields.io/github/downloads/uruit/react-seed/total.svg)](https://github.com/UruIT/react-seed)
 
+[![Twitter Follow](https://img.shields.io/twitter/follow/uruit.svg?style=social&label=Follow)](https://twitter.com/UruIT/followers)
 
 UruIT seed project for ReactJS applications
 
@@ -46,6 +53,29 @@ seed/
 * server side rendering
 * storybook
 * bootstrap
+
+## Structure
+
+```
+app
+├── client
+│   ├── components
+│   │	└── home
+│   ├── config
+│   │	└── webpack
+│   ├── routes
+│   ├── styles
+│   └── utils
+├── docs
+└── server
+    ├── config
+    ├── datastore 
+    ├── exceptions
+    ├── routes
+    ├── services
+    ├── tests
+    └── utils
+```
 
 ## Development
 
