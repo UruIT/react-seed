@@ -18,7 +18,7 @@ export default class App extends React.Component {
 		);
 	};
 	render() {
-		let { container, shadow, button } = styles;
+		let { container, shadow, button, sample } = styles;
 		let { samples } = this.state;
 
 		return (
@@ -29,7 +29,7 @@ export default class App extends React.Component {
 				</button>
 				{!!samples &&
 					samples.map(s =>
-						<div key={s.id}>
+						<div className={sample} key={s.id}>
 							{s.description}
 						</div>
 					)}

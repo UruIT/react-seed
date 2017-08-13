@@ -3,14 +3,13 @@ jest.mock('../../utils/fetch', () => ({
 		url =>
 			new Promise(
 				(resolve, reject) =>
-					url ? resolve({ value: 'Chuck Norris joke' }) : reject()
+					url ? resolve([{ id: 1, description: 'sample #1' }, { id: 2, description: 'sample #2' }]) : reject()
 			)
 	)
 }));
 
 import React from 'react';
 import App from './App';
-import Button from '../button/Button';
 import { shallow } from 'enzyme';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import { getJson } from '../../utils/fetch';
@@ -19,15 +18,13 @@ describe('On click in button', () => {
 	const app = shallow(<App />);
 	app.find('button').simulate('click');
 
-	it('should call ChuckNorris API', () => {
-		expect(getJson).toBeCalledWith(
-			'https://api.chucknorris.io/jokes/random'
-		);
+	it('should call samples API', () => {
+		expect(getJson).toBeCalledWith('/api/sample');
 	});
 
 	it('should update Button children', () => {
 		return app.instance().handleClick().then(() => {
-			expect(app.find(Button).props().text).toEqual('Chuck Norris joke');
+			expect(app.find('div.sample').map(x => x.text())).toEqual(['sample #1', 'sample #2']);
 		});
 	});
 });
