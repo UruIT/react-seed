@@ -1,7 +1,7 @@
 # react-seed
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/UruIT/react-seed/develop/LICENSE)
-[![Build Status](https://travis-ci.org/UruIT/react-seed.svg)](https://travis-ci.org/UruIT/react-seed?branch=master)
+[![Build Status](https://travis-ci.org/UruIT/react-seed.svg)](https://travis-ci.org/UruIT/react-seed.svg?branch=seed%2Fmssql)
 
 
 UruIT seed project for ReactJS applications
@@ -34,11 +34,11 @@ UruIT seed project for ReactJS applications
 ## Seed Branches
 
 ```
-master *
+master
 seed/
     ./redux
     ./mongo
-    ./mssql
+    ./mssql *
     ./redux-i18n
     ./i18n
 ```
