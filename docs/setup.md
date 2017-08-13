@@ -11,11 +11,10 @@ yarn # root folder
 
 ## Database
 
-* Install [postgres](https://www.postgresql.org/) and [pgAdmin](https://www.pgadmin.org/)
+* Install [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) or configure with [Docker](https://hub.docker.com/r/microsoft/mssql-server-linux/) and npm package `mssql`
 * Create new database called *reactseeddb*. Use following credentials: 
-    * user: `postgres`
-    * password: `Password.01`
-* For more information about setting up the server see [official docs](https://wiki.postgresql.org/wiki/First_steps)
+    * user: `mssql`
+    * password: `mssql`
 * Create tables running migrations: 
     * `yarn run migrate:latest`
 * Populate database running the seeds: 

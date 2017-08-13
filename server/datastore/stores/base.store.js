@@ -1,7 +1,7 @@
-const knexfile = require('../postgres/knexfile');
+const knexfile = require('../connection/knexfile');
 const Knex = require('knex')(knexfile);
 
-const PostgresErrors = require('../constants/postgres-errors');
+const Errors = require('../constants/mssql-errors');
 const { BadRequestException, ValidationException } = require('../../exceptions');
 
 class BaseStore {
@@ -29,10 +29,10 @@ class BaseStore {
 			.transacting(trx)
 			.insert(entity, returning)
 			.catch(err => {
-				if (err.code === PostgresErrors.NOT_NULL_VIOLATION) {
+				if (err.number === Errors.NOT_NULL_VIOLATION) {
 					throw new BadRequestException();
 				}
-				if (err.code === PostgresErrors.FOREIGN_KEY_VIOLATION) {
+				if (err.number === Errors.FOREIGN_KEY_VIOLATION) {
 					throw new ValidationException();
 				}
 				throw err;
