@@ -26,8 +26,13 @@ module.exports = merge(common, {
 						{
 							loader: 'css-loader',
 							options: {
-								modules: true
+								modules: true,
+								camelCase: 'dashes',
+								minimize: true
 							}
+						},
+						{
+							loader: 'postcss-loader'
 						},
 						{
 							loader: 'resolve-url-loader'
@@ -46,7 +51,7 @@ module.exports = merge(common, {
 			verbose: false
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
-			names: ['vendor'],
+			names: 'vendor',
 			minChunks: module => /node_modules/.test(module.resource)
 		}),
 		new ExtractTextPlugin('[name].[chunkhash].css'),

@@ -12,7 +12,7 @@ yarn # root folder
 ## Database
 
 * Install [postgres](https://www.postgresql.org/) and [pgAdmin](https://www.pgadmin.org/)
-* Create new database called *ReactSeedDB*. Use following credentials: 
+* Create new database called *reactseeddb*. Use following credentials: 
     * user: `postgres`
     * password: `Password.01`
 * For more information about setting up the server see [official docs](https://wiki.postgresql.org/wiki/First_steps)
