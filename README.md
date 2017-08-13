@@ -32,6 +32,7 @@ UruIT seed project for ReactJS applications
 * Redux
 * Redux-Segment
 * MongoDB
+* MSSQL
 * i18n
 * PDF
 
@@ -43,6 +44,7 @@ master *
 seed/
     ./redux
     ./mongo
+    ./mssql
     ./redux-i18n
     ./i18n
 ```
