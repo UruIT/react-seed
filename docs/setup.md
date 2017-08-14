@@ -2,12 +2,11 @@
 
 ## Install dependencies
 
-Restore all packages
+Restore all packages from root folder:
 
 ```bash
-yarn # root folder
+$ yarn  # or (yarn install)
 ```
-
 
 ## Database
 
@@ -29,13 +28,13 @@ yarn # root folder
 #### Development (with nodemon)
 
 ```bash
-yarn run dev
+$ yarn dev # or (yarn run dev)
 ```
 
 #### Production
 
 ```bash
-yarn run prod # build and start
+$ yarn prod # build and start
 ```
 
 Open browser on [localhost:3000](http://localhost:3000/)
@@ -44,13 +43,13 @@ Open browser on [localhost:3000](http://localhost:3000/)
 ## NPM Scripts
 
 ```bash
-yarn run build  # build production assets
+$ yarn build  # build production assets
 
-yarn run start  # execute production server
+$ yarn start  # execute production server
 
-yarn run test  # execute all tests
+$ yarn test  # execute all tests
 
-yarn run lint # execute linting
+$ yarn lint # execute linting
 ```
 
 <details>
@@ -87,10 +86,11 @@ In develop we use [git hooks](https://git-scm.com/docs/githooks) for automate li
 Using [husky](https://github.com/typicode/husky) with `yarn`:
 
 ```bash
-yarn add husky --dev --force  # ensures hooks will be installed
+$ yarn add husky --dev --force  # ensures hooks will be installed
 ```
 
 Install hooks manually (using `node`):
+
 ```bash
-node node_modules/husky/bin/install
+$ node node_modules/husky/bin/install
 ```
