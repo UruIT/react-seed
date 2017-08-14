@@ -3,6 +3,9 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/UruIT/react-seed/develop/LICENSE)
 [![Build Status](https://travis-ci.org/UruIT/react-seed.svg)](https://travis-ci.org/UruIT/react-seed?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/UruIT/react-seed/badge.svg?branch=feature%2Fcoveralls)](https://coveralls.io/github/UruIT/react-seed?branch=feature%2Fcoveralls)
+[![GitHub release](https://img.shields.io/github/release/uruit/react-seed.svg)](https://github.com/UruIT/react-seed/releases)
+[![Twitter Follow](https://img.shields.io/twitter/follow/uruit.svg?style=social&label=Follow)](https://twitter.com/UruIT/followers)
+[![Twitter URL](https://img.shields.io/twitter/url/http/uruit.react-seed.svg?style=social)](https://twitter.com/intent/tweet?text=react-seed%20by%20%40UruIT%20on&url=https%3A%2F%2Fgithub.com%2Furuit%2Freact-seed)
 
 UruIT seed project for ReactJS applications
 
@@ -26,6 +29,7 @@ UruIT seed project for ReactJS applications
 * Redux
 * Redux-Segment
 * MongoDB
+* MSSQL
 * i18n
 * PDF
 
@@ -37,6 +41,7 @@ master *
 seed/
     ./redux
     ./mongo
+    ./mssql
     ./redux-i18n
     ./i18n
 ```
@@ -46,6 +51,29 @@ seed/
 * server side rendering
 * storybook
 * bootstrap
+
+## Structure
+
+```
+app
+├── client
+│   ├── components
+│   │	└── home
+│   ├── config
+│   │	└── webpack
+│   ├── routes
+│   ├── styles
+│   └── utils
+├── docs
+└── server
+    ├── config
+    ├── datastore 
+    ├── exceptions
+    ├── routes
+    ├── services
+    ├── tests
+    └── utils
+```
 
 ## Development
 
