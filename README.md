@@ -8,7 +8,7 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/uruit/react-seed.svg)](https://github.com/UruIT/react-seed/graphs/contributors)
 [![](https://img.shields.io/github/issues-pr-closed-raw/uruit/react-seed.svg)](https://github.com/UruIT/react-seed/pulls?q=is%3Apr+is%3Aclosed)
 [![Twitter Follow](https://img.shields.io/twitter/follow/uruit.svg?style=social&label=Follow)](https://twitter.com/UruIT/followers)
-[![Twitter URL](https://img.shields.io/twitter/url/http/uruit.react-seed.svg?style=social)](https://twitter.com/UruIT)
+[![Twitter URL](https://img.shields.io/twitter/url/http/uruit.react-seed.svg?style=social)](https://twitter.com/intent/tweet?text=react-seed%20by%20%40UruIT%20on&url=https%3A%2F%2Fgithub.com%2Furuit%2Freact-seed)
 
 UruIT seed project for ReactJS applications
 
