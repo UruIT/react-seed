@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/UruIT/react-seed/develop/LICENSE)
 [![Build Status](https://travis-ci.org/UruIT/react-seed.svg)](https://travis-ci.org/UruIT/react-seed?branch=master)
-
+[![Coverage Status](https://coveralls.io/repos/github/UruIT/react-seed/badge.svg?branch=feature%2Fcoveralls)](https://coveralls.io/github/UruIT/react-seed?branch=feature%2Fcoveralls)
 
 UruIT seed project for ReactJS applications
 
