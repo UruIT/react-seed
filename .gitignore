@@ -23,6 +23,8 @@
 /.sass-cache
 /connect.lock
 /coverage/*
+client/coverage/*
+.coveralls.yml
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
@@ -34,9 +36,9 @@ stats.json
 /e2e/*.js
 /e2e/*.map
 
-#System Files
+# System Files
 .DS_Store
 Thumbs.db
 
-#cache
+# cache
 .eslintcache
