@@ -9,6 +9,7 @@
 	"scripts": {
 		"start": "node index.js",
 		"dev": "nodemon app.dev.js",
+		"database:docker-server": "docker-compose --file datastore/server/docker-compose.yml up -d",
 		"database:create": "npm run database:create:db && npm run database:create:user && npm run database:create:grant",
 		"database:create:db": "cat datastore/create/db.sql | mssql datastore/connection/.mssql.json",
 		"database:create:user": "cat datastore/create/user.sql | mssql datastore/connection/.mssql.json",
