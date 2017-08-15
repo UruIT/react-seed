@@ -9,6 +9,10 @@
 	"scripts": {
 		"start": "node index.js",
 		"dev": "nodemon app.dev.js",
+		"database:create": "npm run database:create:db && npm run database:create:user && npm run database:create:grant",
+		"database:create:db": "cat datastore/create/db.sql | mssql datastore/connection/.mssql.json",
+		"database:create:user": "cat datastore/create/user.sql | mssql datastore/connection/.mssql.json",
+		"database:create:grant": "cat datastore/create/grant.sql | mssql datastore/connection/.mssql.json",
 		"migrate:make": "knex migrate:make --knexfile ./datastore/connection/knexfile.js",
 		"migrate:latest": "knex migrate:latest --knexfile ./datastore/connection/knexfile.js",
 		"migrate:rollback": "knex migrate:rollback --knexfile ./datastore/connection/knexfile.js",

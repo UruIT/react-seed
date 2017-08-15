@@ -31,6 +31,7 @@
 		"test:server": "cd server && npm test",
 		"tdd": "cd client && npm run tdd",
 		"serve": "npm run build && http-server build/ -p 8081",
+		"database:create": "cd server && npm run database:create",
 		"migrate:make": "cd server && npm run migrate:make",
 		"migrate:latest": "cd server && npm run migrate:latest",
 		"migrate:rollback": "cd server && npm run migrate:rollback",
