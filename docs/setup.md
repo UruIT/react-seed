@@ -10,11 +10,17 @@ yarn # root folder
 
 
 ## Database
+You can install SQL Server Express or run your server in a Docker container
+### SQL Server Express
+* Install [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+* Update the `sa` password in the `server/datastore/connection/.mssql.json`
+### Docker
+* Install [Docker](https://docs.docker.com/engine/installation/) and [docker-compose](https://docs.docker.com/compose/install/)
+* Run `yarn database:docker-server` to create the docker container for the SQL Server (volume to persist data will be mounted)
 
-* Install [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) or configure with [Docker](https://hub.docker.com/r/microsoft/mssql-server-linux/) and npm package `mssql`
-* Create new database called *reactseeddb*. Use following credentials: 
-    * user: `mssql`
-    * password: `mssql`
+Once you have configured your SQL Server, run the following commands:
+* Create the `reactseeddb` database, `mssql` user and grant access to the database:
+    * `yarn database:create`
 * Create tables running migrations: 
     * `yarn run migrate:latest`
 * Populate database running the seeds: 
