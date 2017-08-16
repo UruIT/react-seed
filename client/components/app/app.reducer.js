@@ -2,7 +2,7 @@ import { JOKE_FETCH_REQUESTED, JOKE_FETCH_SUCCEEDED, JOKE_FETCH_FAILED } from '.
 
 const DEFAULT_STATE = { joke: '', loading: false, error: '' };
 
-export function appReducer(state = DEFAULT_STATE, action) {
+export default function appReducer(state = DEFAULT_STATE, action) {
 	switch (action.type) {
 		case JOKE_FETCH_REQUESTED:
 			return {
