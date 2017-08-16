@@ -1,22 +1,22 @@
-import { JOKE_FETCH_REQUESTED, JOKE_FETCH_SUCCEEDED, JOKE_FETCH_FAILED } from './app.action';
+import { SAMPLES_FETCH_REQUESTED, SAMPLES_FETCH_SUCCEEDED, SAMPLES_FETCH_FAILED } from './app.action';
 
-const DEFAULT_STATE = { joke: '', loading: false, error: '' };
+const DEFAULT_STATE = { samples: [], loading: false, error: '' };
 
-export function appReducer(state = DEFAULT_STATE, action) {
+export default function appReducer(state = DEFAULT_STATE, action) {
 	switch (action.type) {
-		case JOKE_FETCH_REQUESTED:
+		case SAMPLES_FETCH_REQUESTED:
 			return {
 				...state,
 				loading: true,
 				error: ''
 			};
-		case JOKE_FETCH_SUCCEEDED:
+		case SAMPLES_FETCH_SUCCEEDED:
 			return {
-				joke: action.joke.value,
+				samples: action.samples,
 				loading: false,
 				error: ''
 			};
-		case JOKE_FETCH_FAILED:
+		case SAMPLES_FETCH_FAILED:
 			return {
 				...DEFAULT_STATE,
 				error: action.message

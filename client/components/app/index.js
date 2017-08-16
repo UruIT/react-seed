@@ -1,6 +1,3 @@
-import App from './App';
+import appContainer from './app.container';
 
-export * from './app.reducer';
-export * from './app.action';
-
-export default App;
+export default appContainer;

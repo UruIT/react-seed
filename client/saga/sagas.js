@@ -1,10 +1,10 @@
 import { all } from 'redux-saga/effects';
 
-import watchFetchJokeSaga from '../components/app/app.action';
+import { watchSamplesFetchRequested } from '../components/app/app.sagas';
 // add new sagas here...
 
 export default function *() {
 	yield all([
-		watchFetchJokeSaga()
+		watchSamplesFetchRequested()
 	]);
 }

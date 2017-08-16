@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { counterReducer as counter } from '../components/counter';
-import { appReducer as app } from '../components/app';
+import app from '../components/app/app.reducer';
 import loggerMiddleware from './middlewares/logger';
 import { sagaMiddleware, runSagas } from '../saga';
 

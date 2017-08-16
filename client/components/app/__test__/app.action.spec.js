@@ -1,72 +1,42 @@
-import { call, put } from 'redux-saga/effects';
-import { getJson } from '../../../utils/fetch';
 import {
-	JOKE_FETCH_REQUESTED,
-	JOKE_FETCH_SUCCEEDED,
-	JOKE_FETCH_FAILED,
-	jokeFetchRequested,
-	jokeFetchSucceeded,
-	jokeFetchFailed,
-	fetchJoke
+	SAMPLES_FETCH_REQUESTED,
+	SAMPLES_FETCH_SUCCEEDED,
+	SAMPLES_FETCH_FAILED,
+	samplesFetchRequested,
+	samplesFetchSucceeded,
+	samplesFetchFailed,
 } from '../app.action';
 
-describe('app action creators', () => {
-	it('jokefetchRequested', () => {
+describe('app.action', () => {
+	it('samplesfetchRequested', () => {
 		const expectedAction = {
-			type: JOKE_FETCH_REQUESTED
+			type: SAMPLES_FETCH_REQUESTED
 		};
 
-		const result = jokeFetchRequested();
+		const result = samplesFetchRequested();
 
 		expect(result).toEqual(expectedAction);
 	});
 
-	it('jokeFetchSucceeded', () => {
+	it('samplesFetchSucceeded', () => {
 		const expectedAction = {
-			type: JOKE_FETCH_SUCCEEDED,
-			joke: 'Chuck Norris CAN kill you in your dreams'
+			type: SAMPLES_FETCH_SUCCEEDED,
+			samples: 'Chuck Norris CAN kill you in your dreams'
 		};
 
-		const result = jokeFetchSucceeded('Chuck Norris CAN kill you in your dreams');
+		const result = samplesFetchSucceeded('Chuck Norris CAN kill you in your dreams');
 
 		expect(result).toEqual(expectedAction);
 	});
 
-	it('jokeFetchFailed', () => {
+	it('samplesFetchFailed', () => {
 		const expectedAction = {
-			type: JOKE_FETCH_FAILED,
+			type: SAMPLES_FETCH_FAILED,
 			message: 'network error!'
 		};
 
-		const result = jokeFetchFailed({ message: 'network error!' });
+		const result = samplesFetchFailed({ message: 'network error!' });
 
 		expect(result).toEqual(expectedAction);
-	});
-});
-
-describe('sagas effects: fecthJoke', () => {
-	const iterator = fetchJoke();
-
-	it('call api', () => {
-		expect(iterator.next().value)
-			.toEqual(call(getJson, 'https://api.chucknorris.io/jokes/random'));
-	});
-
-	it('fetch success', () => {
-		expect(iterator.next().value)
-			.toEqual(put({ type: JOKE_FETCH_SUCCEEDED }));
-	});
-
-	it('fetch failed', () => {
-		const error = { message: 'unexpected error!' };
-
-		expect(iterator.throw(error).value)
-			.toEqual(put({ type: JOKE_FETCH_FAILED, message: error.message }));
-	});
-
-	it('end sagas', () => {
-		const end = { value: undefined, done: true };
-
-		expect(iterator.next()).toEqual(end);
 	});
 });
