@@ -7,7 +7,7 @@ import styles from './App.scss';
 const { container, shadow, button } = styles;
 
 const App = ({ samples, loading, error, fetchSamples }) => {
-	let text = (loading && 'loading...') || error;
+	const text = (loading && 'loading...') || error;
 
 	return (
 		<div className={`${container} ${shadow}`}>
