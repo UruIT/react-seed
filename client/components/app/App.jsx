@@ -4,12 +4,9 @@ import Button from '../button/Button';
 import Counter from '../counter';
 import styles from './App.scss';
 
-import { connect } from 'react-redux';
-import { samplesFetchRequested } from './app.action';
-
 const { container, shadow, button } = styles;
 
-export function App({ samples, loading, error, fetchSamples }) {
+const App = ({ samples, loading, error, fetchSamples }) => {
 	let text = (loading && 'loading...') || error;
 
 	return (
@@ -20,11 +17,12 @@ export function App({ samples, loading, error, fetchSamples }) {
 			</button>
 			<div>
 				{!!text && <Button text={text} />}
-				{!text && samples.map(s =>
-					<div key={s.id}>
-						<Button text={s.description} />
-					</div>
-				)}
+				{!text &&
+					samples.map(s =>
+						<div key={s.id}>
+							<Button text={s.description} />
+						</div>
+					)}
 			</div>
 		</div>
 	);
@@ -37,9 +35,4 @@ App.propTypes = {
 	error: PropTypes.string.isRequired
 };
 
-const mapStateToProps = ({ app }) => app;
-const mapDispatchToProps = dispatch => ({
-	fetchSamples: () => dispatch(samplesFetchRequested())
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import App from '../components/app/App';
+import App from '../components/app';
 import About from '../components/about/About';
 import NotFound from '../components/notFound/NotFound';
 
