@@ -1,87 +1,91 @@
 import appReducer from '../app.reducer';
 import * as actions from '../app.action'
 
+const samples = [
+	{ id: 1, description: 'sample #1' },
+	{ id: 2, description: 'sample #2' },
+	{ id: 3, description: 'sample #3' }
+];
+
 describe('app reducer', () => {
 	it('should return the initial state', () => {
 		const state = appReducer(undefined, {});
 		expect(state).toEqual({
 			loading: false,
-			joke: '',
+			samples: [],
 			error: ''
 		});
 	});
 
-	it('should handle JOKE_FETCH_REQUESTED', () => {
+	it('should handle SAMPLES_FETCH_REQUESTED', () => {
 		const state = {
 			loading: false,
-			joke: '',
+			samples: [],
 			error: ''
 		};
 		const action = {
-			type: actions.JOKE_FETCH_REQUESTED
+			type: actions.SAMPLES_FETCH_REQUESTED
 		};
 
 		let nextState = appReducer(state, action);
 		expect(nextState).toEqual({
 			loading: true,
-			joke: '',
+			samples: [],
 			error: ''
 		});
 
 		nextState = appReducer({ ...state, error: 'some error!' }, action);
 		expect(nextState).toEqual({
 			loading: true,
-			joke: '',
+			samples: [],
 			error: ''
 		});
 
-		nextState = appReducer({ ...state, joke: 'joke' }, action);
+		nextState = appReducer({ ...state, samples }, action);
 		expect(nextState).toEqual({
 			loading: true,
-			joke: 'joke',
+			samples,
 			error: ''
 		});
 	});
 
-	it('should handle JOKE_FETCH_SUCCEEDED', () => {
+	it('should handle SAMPLES_FETCH_SUCCEEDED', () => {
 		const state = {
 			loading: true,
-			joke: '',
+			samples: [],
 			error: ''
 		};
 		const action = {
-			type: actions.JOKE_FETCH_SUCCEEDED,
-			joke: {
-				value: 'The only thing scarier than a black hole is a Chuck Norris'
-			}
+			type: actions.SAMPLES_FETCH_SUCCEEDED,
+			samples
 		};
 
 		let nextState = appReducer(state, action);
 		expect(nextState).toEqual({
 			loading: false,
-			joke: 'The only thing scarier than a black hole is a Chuck Norris',
+			samples,
 			error: ''
 		});
 
 		nextState = appReducer({
 			...state,
-			joke: 'chuck norris once granted a genie 3 wishes'
+			samples
 		}, action);
 		expect(nextState).toEqual({
 			loading: false,
-			joke: 'The only thing scarier than a black hole is a Chuck Norris',
+			samples,
 			error: ''
 		});
 	});
 
-	it('should handle JOKE_FETCH_FAILED', () => {
+	it('should handle SAMPLES_FETCH_FAILED', () => {
 		const state = {
 			loading: true,
-			joke: '',
+			samples: [],
 			error: ''
 		};
 		const action = {
-			type: actions.JOKE_FETCH_FAILED,
+			type: actions.SAMPLES_FETCH_FAILED,
 			message: 'error message!'
 		};
 
@@ -89,17 +93,17 @@ describe('app reducer', () => {
 		expect(nextState).toEqual({
 			loading: false,
 			error: 'error message!',
-			joke: ''
+			samples: []
 		});
 
 		nextState = appReducer({
 			...state,
-			joke: 'Only Chuck Norris can divide by zero'
+			samples
 		}, action);
 		expect(nextState).toEqual({
 			loading: false,
 			error: 'error message!',
-			joke: ''
+			samples: []
 		});
 	});
 });

@@ -1,41 +1,41 @@
 import {
-	JOKE_FETCH_REQUESTED,
-	JOKE_FETCH_SUCCEEDED,
-	JOKE_FETCH_FAILED,
-	jokeFetchRequested,
-	jokeFetchSucceeded,
-	jokeFetchFailed,
+	SAMPLES_FETCH_REQUESTED,
+	SAMPLES_FETCH_SUCCEEDED,
+	SAMPLES_FETCH_FAILED,
+	samplesFetchRequested,
+	samplesFetchSucceeded,
+	samplesFetchFailed,
 } from '../app.action';
 
 describe('app.action', () => {
-	it('jokefetchRequested', () => {
+	it('samplesfetchRequested', () => {
 		const expectedAction = {
-			type: JOKE_FETCH_REQUESTED
+			type: SAMPLES_FETCH_REQUESTED
 		};
 
-		const result = jokeFetchRequested();
+		const result = samplesFetchRequested();
 
 		expect(result).toEqual(expectedAction);
 	});
 
-	it('jokeFetchSucceeded', () => {
+	it('samplesFetchSucceeded', () => {
 		const expectedAction = {
-			type: JOKE_FETCH_SUCCEEDED,
-			joke: 'Chuck Norris CAN kill you in your dreams'
+			type: SAMPLES_FETCH_SUCCEEDED,
+			samples: 'Chuck Norris CAN kill you in your dreams'
 		};
 
-		const result = jokeFetchSucceeded('Chuck Norris CAN kill you in your dreams');
+		const result = samplesFetchSucceeded('Chuck Norris CAN kill you in your dreams');
 
 		expect(result).toEqual(expectedAction);
 	});
 
-	it('jokeFetchFailed', () => {
+	it('samplesFetchFailed', () => {
 		const expectedAction = {
-			type: JOKE_FETCH_FAILED,
+			type: SAMPLES_FETCH_FAILED,
 			message: 'network error!'
 		};
 
-		const result = jokeFetchFailed({ message: 'network error!' });
+		const result = samplesFetchFailed({ message: 'network error!' });
 
 		expect(result).toEqual(expectedAction);
 	});

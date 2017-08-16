@@ -1,16 +1,16 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { getJson } from '../../utils/fetch';
-import { jokeFetchSucceeded, jokeFetchFailed, JOKE_FETCH_REQUESTED } from './app.action';
+import { samplesFetchSucceeded, samplesFetchFailed, SAMPLES_FETCH_REQUESTED } from './app.action';
 
-export function* fetchJoke() {
+export function* fetchSamples() {
 	try {
-		const joke = yield call(getJson, 'https://api.chucknorris.io/jokes/random');
-		yield put(jokeFetchSucceeded(joke));
+		const samples = yield call(getJson, '/api/sample');
+		yield put(samplesFetchSucceeded(samples));
 	} catch (err) {
-		yield put(jokeFetchFailed(err));
+		yield put(samplesFetchFailed(err));
 	}
 }
 
-export function* watchJokeFetchRequested() {
-	yield takeLatest(JOKE_FETCH_REQUESTED, fetchJoke);
+export function* watchSamplesFetchRequested() {
+	yield takeLatest(SAMPLES_FETCH_REQUESTED, fetchSamples);
 }
