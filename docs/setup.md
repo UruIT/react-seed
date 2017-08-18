@@ -9,16 +9,15 @@ $ yarn  # or (yarn install)
 ```
 
 ## Database
-You can install Postgres or run your server in a Docker container
+You can install Postgres or run your server in a Docker container.
 ### Postgres
-* Install [postgres](https://www.postgresql.org/) and [pgAdmin](https://www.pgadmin.org/)
-* Update the `postgres` password in the `server/datastore/create/knexfile.js`
+* Install [postgres](https://www.postgresql.org/). When prompted to enter the `postgres` user password, use `sa.pg.01` or one of your choice. Make sure to update the password in `server/datastore/create/knexfile.js` if you picked a different password.
 * For more information about setting up the server see [official docs](https://wiki.postgresql.org/wiki/First_steps)
 ### Docker
 * Install [Docker](https://docs.docker.com/engine/installation/) and [docker-compose](https://docs.docker.com/compose/install/)
 * Run `yarn database:docker-server` to create the docker container for the SQL Server (volume to persist data will be mounted)
 
-Once you have configured your SQL Server, run the following commands:
+Once you have configured your Postgres server, run the following commands:
 * Create the `reactseeddb` database, `pg` user and grant access to database:
     * `yarn database:create`
 * Create tables running migrations: 
