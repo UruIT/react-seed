@@ -33,6 +33,8 @@
 		"coveralls": "npm run test:coverage && cat ./client/coverage/lcov.info | coveralls",
 		"tdd": "cd client && npm run tdd",
 		"serve": "npm run build && http-server build/ -p 8081",
+		"database:docker-server": "cd server && npm run database:docker-server",
+		"database:create": "cd server && npm run database:create",
 		"migrate:make": "cd server && npm run migrate:make",
 		"migrate:latest": "cd server && npm run migrate:latest",
 		"migrate:rollback": "cd server && npm run migrate:rollback",
