@@ -9,16 +9,22 @@ $ yarn  # or (yarn install)
 ```
 
 ## Database
-
+You can install Postgres or run your server in a Docker container
+### Postgres
 * Install [postgres](https://www.postgresql.org/) and [pgAdmin](https://www.pgadmin.org/)
-* Create new database called *reactseeddb*. Use following credentials: 
-    * user: `postgres`
-    * password: `Password.01`
+* Update the `postgres` password in the `server/datastore/create/knexfile.js`
 * For more information about setting up the server see [official docs](https://wiki.postgresql.org/wiki/First_steps)
+### Docker
+* Install [Docker](https://docs.docker.com/engine/installation/) and [docker-compose](https://docs.docker.com/compose/install/)
+* Run `yarn database:docker-server` to create the docker container for the SQL Server (volume to persist data will be mounted)
+
+Once you have configured your SQL Server, run the following commands:
+* Create the `reactseeddb` database, `pg` user and grant access to database:
+    * `yarn database:create`
 * Create tables running migrations: 
-    * `yarn run migrate:latest`
+    * `yarn migrate:latest`
 * Populate database running the seeds: 
-    * `yarn run seed:run`
+    * `yarn seed:run`
 
 
 ## Start the app

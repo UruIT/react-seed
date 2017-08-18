@@ -39,9 +39,4 @@ yarn run seed:make
 yarn run seed:run
 ```
 
-## Tools and Config.
-
-* [PostgreSQL](https://www.postgresql.org/)
-* [pgAdmin](https://www.pgadmin.org/)
-
 ### [Setup info here](../docs/setup.md)
