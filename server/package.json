@@ -9,11 +9,13 @@
 	"scripts": {
 		"start": "node index.js",
 		"dev": "nodemon app.dev.js",
-		"migrate:make": "knex migrate:make --knexfile ./datastore/postgres/knexfile.js",
-		"migrate:latest": "knex migrate:latest --knexfile ./datastore/postgres/knexfile.js",
-		"migrate:rollback": "knex migrate:rollback --knexfile ./datastore/postgres/knexfile.js",
-		"seed:make": "knex seed:make --knexfile ./datastore/postgres/knexfile.js",
-		"seed:run": "knex seed:run --knexfile ./datastore/postgres/knexfile.js",
+		"database:docker-server": "docker-compose --file datastore/server/docker-compose.yml up -d",
+		"database:create": "knex seed:run --knexfile ./datastore/create/knexfile.js",
+		"migrate:make": "knex migrate:make --knexfile ./datastore/connection/knexfile.js",
+		"migrate:latest": "knex migrate:latest --knexfile ./datastore/connection/knexfile.js",
+		"migrate:rollback": "knex migrate:rollback --knexfile ./datastore/connection/knexfile.js",
+		"seed:make": "knex seed:make --knexfile ./datastore/connection/knexfile.js",
+		"seed:run": "knex seed:run --knexfile ./datastore/connection/knexfile.js",
 		"test": "tape tests/*.js | tap-spec"
 	},
 	"dependencies": {

@@ -1,4 +1,4 @@
-const knexfile = require('../postgres/knexfile');
+const knexfile = require('../connection/knexfile');
 const Knex = require('knex')(knexfile);
 
 const PostgresErrors = require('../constants/postgres-errors');
