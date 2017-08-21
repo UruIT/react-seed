@@ -2,18 +2,16 @@
 
 ## Install dependencies
 
-Restore all packages
+Restore all packages from root folder:
 
 ```bash
-yarn # root folder
+$ yarn  # or (yarn install)
 ```
-
 
 ## Database
 You can install SQL Server Express or run your server in a Docker container
 ### SQL Server Express
-* Install [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
-* Update the `sa` password in the `server/datastore/connection/.mssql.json`
+* Install [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads). When prompted to enter the `sa` password, use `sa.mssql.01` or one of your choice. Make sure to update the password in `server/datastore/connection/.mssql.json` if you picked a different password.
 ### Docker
 * Install [Docker](https://docs.docker.com/engine/installation/) and [docker-compose](https://docs.docker.com/compose/install/)
 * Run `yarn database:docker-server` to create the docker container for the SQL Server (volume to persist data will be mounted)
@@ -22,9 +20,9 @@ Once you have configured your SQL Server, run the following commands:
 * Create the `reactseeddb` database, `mssql` user and grant access to the database:
     * `yarn database:create`
 * Create tables running migrations: 
-    * `yarn run migrate:latest`
+    * `yarn migrate:latest`
 * Populate database running the seeds: 
-    * `yarn run seed:run`
+    * `yarn seed:run`
 
 
 ## Start the app
@@ -34,13 +32,13 @@ Once you have configured your SQL Server, run the following commands:
 #### Development (with nodemon)
 
 ```bash
-yarn run dev
+$ yarn dev # or (yarn run dev)
 ```
 
 #### Production
 
 ```bash
-yarn run prod # build and start
+$ yarn prod # build and start
 ```
 
 Open browser on [localhost:3000](http://localhost:3000/)
@@ -49,13 +47,13 @@ Open browser on [localhost:3000](http://localhost:3000/)
 ## NPM Scripts
 
 ```bash
-yarn run build  # build production assets
+$ yarn build  # build production assets
 
-yarn run start  # execute production server
+$ yarn start  # execute production server
 
-yarn run test  # execute all tests
+$ yarn test  # execute all tests
 
-yarn run lint # execute linting
+$ yarn lint # execute linting
 ```
 
 <details>
@@ -92,10 +90,11 @@ In develop we use [git hooks](https://git-scm.com/docs/githooks) for automate li
 Using [husky](https://github.com/typicode/husky) with `yarn`:
 
 ```bash
-yarn add husky --dev --force  # ensures hooks will be installed
+$ yarn add husky --dev --force  # ensures hooks will be installed
 ```
 
 Install hooks manually (using `node`):
+
 ```bash
-node node_modules/husky/bin/install
+$ node node_modules/husky/bin/install
 ```

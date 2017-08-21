@@ -11,6 +11,7 @@
 		"stats": "webpack --profile --json > stats.json",
 		"test": "jest",
 		"tdd": "jest --watchAll",
+		"coverage": "jest --coverage",
 		"build": "webpack"
 	},
 	"dependencies": {

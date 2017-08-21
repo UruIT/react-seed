@@ -10,7 +10,7 @@ We encourage the use of [prettier](https://github.com/prettier/prettier) in your
 ## Settings.json
 
 ```javascript
-// Settings we use to overwrite the default settings
+// Settings we use to overwrite the default ones
 {
     "editor.rulers": [120],
     "editor.renderWhitespace": "boundary",
@@ -20,12 +20,12 @@ We encourage the use of [prettier](https://github.com/prettier/prettier) in your
     "relativePath.removeExtension": true,
     "relativePath.removeLeadingDot": true,
 
-    // we use these settings with `prettier` extension
+    // settings for `prettier` extension
     "prettier.singleQuote": true,
     "prettier.printWidth": 120,
     "prettier.useTabs": true,
     "prettier.tabWidth": 4
-  }
+}
 ```
 
 ## Extensions 
@@ -34,3 +34,4 @@ We encourage the use of [prettier](https://github.com/prettier/prettier) in your
 * [Mithril Emmet](https://marketplace.visualstudio.com/items?itemName=FallenMax.mithril-emmet)
 * [Prettier - JavaScript formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 * [Relative Path](https://marketplace.visualstudio.com/items?itemName=jakob101.RelativePath)
+* [UruIT React Snippets](https://marketplace.visualstudio.com/items?itemName=UruIT.uruit-react-snippets)
