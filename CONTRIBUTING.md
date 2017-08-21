@@ -11,7 +11,7 @@ Read our documentation on [docs/setup](docs/setup.md)
 
 ## 2. Create a Pull Request
 
-See README' [Comming up next](./README.md#Coming%20up%20next) section to get some ideas / features we want to incorporate.
+See README' [Coming up next](./README.md#Coming%20up%20next) section to get some ideas / features we want to incorporate.
 
 ### [pull-requests](docs/pull_request_template.md)
 
