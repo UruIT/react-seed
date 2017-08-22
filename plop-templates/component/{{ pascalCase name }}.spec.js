@@ -3,9 +3,7 @@ import {{ pascalCase name }} from './{{ pascalCase name }}';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 
-const PROPS = {
-
-}
+const PROPS = {};
 
 describe('{{ pascalCase name }}', () => {
 	it('should render', () => {
