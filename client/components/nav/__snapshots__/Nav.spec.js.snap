@@ -1,12 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Nav/> 1`] = `
+exports[`<Nav/> snapshot 1`] = `
 <ul
   className="nav"
 >
   <li>
     <NavLink
       activeClassName="active"
+      ariaCurrent="true"
       exact={true}
       to="/"
     >
@@ -16,6 +17,7 @@ exports[`<Nav/> 1`] = `
   <li>
     <NavLink
       activeClassName="active"
+      ariaCurrent="true"
       exact={true}
       to="/about"
     >
