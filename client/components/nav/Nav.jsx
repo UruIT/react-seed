@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Nav.scss';
 
-let { nav, active } = styles;
+const { nav, active } = styles;
 
 const Nav = () => (
 	<ul className={nav}>
