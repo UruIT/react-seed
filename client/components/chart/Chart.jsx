@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Chart.scss';
 import PropTypes from 'prop-types';
-const Line = require('react-chartjs-2').Line;
+import { Line } from 'react-chartjs-2';
 
 const options = onClick => ({
 	responsive: true,
