@@ -20,7 +20,7 @@
 	"scripts": {
 		"precommit": "lint-staged",
 		"prepush": "npm test",
-		"lint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache",
+		"lint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache --ignore-pattern plop-templates",
 		"stats": "cd client && npm run stats",
 		"build": "cd client && npm run build",
 		"start": "cd server && npm start",
@@ -46,7 +46,7 @@
 	},
 	"lint-staged": {
 		"*.{js,jsx}": [
-			"eslint"
+			"lint"
 		]
 	},
 	"devDependencies": {
@@ -75,6 +75,7 @@
 		"node-sass": "^4.5.3",
 		"nodemon": "^1.11.0",
 		"npm-install-webpack-plugin": "^4.0.5",
+		"plop": "^1.8.0",
 		"postcss-loader": "^2.0.6",
 		"raw-loader": "^0.5.1",
 		"resolve-url-loader": "^2.1.0",

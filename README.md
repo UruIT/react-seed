@@ -25,6 +25,7 @@ UruIT seed project for ReactJS applications
 * Sass
 * Express
 * Git hooks
+* Plop
 
 
 ## Secondary features
