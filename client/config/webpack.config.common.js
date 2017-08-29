@@ -38,6 +38,7 @@ const common = {
 			},
 			{
 				test: /\.jsx?$/,
+				exclude: /(node_modules)/,
 				use: ['babel-loader?cacheDirectory'],
 				include: PATHS.app
 			},
