@@ -1,6 +1,6 @@
 # VS Code Config 
 
-Our team use this editor as IDE. 
+Our team use this editor as IDE.
 Here are some useful configs and extensions we use
 
 ## Code Formatter
@@ -34,3 +34,4 @@ We encourage the use of [prettier](https://github.com/prettier/prettier) in your
 * [Mithril Emmet](https://marketplace.visualstudio.com/items?itemName=FallenMax.mithril-emmet)
 * [Prettier - JavaScript formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 * [Relative Path](https://marketplace.visualstudio.com/items?itemName=jakob101.RelativePath)
+* [UruIT React Snippets](https://marketplace.visualstudio.com/items?itemName=UruIT.uruit-react-snippets)
