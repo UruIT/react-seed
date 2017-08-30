@@ -1,14 +1,29 @@
-## Test Case
+# Select an issue type
+
+- [ ] bug
+- [ ] new feature
+
+---
+
+## * Bug template
+
+### Test Case
 
 
-## Steps to reproduce
+### Steps to reproduce
 
 
-## Expected Behavior
+### Expected Behavior
 
 
-## Actual Behavior
+### Actual Behavior
 
 
-## Version
+### Version
+
+---
+
+## * New Feature template
+
+### Description
 
