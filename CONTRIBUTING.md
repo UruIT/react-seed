@@ -9,7 +9,7 @@ In order to achieve this goal, we are keeping the main branch (`master`) as basi
 * Only adding to it what we consider essential for starting projects. 
 * And, leaving other features (more advanced ones) to the `seed/*` branches.
 
-All these is also part of our second intention: avoid having an overwhelming amount of features/packages/configs.
+All these is also part of our second intention: avoid having an overwhelming amount of features/packages/configs for those who are newcomers into these technologies.
 
 We plan to incorporate a *Contributors* section on the `README` to say thank you for helping us!
 
