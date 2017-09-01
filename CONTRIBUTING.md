@@ -3,15 +3,16 @@
 First off, thank you for considering contributing to this *React Seed*.
 It’s people like you that helps to spread the knowledge and make this repo such a great tool...
 
-We are building it for people who want to learn more about these technologies.
+We are building it for both, people who want to learn more about these technologies and teams starting new projects.
 
-In order to achieve this goal, we are keeping the main branch (`master`) as basic as possible.
-* Only adding to it what we consider essential for starting projects. 
-* And, leaving other features (more advanced ones) to the `seed/*` branches.
+In order to achieve this goal, we are keeping the main branch (`master`) as basic as possible:
+* Adding only what we consider essential for starting projects and newcomers to the *React* ecosystem. 
+* Leaving other features (more advanced ones) to the `seed/*` branches. (read README's [Seed Branches](./README.md#Seed%20Branches))
 
-All these is also part of our second intention: avoid having an overwhelming amount of features/packages/configs for those who are newcomers into these technologies.
+What we try to do is to have a simple seed, to fit most of the starting projects.
+In our experience a lot of existing seeds have features we don’t need, and therefore we end up removing. 
 
-We plan to incorporate a *Contributors* section on the `README` to say thank you for helping us!
+All the contributors will be listed in the `README` to make public their help and express our gratitude.
 
 ## 1. Set up your environment
 
