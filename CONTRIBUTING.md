@@ -3,7 +3,16 @@
 First off, thank you for considering contributing to this *React Seed*.
 It’s people like you that helps to spread the knowledge and make this repo such a great tool...
 
-We are building it for people who want to learn more about these technologies.
+We are building it for both, people who want to learn more about these technologies and teams starting new projects.
+
+In order to achieve this goal, we are keeping the main branch (`master`) as basic as possible:
+* Adding only what we consider essential for starting projects and newcomers to the *React* ecosystem. 
+* Leaving other features (more advanced ones) to the `seed/*` branches. (read README's [Seed Branches](./README.md#seed-branches))
+
+What we try to do is to have a simple seed, to fit most of the starting projects.
+In our experience a lot of existing seeds have features we don’t need, and therefore we end up removing. 
+
+All the contributors will be listed in the `README` to make public their help and express our gratitude.
 
 ## 1. Set up your environment
 
@@ -14,7 +23,7 @@ Once you have the environment up and running, start playing around and build som
 
 If you like to contribute, submit a new *PR*. We will get back to you as soon as possible.
 
-See README's [Coming up next](./README.md#Coming%20up%20next) section to get some ideas/features we want to incorporate.
+See README's [Coming up next](./README.md#coming-up-next) section to get some ideas/features we want to incorporate.
 
 You can also see our pull request template [here](docs/pull_request_template.md).
 
