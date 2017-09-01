@@ -5,6 +5,14 @@ It’s people like you that helps to spread the knowledge and make this repo suc
 
 We are building it for people who want to learn more about these technologies.
 
+In order to achieve this goal, we are keeping the main branch (`master`) as basic as possible.
+* Only adding to it what we consider essential for starting projects. 
+* And, leaving other features (more advanced ones) to the `seed/*` branches.
+
+All these is also part of our second intention: avoid having an overwhelming amount of features/packages/configs.
+
+We plan to incorporate a *Contributors* section on the `README` to say thank you for helping us!
+
 ## 1. Set up your environment
 
 Read our documentation on [docs/setup](docs/setup.md).
