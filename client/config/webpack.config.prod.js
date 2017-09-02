@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 module.exports = merge(common, {
 	output: {
@@ -62,6 +63,7 @@ module.exports = merge(common, {
 			compress: {
 				warnings: false
 			}
-		})
+		}),
+		new OfflinePlugin()
 	]
 });
