@@ -49,6 +49,7 @@ seed/
     ./mssql
     ./redux-i18n
     ./i18n
+    ./offline
 ```
 
 ### Coming up next
