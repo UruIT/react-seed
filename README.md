@@ -49,6 +49,7 @@ seed/
     ./mssql
     ./redux-i18n
     ./i18n
+    ./offline
 ```
 
 ### Coming up next
@@ -99,6 +100,10 @@ Open browser on [localhost:3000](http://localhost:3000/)
 * [Client Readme](client/README.md)
 * [Server Readme](server/README.md)
 * [VS Code](docs/vscode.md)
+
+## Contributors
+
+* [Arnold Gandarillas Castillo](https://github.com/arkgast)
 
 ## Authors
 
