@@ -4,6 +4,7 @@ import links from '../../routes/links';
 import Counter from '../counter/Counter';
 import MyButton from '../button/Button';
 import styles from './app.scss';
+import classes from 'utils/classes';
 
 class App extends React.Component {
 	constructor(props) {
@@ -24,13 +25,12 @@ class App extends React.Component {
 	}
 
 	render() {
-		const { container, shadow, button } = styles;
 		const { joke } = this.state;
 
 		return (
-			<div className={`${container} ${shadow}`}>
+			<div className={styles.container}>
 				<Counter />
-				<button className={`${button} ${shadow}`} onClick={this.handleClick}>
+				<button className={classes(styles.button, styles.shadow)} onClick={this.handleClick}>
 					Test
 				</button>
 				{!!joke && <MyButton text={joke} />}

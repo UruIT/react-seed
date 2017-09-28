@@ -2,7 +2,7 @@
 
 exports[`<App/> snapshot 1`] = `
 <div
-  className="container shadow"
+  className="container"
 >
   <Counter />
   <button
