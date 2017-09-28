@@ -19,7 +19,11 @@ const common = {
 		app: [PATHS.app]
 	},
 	resolve: {
-		extensions: ['.js', '.jsx']
+		extensions: ['.js', '.jsx'],
+		alias: {
+			styles: path.resolve(__dirname, '../styles'),
+			utils: path.resolve(__dirname, '../utils')
+		}
 	},
 	output: {
 		path: PATHS.build,

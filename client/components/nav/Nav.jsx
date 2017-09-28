@@ -2,17 +2,17 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Nav.scss';
 
-const { nav, active } = styles;
+const { nav, active, link } = styles;
 
 const Nav = () => (
 	<ul className={nav}>
 		<li>
-			<NavLink to="/" activeClassName={active} exact>
+			<NavLink to="/" className={link} activeClassName={active} exact>
 				Home
 			</NavLink>
 		</li>
 		<li>
-			<NavLink to="/about" activeClassName={active} exact>
+			<NavLink to="/about" className={link} activeClassName={active} exact>
 				About
 			</NavLink>
 		</li>

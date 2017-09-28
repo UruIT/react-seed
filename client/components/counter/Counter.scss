@@ -1,9 +1,10 @@
-@import '../../styles/box-shadow.scss';
+@import '~styles/_box-shadow.scss';
+@import '~styles/_palette.scss';
 
 .container {
-	background: #fbfb09;
+	background: $gold;
 	@include box-shadow(1px, 1px, 4px,#4c4a4a);
-	border: 2px solid #222;
+	border: 2px solid $black-2;
 	width: 15rem;
 	margin: auto;
 
@@ -23,7 +24,7 @@
 		padding: 0.2rem;
 		margin: 1rem;
 		width: 3.5rem;
-		background: #222;
-		color: #fbfb09;
+		background: $black-2;
+		color: $gold;
 	}
 }

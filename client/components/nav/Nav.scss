@@ -1,20 +1,33 @@
+@import '~styles/_palette.scss';
+@import '~styles/_mixins.scss';
+
 ul.nav {
-	border: 1px solid;
+	width: 150px;
+	margin: 0 auto;
+	border-bottom: 1px dashed $black-2;
 	border-width: 1px 0;
 	list-style: none;
 	text-align: center;
 	padding: 0;
 
 	li {
-		display: inline;
-	}
-
-	a {
 		display: inline-block;
-		padding: 10px;
-	}
-}
 
-.active {
-	font-weight: 600;
+		&:not(:last-child)::after {
+			content: '|';
+			color: $black-2;
+		}
+	}
+
+	.link {
+		display: inline-block;
+		text-decoration: none;
+		padding: 8px;
+		margin: 0 8px;
+		@include blurry();
+	}
+
+	.active {
+		font-weight: 600;
+	}
 }
