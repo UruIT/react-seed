@@ -1,7 +1,8 @@
 import React from 'react';
-import MyButton from '../button/Button';
 import { getJson } from 'utils/fetch';
+import links from '../../routes/links';
 import Counter from '../counter/Counter';
+import MyButton from '../button/Button';
 import styles from './app.scss';
 
 class App extends React.Component {
@@ -15,7 +16,7 @@ class App extends React.Component {
 	}
 
 	handleClick() {
-		return getJson('https://api.chucknorris.io/jokes/random').then(res =>
+		return getJson(links.chucknorris).then(res =>
 			this.setState({
 				joke: res.value
 			})

@@ -4,6 +4,7 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 import { getJson } from 'utils/fetch';
 import Button from '../button/Button';
 import App from './App';
+import links from '../../routes/links';
 
 jest.mock('utils/fetch', () => ({
 	getJson: jest.fn(
@@ -27,7 +28,7 @@ describe('App - on button click', () => {
 	});
 
 	it('should call ChuckNorris api', () => {
-		expect(getJson).toBeCalledWith('https://api.chucknorris.io/jokes/random');
+		expect(getJson).toBeCalledWith(links.chucknorris);
 	});
 
 	it('should update <Button> children', () => {
