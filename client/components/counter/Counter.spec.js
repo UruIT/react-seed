@@ -1,10 +1,12 @@
 import React from 'react';
-import Counter from './Counter';
 import ShallowRenderer from 'react-test-renderer/shallow';
+import Counter from './Counter';
 
-test('<Counter/>', () => {
-	const renderer = new ShallowRenderer();
-	const tree = renderer.render(<Counter />);
+describe('<Counter/>', () => {
+	it('snapshot', () => {
+		const renderer = new ShallowRenderer();
+		const tree = renderer.render(<Counter />);
 
-	expect(tree).toMatchSnapshot();
+		expect(tree).toMatchSnapshot();
+	});
 });

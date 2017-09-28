@@ -4,24 +4,18 @@ import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 
 describe('<Button/>', () => {
-	test('with default props', () => {
-		const tree = renderer.create(
-			<Button />
-		).toJSON();
-
+	it('snapshot - default props', () => {
+		const tree = renderer.create(<Button />).toJSON();
 		expect(tree).toMatchSnapshot();
 	});
 
-	test('with some props', () => {
-		const tree = renderer.create(
-			<Button text="TEXT" />
-		).toJSON();
-
+	it('snapshot - with TEXT', () => {
+		const tree = renderer.create(<Button text="TEXT" />).toJSON();
 		expect(tree).toMatchSnapshot();
 	});
 });
 
-describe('On Click', () => {
+describe('Button - on Click', () => {
 	it('should call onClick callback', () => {
 		const onClickCb = jest.fn();
 

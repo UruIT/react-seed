@@ -1,11 +1,11 @@
 import React from 'react';
-import NotFound from './NotFound';
 import ShallowRenderer from 'react-test-renderer/shallow';
+import NotFound from './NotFound';
 
-test('<NotFound/>', () => {
-	const renderer = new ShallowRenderer();
-
-	const tree = renderer.render(<NotFound />);
-
-	expect(tree).toMatchSnapshot();
+describe('<NotFound/>', () => {
+	it('snapshot', () => {
+		const renderer = new ShallowRenderer();
+		const tree = renderer.render(<NotFound />);
+		expect(tree).toMatchSnapshot();
+	});
 });

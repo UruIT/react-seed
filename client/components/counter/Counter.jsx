@@ -1,27 +1,31 @@
 import React, { Component } from 'react';
-import styles from './Counter.scss';
+import styles from './counter.scss';
 
-const increment = step => ({ value }) => ({ value: value + step });
+const leap = step => ({ value }) => ({ value: value + step });
 
 class Counter extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			value: 0
-		};
+
+		this.handleIncrement = this.handleIncrement.bind(this);
+		this.handleDecrement = this.handleDecrement.bind(this);
+		this.state = { value: 0 };
 	}
-	handleIncClick = () => {
-		this.setState(increment(1));
-	};
-	handleDecClick = () => {
-		this.setState(increment(-1));
-	};
+
+	handleIncrement() {
+		this.setState(leap(1));
+	}
+
+	handleDecrement() {
+		this.setState(leap(-1));
+	}
+
 	render() {
 		return (
 			<div className={styles.container}>
-				<div>{ this.state.value }</div>
-				<a onClick={this.handleDecClick}>−</a>
-				<a onClick={this.handleIncClick}>+</a>
+				<div>{this.state.value}</div>
+				<a onClick={this.handleDecrement}>−</a>
+				<a onClick={this.handleIncrement}>+</a>
 			</div>
 		);
 	}

@@ -1,9 +1,10 @@
 import React from 'react';
-import About from './About';
 import renderer from 'react-test-renderer';
+import About from './About';
 
-test('renders About', () => {
-	const tree = renderer.create(<About />).toJSON();
-
-	expect(tree).toMatchSnapshot();
+describe('<About/>', () => {
+	it('snapshot', () => {
+		const tree = renderer.create(<About />).toJSON();
+		expect(tree).toMatchSnapshot();
+	});
 });

@@ -30,7 +30,8 @@
 	},
 	"jest": {
 		"moduleNameMapper": {
-			"\\.(scss)$": "<rootDir>/components/__mocks__/styles.js"
+			"\\.(scss)$": "<rootDir>/components/__mocks__/styles.js",
+			"^utils(.*)$": "<rootDir>/utils$1"
 		},
 		"testPathIgnorePatterns": [
 			"/node_modules/",

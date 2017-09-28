@@ -1,15 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<NotFound/> 1`] = `
-<div>
-  <h3>
-    Page not found
-  </h3>
+exports[`<NotFound/> snapshot 1`] = `
+<div
+  className="container"
+>
+  <h1>
+    404
+  </h1>
+  <h2>
+    Page Not Found
+  </h2>
   <Link
+    className="link"
     replace={false}
     to="/"
   >
-    Return home
+    Go Home!
   </Link>
 </div>
 `;
