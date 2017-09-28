@@ -4,20 +4,20 @@ import styles from './clickable.scss';
 
 const dialog = e => alert(e.target.textContent);
 
-const Clickable = ({ text, onClick }) => (
+const Clickable = ({ content, onClick }) => (
 	<div className={styles.container} onClick={onClick}>
-		{ text }
+		{ content }
 	</div>
 );
 
 Clickable.propTypes = {
-	onClick: PropTypes.func,
-	text: PropTypes.string
+	content: PropTypes.node,
+	onClick: PropTypes.func
 };
 
 Clickable.defaultProps = {
-	onClick: dialog,
-	text: '...'
+	content: '...',
+	onClick: dialog
 };
 
 export default Clickable;

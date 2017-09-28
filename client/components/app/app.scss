@@ -16,8 +16,18 @@
 	border: 2px solid $black;
 	background-color: $gold;
 	cursor: pointer;
-	font-weight: 600;
+	font-weight: 500;
 	font-size: 2rem;
 	margin: 2rem;
 	width: 15rem;
+}
+
+.api-response {
+	padding: 4px;
+
+	span {
+		display: inline-block;
+		border-bottom: 1px solid $black-2;
+		margin-bottom: 4px;
+	}
 }

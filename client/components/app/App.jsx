@@ -12,29 +12,53 @@ class App extends React.Component {
 
 		this.handleClick = this.handleClick.bind(this);
 		this.state = {
-			joke: ''
+			joke: '',
+			sample: [],
+			error: ''
 		};
 	}
 
+	componentDidMount() {
+		getJson(links.api.sample)
+			.then(sample => this.setState({ sample }))
+			.catch(error => this.setState({ error }));
+	}
+
 	handleClick() {
-		return getJson(links.chucknorris).then(res =>
+		return getJson(links.chucknorris).then(response =>
 			this.setState({
-				joke: res.value
+				joke: response.value
 			})
 		);
 	}
 
 	render() {
-		const { joke } = this.state;
+		const { joke, sample, error } = this.state;
 
 		return (
 			<div className={styles.container}>
 				<Counter />
 				<button className={classes(styles.button, styles.shadow)} onClick={this.handleClick}>
-					Test
+					click me
 				</button>
-				{!!joke && <Clickable text={joke} />}
+				{!!joke && <Clickable content={joke} />}
+				{this.renderApiTest(sample, error)}
 			</div>
+		);
+	}
+
+	renderApiTest(sample, error) {
+		const response = JSON.stringify(sample.length ? sample : error);
+
+		return (
+			<Clickable
+				content={
+					<div className={styles.apiResponse}>
+						<span>{links.api.sample} response:</span>
+						<div>{response}</div>
+					</div>
+				}
+			/>
 		);
 	}
 }

@@ -10,7 +10,7 @@ describe('<Clickable/>', () => {
 	});
 
 	it('snapshot - with TEXT', () => {
-		const tree = renderer.create(<Clickable text="TEXT" />).toJSON();
+		const tree = renderer.create(<Clickable content="TEXT" />).toJSON();
 		expect(tree).toMatchSnapshot();
 	});
 });

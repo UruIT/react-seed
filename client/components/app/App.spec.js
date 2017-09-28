@@ -7,13 +7,11 @@ import App from './App';
 import links from '../../routes/links';
 
 jest.mock('utils/fetch', () => ({
-	getJson: jest.fn(
-		url => new Promise((resolve, reject) => (url ? resolve({ value: 'Chuck Norris joke' }) : reject()))
-	)
+	getJson: jest.fn(url => new Promise((resolve, reject) => (url ? resolve({ value: 'another joke' }) : reject())))
 }));
 
 describe('<App/>', () => {
-	it('snapshot', ()=> {
+	it('snapshot', () => {
 		const renderer = new ShallowRenderer();
 		const tree = renderer.render(<App />);
 		expect(tree).toMatchSnapshot();
@@ -35,8 +33,13 @@ describe('App - on button click', () => {
 		return app
 			.instance()
 			.handleClick()
-			.then(() => {
-				expect(app.find(Clickable).props().text).toEqual('Chuck Norris joke');
-			});
+			.then(() =>
+				expect(
+					app
+						.find(Clickable)
+						.first()
+						.props().content
+				).toEqual('another joke')
+			);
 	});
 });

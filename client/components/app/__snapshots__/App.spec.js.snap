@@ -9,7 +9,23 @@ exports[`<App/> snapshot 1`] = `
     className="button shadow"
     onClick={[Function]}
   >
-    Test
+    click me
   </button>
+  <Clickable
+    content={
+      <div
+        className="apiResponse"
+      >
+        <span>
+          /api/sample
+           response:
+        </span>
+        <div>
+          ""
+        </div>
+      </div>
+    }
+    onClick={[Function]}
+  />
 </div>
 `;
