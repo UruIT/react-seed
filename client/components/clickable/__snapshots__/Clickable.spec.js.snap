@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button/> snapshot - default props 1`] = `
+exports[`<Clickable/> snapshot - default props 1`] = `
 <div
   className="container"
   onClick={[Function]}
@@ -9,7 +9,7 @@ exports[`<Button/> snapshot - default props 1`] = `
 </div>
 `;
 
-exports[`<Button/> snapshot - with TEXT 1`] = `
+exports[`<Clickable/> snapshot - with TEXT 1`] = `
 <div
   className="container"
   onClick={[Function]}

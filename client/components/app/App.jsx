@@ -1,8 +1,8 @@
 import React from 'react';
 import { getJson } from 'utils/fetch';
 import links from '../../routes/links';
-import Counter from '../counter/Counter';
-import MyButton from '../button/Button';
+import Clickable from '../clickable';
+import Counter from '../counter';
 import styles from './app.scss';
 import classes from 'utils/classes';
 
@@ -33,7 +33,7 @@ class App extends React.Component {
 				<button className={classes(styles.button, styles.shadow)} onClick={this.handleClick}>
 					Test
 				</button>
-				{!!joke && <MyButton text={joke} />}
+				{!!joke && <Clickable text={joke} />}
 			</div>
 		);
 	}

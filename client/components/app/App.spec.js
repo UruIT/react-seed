@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import { getJson } from 'utils/fetch';
-import Button from '../button/Button';
+import Clickable from '../clickable';
 import App from './App';
 import links from '../../routes/links';
 
@@ -31,12 +31,12 @@ describe('App - on button click', () => {
 		expect(getJson).toBeCalledWith(links.chucknorris);
 	});
 
-	it('should update <Button> children', () => {
+	it('should update <Clickable> children', () => {
 		return app
 			.instance()
 			.handleClick()
 			.then(() => {
-				expect(app.find(Button).props().text).toEqual('Chuck Norris joke');
+				expect(app.find(Clickable).props().text).toEqual('Chuck Norris joke');
 			});
 	});
 });
