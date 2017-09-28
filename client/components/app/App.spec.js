@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import { getJson } from 'utils/fetch';
 import Clickable from '../clickable';
@@ -22,6 +22,7 @@ describe('App - on button click', () => {
 	const app = shallow(<App />);
 
 	beforeEach(() => {
+		getJson.mockImplementation(() => Promise.resolve({ value: 'another joke' }));
 		app.find('button').simulate('click');
 	});
 
@@ -41,5 +42,19 @@ describe('App - on button click', () => {
 						.props().content
 				).toEqual('another joke')
 			);
+	});
+});
+
+describe('App - mounting', () => {
+	const sample = [{ id: 1 }, { id: 2 }];
+	getJson.mockImplementation(() => Promise.resolve(sample));
+	const tree = mount(<App />);
+
+	it('should call getJson', () => {
+		expect(getJson).toBeCalledWith(links.api.sample);
+	});
+
+	it('should update state.sample', () => {
+		expect(tree.instance().state).toMatchObject({ sample });
 	});
 });
