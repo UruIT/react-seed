@@ -54,7 +54,7 @@ class App extends React.Component {
 			<Clickable
 				content={
 					<div className={styles.apiResponse}>
-						<span>{links.api.sample} response:</span>
+						<span>~{links.api.sample} response:</span>
 						<div>{response}</div>
 					</div>
 				}

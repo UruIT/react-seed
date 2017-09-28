@@ -1,4 +1,4 @@
-@import '~styles/_box-shadow.scss';
+@import '~styles/_mixins.scss';
 @import '~styles/_palette.scss';
 
 .shadow {
@@ -27,7 +27,7 @@
 
 	span {
 		display: inline-block;
-		border-bottom: 1px solid $black-2;
+		text-decoration: underline;
 		margin-bottom: 4px;
 	}
 }

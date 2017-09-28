@@ -17,6 +17,7 @@ exports[`<App/> snapshot 1`] = `
         className="apiResponse"
       >
         <span>
+          ~
           /api/sample
            response:
         </span>
