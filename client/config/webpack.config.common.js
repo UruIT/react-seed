@@ -1,7 +1,7 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const glob = require('glob');
 const webpack = require('webpack');
+const glob = require('glob');
+const path = require('path');
 
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
@@ -15,6 +15,7 @@ const PATHS = {
 process.env.BABEL_ENV = TARGET;
 
 const common = {
+	context: PATHS.app,
 	entry: {
 		app: [PATHS.app]
 	},
@@ -27,7 +28,8 @@ const common = {
 	},
 	output: {
 		path: PATHS.build,
-		filename: '[name].js'
+		filename: '[name].js',
+		publicPath: '/'
 	},
 	module: {
 		rules: [
@@ -56,6 +58,7 @@ const common = {
 		new HtmlWebpackPlugin({
 			template: '../node_modules/html-webpack-template/index.ejs',
 			title: 'UruIT React Seed',
+			favicon: 'favicon.ico',
 			appMountId: 'app',
 			inject: false,
 			minify: {

@@ -1,8 +1,10 @@
-const { common, PATHS } = require('./webpack.config.common');
+const CleanPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
-const CleanPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const { common, PATHS } = require('./webpack.config.common');
 
 module.exports = merge(common, {
 	output: {
@@ -62,6 +64,12 @@ module.exports = merge(common, {
 			compress: {
 				warnings: false
 			}
-		})
+		}),
+		new CopyWebpackPlugin([
+			{
+				from: path.join(PATHS.app, 'favicon.ico'),
+				to: path.join(PATHS.build, 'favicon.ico')
+			}
+		])
 	]
 });
