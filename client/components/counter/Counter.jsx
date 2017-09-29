@@ -23,9 +23,11 @@ class Counter extends Component {
 	render() {
 		return (
 			<div className={styles.container}>
-				<div>{this.state.value}</div>
-				<a onClick={this.handleDecrement}>−</a>
-				<a onClick={this.handleIncrement}>+</a>
+				<div className={styles.value}>{this.state.value}</div>
+				<div className={styles.controls}>
+					<a onClick={this.handleDecrement}>−</a>
+					<a onClick={this.handleIncrement}>+</a>
+				</div>
 			</div>
 		);
 	}

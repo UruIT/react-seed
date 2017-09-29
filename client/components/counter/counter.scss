@@ -3,28 +3,35 @@
 
 .container {
 	background: $gold;
-	@include box-shadow(1px, 1px, 4px,$slate);
 	border: 2px solid $black-2;
-	width: 15rem;
-	margin: auto;
+	@include box-shadow(1px, 1px, 4px,$slate);
+	width: 240px;
+	margin: 8px auto;
+	position: relative;
 
-	div {
-		font-size: 9rem;
-		user-select: none;
+	.value {
 		cursor: default;
+		font-size: 8rem;
+		text-align: center;
+		user-select: none;
+		overflow: auto;
 	}
 
-	a {
-		display: inline-block;
-		user-select: none;
-		font-weight: bold;
-		font-size: 3rem;
-		cursor: pointer;
-		border-radius: 0.2rem;
-		padding: 0.2rem;
-		margin: 1rem;
-		width: 3.5rem;
-		background: $black-2;
-		color: $gold;
+	.controls {
+		display: flex;
+		justify-content: space-around;
+		padding: 8px 24px;
+
+		a {
+			user-select: none;
+			font-weight: bold;
+			font-size: 3rem;
+			cursor: pointer;
+			@include box-shadow(1px, 1px, 4px,$slate);
+			border-radius: 4px;
+			width: 56px;
+			background: $black-2;
+			color: $gold;
+		}
 	}
 }
