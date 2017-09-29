@@ -30,6 +30,10 @@ describe('App - on button click', () => {
 		expect(getJson).toBeCalledWith(links.chucknorris);
 	});
 
+	it('should keep previous jokes', () => {
+		expect(app.state().jokes.length).toBe(2);
+	});
+
 	it('should update <Clickable> children', () => {
 		return app
 			.instance()

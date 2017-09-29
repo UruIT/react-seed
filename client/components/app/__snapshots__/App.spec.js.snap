@@ -4,13 +4,17 @@ exports[`<App/> snapshot 1`] = `
 <div
   className="container"
 >
-  <Counter />
   <button
     className="button shadow"
     onClick={[Function]}
   >
-    click me
+    +
   </button>
+  <div
+    className="jokes"
+  >
+    
+  </div>
   <Clickable
     content={
       <div

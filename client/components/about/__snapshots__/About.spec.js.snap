@@ -10,5 +10,22 @@ exports[`<About/> snapshot 1`] = `
   <h2>
     Simple project to start with React!
   </h2>
+  <div
+    className="container"
+  >
+    <div>
+      0
+    </div>
+    <a
+      onClick={[Function]}
+    >
+      −
+    </a>
+    <a
+      onClick={[Function]}
+    >
+      +
+    </a>
+  </div>
 </div>
 `;
