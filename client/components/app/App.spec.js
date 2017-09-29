@@ -18,7 +18,7 @@ describe('<App/>', () => {
 	});
 });
 
-describe('App - on button click', () => {
+describe('App - button onClick', () => {
 	const app = shallow(<App />);
 
 	beforeEach(() => {
@@ -50,15 +50,30 @@ describe('App - on button click', () => {
 });
 
 describe('App - mounting', () => {
-	const sample = [{ id: 1 }, { id: 2 }];
-	getJson.mockImplementation(() => Promise.resolve(sample));
-	const tree = mount(<App />);
+	describe('server request succeeded', () => {
+		const sample = [{ id: 1 }, { id: 2 }];
+		getJson.mockImplementation(() => Promise.resolve(sample));
+		const tree = mount(<App />);
 
-	it('should call getJson', () => {
-		expect(getJson).toBeCalledWith(links.api.sample);
+		it('should call getJson', () => {
+			expect(getJson).toBeCalledWith(links.api.sample);
+		});
+
+		it('should update state.sample', () => {
+			expect(tree.instance().state).toMatchObject({ sample });
+		});
 	});
 
-	it('should update state.sample', () => {
-		expect(tree.instance().state).toMatchObject({ sample });
+	describe('server request error', () => {
+		getJson.mockImplementation(() => Promise.reject({ code: 500 }));
+		const app = mount(<App />);
+
+		it('should update state.error', () => {
+			expect(app.instance().state).toMatchObject({ error: { code: 500 } });
+		});
+
+		it('should not have any joke', () => {
+			expect(app.state().jokes).toEqual([]);
+		});
 	});
 });
