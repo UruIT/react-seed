@@ -1,0 +1,37 @@
+@import '~styles/_mixins';
+@import '~styles/_palette';
+
+.container {
+	background: $gold;
+	border: 2px solid $black-2;
+	@include box-shadow(1px, 1px, 4px,$slate);
+	width: 240px;
+	margin: 8px auto;
+	position: relative;
+
+	.value {
+		cursor: default;
+		font-size: 8rem;
+		text-align: center;
+		user-select: none;
+		overflow: auto;
+	}
+
+	.controls {
+		display: flex;
+		justify-content: space-around;
+		padding: 8px 24px;
+
+		a {
+			user-select: none;
+			font-weight: bold;
+			font-size: 3rem;
+			cursor: pointer;
+			@include box-shadow(1px, 1px, 4px,$slate);
+			border-radius: 4px;
+			width: 56px;
+			background: $black-2;
+			color: $gold;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+@import '~styles/_palette';
+@import '~styles/_mixins';
+
+.container {
+	text-align: center;
+
+	h1, h2 {
+		color: $black-2;
+	}
+
+	.link {
+		text-decoration: none;
+		@include blurry();
+	}
+}

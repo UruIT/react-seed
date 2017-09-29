@@ -1,15 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<App/> 1`] = `
+exports[`<App/> snapshot 1`] = `
 <div
-  className="container shadow"
+  className="container"
 >
-  <Counter />
   <button
     className="button shadow"
     onClick={[Function]}
   >
-    Test
+    +
   </button>
+  <div
+    className="jokes"
+  >
+    
+  </div>
+  <Clickable
+    content={
+      <div
+        className="apiResponse"
+      >
+        <span>
+          ~
+          /api/sample
+           response:
+        </span>
+        <div>
+          ""
+        </div>
+      </div>
+    }
+    onClick={[Function]}
+  />
 </div>
 `;

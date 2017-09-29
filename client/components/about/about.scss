@@ -1,0 +1,9 @@
+@import '~styles/_palette';
+
+.about {
+	text-align: center;
+
+	h1, h2 {
+		color: $black-2;
+	}
+}

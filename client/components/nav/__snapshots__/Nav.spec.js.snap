@@ -8,6 +8,7 @@ exports[`<Nav/> snapshot 1`] = `
     <NavLink
       activeClassName="active"
       ariaCurrent="true"
+      className="link"
       exact={true}
       to="/"
     >
@@ -18,6 +19,7 @@ exports[`<Nav/> snapshot 1`] = `
     <NavLink
       activeClassName="active"
       ariaCurrent="true"
+      className="link"
       exact={true}
       to="/about"
     >

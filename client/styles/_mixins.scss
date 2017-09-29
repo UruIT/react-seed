@@ -9,3 +9,8 @@
 		box-shadow: $top $left $blur $color;
 	}
 }
+
+@mixin blurry {
+	color: $black-2;
+	text-shadow: 0 0 4px $black-05;
+}
