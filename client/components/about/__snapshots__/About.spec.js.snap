@@ -1,11 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders About 1`] = `
+exports[`<About/> snapshot 1`] = `
 <div
   className="about"
 >
   <h1>
-    About
+    React Seed
   </h1>
+  <h2>
+    Simple project to start with React!
+  </h2>
+  <Counter />
 </div>
 `;

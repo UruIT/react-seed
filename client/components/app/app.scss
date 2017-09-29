@@ -1,0 +1,53 @@
+@import '~styles/_mixins';
+@import '~styles/_palette';
+
+$narrow-screen: 420px;
+
+.shadow {
+	@include box-shadow(1px, 1px, 4px, $slate);
+}
+
+.container {
+	max-width: 400px;
+	margin: 24px auto 8px;
+	padding: 8px;
+	text-align: center;
+
+	.button {
+		border: 2px solid $black;
+		background-color: $gold;
+		cursor: pointer;
+		font-weight: 500;
+		font-size: 2rem;
+		width: 100%;
+
+		&:focus {
+			outline: 0;
+		}
+	}
+
+	.jokes {
+		margin: 16px 0;
+	}
+}
+
+.api-response {
+	padding: 4px;
+
+	span {
+		display: inline-block;
+		text-decoration: underline;
+		margin-bottom: 4px;
+	}
+
+	div {
+		overflow: auto;
+	}
+}
+
+@media screen and (min-width: $narrow-screen) {
+	.container {
+		padding: 4px;
+		max-width: $narrow-screen;
+	}
+}

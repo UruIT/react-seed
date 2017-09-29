@@ -1,9 +1,12 @@
 import React from 'react';
-import style from './About.scss';
+import Counter from '../counter';
+import styles from './about.scss';
 
 const About = () => (
-	<div className={style.about}>
-		<h1>About</h1>
+	<div className={styles.about}>
+		<h1>React Seed</h1>
+		<h2>Simple project to start with React!</h2>
+		<Counter />
 	</div>
 );
 

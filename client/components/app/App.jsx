@@ -1,42 +1,65 @@
 import React from 'react';
-import MyButton from '../button/Button';
-import { getJson } from '../../utils/fetch';
-import Counter from '../counter/Counter';
-import styles from './App.scss';
+import { getJson } from 'utils/fetch';
+import links from '../../routes/links';
+import Clickable from '../clickable';
+import styles from './app.scss';
+import classes from 'utils/classes';
 
-export default class App extends React.Component {
+class App extends React.Component {
 	constructor(props) {
 		super(props);
+
+		this.handleClick = this.handleClick.bind(this);
 		this.state = {
-			joke: ''
+			jokes: [],
+			sample: [],
+			error: ''
 		};
 	}
-	handleClick = () => {
-		return getJson('https://api.chucknorris.io/jokes/random').then(res =>
+
+	componentDidMount() {
+		getJson(links.api.sample)
+			.then(sample => this.setState({ sample }))
+			.catch(error => this.setState({ error }));
+	}
+
+	handleClick() {
+		return getJson(links.chucknorris).then(response =>
 			this.setState({
-				joke: res.value
+				jokes: [response.value, ...this.state.jokes]
 			})
 		);
-	};
+	}
+
 	render() {
-		let { container, shadow, button } = styles;
-		let { joke } = this.state;
+		const { jokes, sample, error } = this.state;
+		const jsxJokes = jokes.map((joke, idx) => <Clickable key={idx} content={joke} />);
 
 		return (
-			<div className={`${container} ${shadow}`}>
-				<Counter />
-				<button
-					className={`${button} ${shadow}`}
-					onClick={this.handleClick}
-				>
-					Test
+			<div className={styles.container}>
+				<button className={classes(styles.button, styles.shadow)} onClick={this.handleClick}>
+					+
 				</button>
-				{!!joke && <MyButton text={joke} />}
+				<div className={styles.jokes}>{jsxJokes}</div>
+				{this.renderApiTest(sample, error)}
 			</div>
 		);
 	}
 
-	test = () => {
-		console.error('test');
-	};
+	renderApiTest(sample, error) {
+		const response = JSON.stringify(sample.length ? sample : error);
+
+		return (
+			<Clickable
+				content={
+					<div className={styles.apiResponse}>
+						<span>~{links.api.sample} response:</span>
+						<div>{response}</div>
+					</div>
+				}
+			/>
+		);
+	}
 }
+
+export default App;

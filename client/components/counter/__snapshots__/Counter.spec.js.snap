@@ -1,19 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Counter/> 1`] = `
+exports[`<Counter/> snapshot 1`] = `
 <div
   className="container"
 >
-  <div />
-  <a
-    onClick={[Function]}
+  <div
+    className="value"
+  />
+  <div
+    className="controls"
   >
-    −
-  </a>
-  <a
-    onClick={[Function]}
-  >
-    +
-  </a>
+    <a
+      onClick={[Function]}
+    >
+      −
+    </a>
+    <a
+      onClick={[Function]}
+    >
+      +
+    </a>
+  </div>
 </div>
 `;
