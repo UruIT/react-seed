@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import noop from 'utils/noop';
 import styles from './clickable.scss';
-
-const dialog = e => alert(e.target.textContent);
 
 const Clickable = ({ content, onClick }) => (
 	<div className={styles.container} onClick={onClick}>
@@ -17,7 +16,7 @@ Clickable.propTypes = {
 
 Clickable.defaultProps = {
 	content: '...',
-	onClick: dialog
+	onClick: noop
 };
 
 export default Clickable;
