@@ -37,6 +37,10 @@
 		"testPathIgnorePatterns": [
 			"/node_modules/",
 			"webpack"
+		],
+		"setupFiles": [
+			"<rootDir>/__setup__/shim.js",
+			"<rootDir>/__setup__/enzyme.js"
 		]
 	}
 }

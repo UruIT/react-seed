@@ -1,13 +1,11 @@
 import React from 'react';
-import Adapter from 'enzyme-adapter-react-16';
-import Enzyme, { shallow, mount } from 'enzyme';
 import ShallowRenderer from 'react-test-renderer/shallow';
+import { shallow, mount } from 'enzyme';
+
 import { getJson } from 'utils/fetch';
 import Clickable from '../clickable';
-import App from './App';
 import links from '../../routes/links';
-
-Enzyme.configure({ adapter: new Adapter() });
+import App from './App';
 
 jest.mock('utils/fetch', () => ({
 	getJson: jest.fn(url => new Promise((resolve, reject) => (url ? resolve({ value: 'another joke' }) : reject())))
