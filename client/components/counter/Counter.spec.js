@@ -1,7 +1,10 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import { shallow } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import Counter from './Counter';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('<Counter/>', () => {
 	it('snapshot', () => {

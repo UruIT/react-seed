@@ -12,9 +12,7 @@ exports[`<App/> snapshot 1`] = `
   </button>
   <div
     className="jokes"
-  >
-    
-  </div>
+  />
   <Clickable
     content={
       <div
