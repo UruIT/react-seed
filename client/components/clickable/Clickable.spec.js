@@ -1,7 +1,8 @@
 import React from 'react';
-import Clickable from './Clickable';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
+
+import Clickable from './Clickable';
 
 describe('<Clickable/>', () => {
 	it('snapshot - default props', () => {

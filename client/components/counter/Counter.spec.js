@@ -1,6 +1,7 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import { shallow } from 'enzyme';
+
 import Counter from './Counter';
 
 describe('<Counter/>', () => {

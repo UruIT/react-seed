@@ -5,7 +5,7 @@ import styles from './clickable.scss';
 
 const Clickable = ({ content, onClick }) => (
 	<div className={styles.container} onClick={onClick}>
-		{ content }
+		{content}
 	</div>
 );
 

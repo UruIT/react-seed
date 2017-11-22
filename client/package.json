@@ -17,16 +17,17 @@
 	"dependencies": {
 		"es6-promise": "^4.1.1",
 		"prop-types": "^15.5.9",
-		"react": "^15.5.4",
-		"react-dom": "^15.5.4",
+		"react": "^16.1.1",
+		"react-dom": "^16.1.1",
 		"react-router-dom": "^4.2.0",
 		"whatwg-fetch": "^2.0.3"
 	},
 	"devDependencies": {
 		"babel-preset-react-hmre": "^1.1.1",
-		"enzyme": "^2.9.1",
-		"jest": "^20.0.0",
-		"react-test-renderer": "^15.6.1"
+		"enzyme": "^3.2.0",
+		"enzyme-adapter-react-16": "^1.1.0",
+		"jest": "^21.2.1",
+		"react-test-renderer": "^16.1.1"
 	},
 	"jest": {
 		"moduleNameMapper": {
@@ -36,6 +37,10 @@
 		"testPathIgnorePatterns": [
 			"/node_modules/",
 			"webpack"
+		],
+		"setupFiles": [
+			"<rootDir>/__setup__/shim.js",
+			"<rootDir>/__setup__/enzyme.js"
 		]
 	}
 }
