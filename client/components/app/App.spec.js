@@ -1,10 +1,11 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
 import ShallowRenderer from 'react-test-renderer/shallow';
+import { shallow, mount } from 'enzyme';
+
 import { getJson } from 'utils/fetch';
 import Clickable from '../clickable';
-import App from './App';
 import links from '../../routes/links';
+import App from './App';
 
 jest.mock('utils/fetch', () => ({
 	getJson: jest.fn(url => new Promise((resolve, reject) => (url ? resolve({ value: 'another joke' }) : reject())))

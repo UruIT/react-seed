@@ -6,7 +6,9 @@ exports[`<Counter/> snapshot 1`] = `
 >
   <div
     className="value"
-  />
+  >
+    0
+  </div>
   <div
     className="controls"
   >
