@@ -18,14 +18,8 @@ We encourage the use of [prettier](https://github.com/prettier/prettier) in your
 
     // settings for `relative path` extension
     "relativePath.removeExtension": true,
-    "relativePath.removeLeadingDot": true,
-
-    // we use these settings with `prettier` extension
-    "prettier.singleQuote": true,
-    "prettier.printWidth": 120,
-    "prettier.useTabs": true,
-    "prettier.tabWidth": 4
-  }
+    "relativePath.removeLeadingDot": true
+}
 ```
 
 ## Extensions 
