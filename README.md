@@ -1,15 +1,14 @@
 # react-seed
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/UruIT/react-seed/develop/LICENSE)
 [![Build Status](https://travis-ci.org/UruIT/react-seed.svg)](https://travis-ci.org/UruIT/react-seed?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/UruIT/react-seed/badge.svg)](https://coveralls.io/github/UruIT/react-seed)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2f466346b9804520bd466618053971d4)](https://www.codacy.com/app/matiasdelgado/react-seed?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=UruIT/react-seed&amp;utm_campaign=Badge_Grade)
+[![DevDependencies](https://img.shields.io/david/dev/uruit/react-seed.svg)](https://david-dm.org/uruit/react-seed?type=dev)
+
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/UruIT/react-seed/develop/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/uruit/react-seed.svg)](https://github.com/UruIT/react-seed/releases)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 [![Twitter Follow](https://img.shields.io/twitter/follow/uruit.svg?style=social&label=Follow)](https://twitter.com/UruIT/followers)
 [![Twitter URL](https://img.shields.io/twitter/url/http/uruit.react-seed.svg?style=social)](https://twitter.com/intent/tweet?text=react-seed%20by%20%40UruIT%20on&url=https%3A%2F%2Fgithub.com%2Furuit%2Freact-seed&hashtags=react,uruit,dev,seed)
-
-[![DevDependencies](https://img.shields.io/david/dev/uruit/react-seed.svg)](https://github.com/uruit/react-seed/blob/master/package.json)
-
 
 UruIT seed project for ReactJS applications
 

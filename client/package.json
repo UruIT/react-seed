@@ -12,7 +12,9 @@
 		"test": "jest",
 		"tdd": "jest --watchAll",
 		"coverage": "jest --coverage",
-		"build": "webpack"
+		"build": "webpack",
+		"coveralls": "cat ./coverage/lcov.info | coveralls",
+		"codacy": "cat ./coverage/lcov.info | codacy-coverage"
 	},
 	"dependencies": {
 		"es6-promise": "^4.1.1",
@@ -24,6 +26,8 @@
 	},
 	"devDependencies": {
 		"babel-preset-react-hmre": "^1.1.1",
+		"codacy-coverage": "^2.0.3",
+		"coveralls": "^3.0.0",
 		"enzyme": "^3.2.0",
 		"enzyme-adapter-react-16": "^1.1.0",
 		"jest": "^21.2.1",
