@@ -67,7 +67,10 @@ const common = {
 			mobile: true
 		}),
 		new webpack.optimize.ModuleConcatenationPlugin()
-	]
+	],
+	stats: {
+		children: false
+	}
 };
 
 module.exports = {

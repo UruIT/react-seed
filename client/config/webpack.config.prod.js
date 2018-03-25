@@ -2,7 +2,6 @@ const CleanPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const merge = require('webpack-merge');
-const webpack = require('webpack');
 const path = require('path');
 
 const { common, PATHS } = require('./webpack.config.common');
@@ -10,9 +9,8 @@ const { common, PATHS } = require('./webpack.config.common');
 module.exports = merge(common, {
 	mode: 'production',
 	output: {
-		path: PATHS.build,
-		filename: '[name].[chunkhash].js',
-		chunkFilename: '[chunkhash].js'
+		chunkFilename: '[chunkhash].js',
+		filename: '[name].[chunkhash].js'
 	},
 	optimization: {
 		runtimeChunk: 'single',
@@ -20,6 +18,7 @@ module.exports = merge(common, {
 			chunks: 'all'
 		}
 	},
+	devtool: 'hidden-source-map',
 	module: {
 		rules: [
 			{
@@ -59,9 +58,6 @@ module.exports = merge(common, {
 			verbose: false
 		}),
 		new MiniCssExtractPlugin('[name].[chunkhash].css'),
-		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': '"production"'
-		}),
 		new CopyWebpackPlugin([
 			{
 				from: path.join(PATHS.app, 'favicon.ico'),
