@@ -20,7 +20,7 @@
 	"scripts": {
 		"precommit": "lint-staged",
 		"prepush": "npm test",
-		"lint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache --ignore-pattern plop-templates",
+		"slint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache --ignore-pattern plop-templates",
 		"stats": "cd client && npm run stats",
 		"build": "cd client && npm run build",
 		"start": "cd server && npm start",
@@ -46,7 +46,7 @@
 	},
 	"lint-staged": {
 		"*.{js,jsx}": [
-			"lint"
+			"npm run slint"
 		]
 	},
 	"devDependencies": {
