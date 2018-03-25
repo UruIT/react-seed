@@ -47,10 +47,6 @@ const common = {
 				use: ['babel-loader?cacheDirectory'],
 				exclude: /node_modules/,
 				include: PATHS.app
-			},
-			{
-				test: /\.json$/,
-				loader: 'json-loader'
 			}
 		]
 	},

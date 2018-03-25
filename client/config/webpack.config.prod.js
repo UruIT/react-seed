@@ -1,16 +1,24 @@
 const CleanPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const path = require('path');
+
 const { common, PATHS } = require('./webpack.config.common');
 
 module.exports = merge(common, {
+	mode: 'production',
 	output: {
 		path: PATHS.build,
 		filename: '[name].[chunkhash].js',
 		chunkFilename: '[chunkhash].js'
+	},
+	optimization: {
+		runtimeChunk: 'single',
+		splitChunks: {
+			chunks: 'all'
+		}
 	},
 	module: {
 		rules: [
@@ -22,28 +30,26 @@ module.exports = merge(common, {
 			},
 			{
 				test: /\.scss$/,
-				use: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
-					use: [
-						{
-							loader: 'css-loader',
-							options: {
-								modules: true,
-								camelCase: 'dashes',
-								minimize: true
-							}
-						},
-						{
-							loader: 'postcss-loader'
-						},
-						{
-							loader: 'resolve-url-loader'
-						},
-						{
-							loader: 'sass-loader'
+				use: [
+					MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: {
+							modules: true,
+							camelCase: 'dashes',
+							minimize: true
 						}
-					]
-				})
+					},
+					{
+						loader: 'postcss-loader'
+					},
+					{
+						loader: 'resolve-url-loader'
+					},
+					{
+						loader: 'sass-loader'
+					}
+				]
 			}
 		]
 	},
@@ -52,18 +58,9 @@ module.exports = merge(common, {
 			root: PATHS.root,
 			verbose: false
 		}),
-		new webpack.optimize.CommonsChunkPlugin({
-			names: 'vendor',
-			minChunks: module => /node_modules/.test(module.resource)
-		}),
-		new ExtractTextPlugin('[name].[chunkhash].css'),
+		new MiniCssExtractPlugin('[name].[chunkhash].css'),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': '"production"'
-		}),
-		new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				warnings: false
-			}
 		}),
 		new CopyWebpackPlugin([
 			{
