@@ -3,7 +3,8 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 
 module.exports = merge(common, {
-	devtool: 'eval-source-map',
+	mode: 'development',
+	devtool: 'eval',
 	module: {
 		rules: [
 			{
@@ -26,6 +27,9 @@ module.exports = merge(common, {
 							camelCase: 'dashes',
 							localIdentName: '[path][name]__[local]'
 						}
+					},
+					{
+						loader: 'postcss-loader'
 					},
 					{
 						loader: 'resolve-url-loader'

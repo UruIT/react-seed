@@ -47,10 +47,6 @@ const common = {
 				use: ['babel-loader?cacheDirectory'],
 				exclude: /node_modules/,
 				include: PATHS.app
-			},
-			{
-				test: /\.json$/,
-				loader: 'json-loader'
 			}
 		]
 	},
@@ -71,7 +67,10 @@ const common = {
 			mobile: true
 		}),
 		new webpack.optimize.ModuleConcatenationPlugin()
-	]
+	],
+	stats: {
+		children: false
+	}
 };
 
 module.exports = {
