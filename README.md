@@ -5,10 +5,10 @@
 [![Coverage Status](https://coveralls.io/repos/github/UruIT/react-seed/badge.svg)](https://coveralls.io/github/UruIT/react-seed)
 [![GitHub release](https://img.shields.io/github/release/uruit/react-seed.svg)](https://github.com/UruIT/react-seed/releases)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+[![DevDependencies](https://img.shields.io/david/dev/uruit/react-seed.svg)](https://david-dm.org/uruit/react-seed?type=dev)
+
 [![Twitter Follow](https://img.shields.io/twitter/follow/uruit.svg?style=social&label=Follow)](https://twitter.com/UruIT/followers)
 [![Twitter URL](https://img.shields.io/twitter/url/http/uruit.react-seed.svg?style=social)](https://twitter.com/intent/tweet?text=react-seed%20by%20%40UruIT%20on&url=https%3A%2F%2Fgithub.com%2Furuit%2Freact-seed&hashtags=react,uruit,dev,seed)
-
-[![DevDependencies](https://img.shields.io/david/dev/uruit/react-seed.svg)](https://github.com/uruit/react-seed/blob/master/package.json)
 
 
 UruIT seed project for ReactJS applications

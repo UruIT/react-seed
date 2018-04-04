@@ -42,7 +42,8 @@
 		"seed:run": "cd server && npm run seed:run",
 		"postinstall": "npm run install:client && npm run install:server",
 		"install:client": "cd client && yarn",
-		"install:server": "cd server && yarn"
+		"install:server": "cd server && yarn",
+		"plop": "plop"
 	},
 	"lint-staged": {
 		"*.{js,jsx}": [
@@ -59,7 +60,7 @@
 		"babel-preset-survivejs-kanban": "^0.3.3",
 		"clean-webpack-plugin": "^0.1.16",
 		"copy-webpack-plugin": "^4.0.1",
-		"coveralls": "^2.13.1",
+		"coveralls": "^3.0.0",
 		"css-loader": "^0.28.5",
 		"eslint": "^4.5.0",
 		"eslint-loader": "^2.0.0",
@@ -67,7 +68,7 @@
 		"file-loader": "^1.1.11",
 		"html-webpack-plugin": "^3.1.0",
 		"html-webpack-template": "^6.0.1",
-		"http-server": "^0.10.0",
+		"http-server": "^0.11.1",
 		"husky": "^0.14.3",
 		"istanbul-instrumenter-loader": "^3.0.0",
 		"lint-staged": "^7.0.0",
@@ -75,7 +76,7 @@
 		"node-sass": "^4.5.3",
 		"nodemon": "^1.11.0",
 		"npm-install-webpack-plugin": "^4.0.5",
-		"plop": "^1.8.0",
+		"plop": "^2.0.0",
 		"postcss-loader": "^2.0.6",
 		"raw-loader": "^0.5.1",
 		"resolve-url-loader": "^2.1.0",
