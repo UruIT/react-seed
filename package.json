@@ -42,7 +42,8 @@
 		"seed:run": "cd server && npm run seed:run",
 		"postinstall": "npm run install:client && npm run install:server",
 		"install:client": "cd client && yarn",
-		"install:server": "cd server && yarn"
+		"install:server": "cd server && yarn",
+		"plop": "plop"
 	},
 	"lint-staged": {
 		"*.{js,jsx}": [
@@ -75,7 +76,7 @@
 		"node-sass": "^4.5.3",
 		"nodemon": "^1.11.0",
 		"npm-install-webpack-plugin": "^4.0.5",
-		"plop": "^1.8.0",
+		"plop": "^2.0.0",
 		"postcss-loader": "^2.0.6",
 		"raw-loader": "^0.5.1",
 		"resolve-url-loader": "^2.1.0",
