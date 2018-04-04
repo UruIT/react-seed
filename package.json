@@ -42,7 +42,8 @@
 		"seed:run": "cd server && npm run seed:run",
 		"postinstall": "npm run install:client && npm run install:server",
 		"install:client": "cd client && yarn",
-		"install:server": "cd server && yarn"
+		"install:server": "cd server && yarn",
+		"plop": "plop"
 	},
 	"lint-staged": {
 		"*.{js,jsx}": [
