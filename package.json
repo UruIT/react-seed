@@ -60,7 +60,7 @@
 		"babel-preset-survivejs-kanban": "^0.3.3",
 		"clean-webpack-plugin": "^0.1.16",
 		"copy-webpack-plugin": "^4.0.1",
-		"coveralls": "^2.13.1",
+		"coveralls": "^3.0.0",
 		"css-loader": "^0.28.5",
 		"eslint": "^4.5.0",
 		"eslint-loader": "^2.0.0",
