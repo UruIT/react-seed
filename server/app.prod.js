@@ -8,7 +8,7 @@ const {
 	configureErrorHandler
 } = require('./utils/app.configure');
 
-const DIST_DIR = path.join(__dirname, '../build');
+const DIST_DIR = path.join(__dirname, '../dist');
 const HTML_FILE = path.join(DIST_DIR, 'index.html');
 
 const app = express();

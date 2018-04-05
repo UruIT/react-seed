@@ -53,7 +53,7 @@ module.exports = merge(common, {
 		]
 	},
 	plugins: [
-		new CleanPlugin([PATHS.build], {
+		new CleanPlugin([PATHS.dist], {
 			root: PATHS.root,
 			verbose: false
 		}),
@@ -61,7 +61,7 @@ module.exports = merge(common, {
 		new CopyWebpackPlugin([
 			{
 				from: path.join(PATHS.app, 'favicon.ico'),
-				to: path.join(PATHS.build, 'favicon.ico')
+				to: path.join(PATHS.dist, 'favicon.ico')
 			}
 		])
 	]
