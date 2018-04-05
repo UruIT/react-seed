@@ -7,7 +7,7 @@ const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
 	root: path.join(__dirname, '..', '..'),
 	app: path.join(__dirname, '..'),
-	build: path.join(__dirname, '../../build'),
+	dist: path.join(__dirname, '../../dist'),
 	style: glob.sync('./**/*.scss'),
 	test: glob.sync('./**/*.spec.js')
 };
@@ -27,7 +27,7 @@ const common = {
 		}
 	},
 	output: {
-		path: PATHS.build,
+		path: PATHS.dist,
 		filename: '[name].js',
 		publicPath: '/'
 	},
