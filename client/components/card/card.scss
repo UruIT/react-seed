@@ -1,0 +1,19 @@
+@import '~styles/_palette';
+
+.card {
+	text-align: left;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: $white;
+	box-shadow: -1px 3px 5px 0px $black-05;
+	padding: 2px;
+	margin: 4px;
+	transition: all 0.4s;
+
+	&:hover {
+		transform: scale(1.01, 1.01);
+	}
+
+	h4 {
+		color: $black-2;
+	}
+}

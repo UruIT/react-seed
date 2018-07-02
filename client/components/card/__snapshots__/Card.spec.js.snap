@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> snapshot - default props 1`] = `
+<div
+  className="card"
+>
+  <h4>
+    Card title
+  </h4>
+  <p>
+    Card content
+  </p>
+</div>
+`;
+
+exports[`<Card /> snapshot - with content 1`] = `
+<div
+  className="card"
+>
+  <h4>
+    Card title
+  </h4>
+  <p>
+    TEXT
+  </p>
+</div>
+`;
+
+exports[`<Card /> snapshot - with title 1`] = `
+<div
+  className="card"
+>
+  <h4>
+    TEXT
+  </h4>
+  <p>
+    Card content
+  </p>
+</div>
+`;
+
+exports[`<Card /> snapshot - with title and content 1`] = `
+<div
+  className="card"
+>
+  <h4>
+    TITLE
+  </h4>
+  <p>
+    CONTENT
+  </p>
+</div>
+`;

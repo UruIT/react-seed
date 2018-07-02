@@ -11,6 +11,11 @@ const Nav = () => (
 			</NavLink>
 		</li>
 		<li>
+			<NavLink to={links.sortableList} className={styles.link} activeClassName={styles.active} exact>
+				Sortable List
+			</NavLink>
+		</li>
+		<li>
 			<NavLink to={links.about} className={styles.link} activeClassName={styles.active} exact>
 				About
 			</NavLink>

@@ -7,6 +7,7 @@ import NotFound from '../components/not-found';
 import Nav from '../components/nav/Nav';
 
 import links from './links';
+import Sortable from '../components/sortable-list';
 
 const Root = () => (
 	<BrowserRouter>
@@ -14,6 +15,7 @@ const Root = () => (
 			<Nav />
 			<Switch>
 				<Route exact path={links.index} component={App} />
+				<Route path={links.sortableList} component={Sortable} />
 				<Route path={links.about} component={About} />
 				<Route component={NotFound} />
 			</Switch>
