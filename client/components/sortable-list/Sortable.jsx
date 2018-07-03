@@ -39,7 +39,12 @@ class Sortable extends React.Component {
 			<div className={styles.sortable}>
 				<label>
 					<span>Lock Axis</span>
-					<input type="checkbox" name="lockAxis" checked={lockAxis} onChange={this.handleChangeChecked} />
+					<input
+						type="checkbox"
+						name="lockAxis"
+						checked={lockAxis}
+						onChange={this.handleChangeChecked}
+					/>
 				</label>
 				<label>
 					<span>Transition duration</span>
@@ -52,11 +57,21 @@ class Sortable extends React.Component {
 				</label>
 				<label>
 					<span>Press Delay</span>
-					<input type="Number" name="pressDelay" onChange={this.handleChangeNumber} value={pressDelay} />
+					<input
+						type="Number"
+						name="pressDelay"
+						onChange={this.handleChangeNumber}
+						value={pressDelay}
+					/>
 				</label>
 				<label>
 					<span>Distance</span>
-					<input type="Number" name="distance" onChange={this.handleChangeNumber} value={distance} />
+					<input
+						type="Number"
+						name="distance"
+						onChange={this.handleChangeNumber}
+						value={distance}
+					/>
 				</label>
 				<div>
 					<SortableList
