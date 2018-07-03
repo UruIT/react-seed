@@ -7,11 +7,13 @@ class Sortable extends React.Component {
 		super(props);
 
 		this.handleChange = this.handleChange.bind(this);
-		this.handleChangeChecked = this.handleChangeChecked.bind(this, 'lockAxis');
+		this.handleChangeLockAxis = this.handleChangeChecked.bind(this, 'lockAxis');
+		this.handleChangeDragHandle = this.handleChangeChecked.bind(this, 'enableDragHandle');
 		this.handleChangeNumber = this.handleChangeNumber.bind(this);
 
 		this.state = {
 			lockAxis: '',
+			enableDragHandle: false,
 			transitionDuration: 400,
 			pressDelay: 0,
 			distance: 0
@@ -19,7 +21,10 @@ class Sortable extends React.Component {
 	}
 
 	handleChangeChecked(param, e) {
-		const value = e.target.checked ? 'y' : '';
+		let value = e.target.checked
+		if (param === 'lockAxis'){
+			value = e.target.checked ? 'y' : '';
+		}
 		this.handleChange(param, value);
 	}
 	handleChangeNumber(e) {
@@ -34,7 +39,7 @@ class Sortable extends React.Component {
 	}
 
 	render() {
-		const { lockAxis, transitionDuration, pressDelay, distance } = this.state;
+		const { lockAxis, transitionDuration, pressDelay, distance, enableDragHandle } = this.state;
 		return (
 			<div className={styles.sortable}>
 				<label>
@@ -43,7 +48,16 @@ class Sortable extends React.Component {
 						type="checkbox"
 						name="lockAxis"
 						checked={lockAxis}
-						onChange={this.handleChangeChecked}
+						onChange={this.handleChangeLockAxis}
+					/>
+				</label>
+				<label>
+					<span>Drag Handle</span>
+					<input
+						type="checkbox"
+						name="useDragHandle"
+						checked={enableDragHandle}
+						onChange={this.handleChangeDragHandle}
 					/>
 				</label>
 				<label>
@@ -73,12 +87,13 @@ class Sortable extends React.Component {
 						value={distance}
 					/>
 				</label>
-				<div>
+				<div className={styles.list}>
 					<SortableList
 						lockAxis={lockAxis}
 						transitionDuration={transitionDuration}
 						pressDelay={pressDelay}
 						distance={distance}
+						enableDragHandle={enableDragHandle}
 					/>
 				</div>
 			</div>

@@ -2,9 +2,16 @@
 
 .sortable {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	text-align: center;
+
+	display: flex;
+	flex-direction: column;
+
+	align-items: center;
+	vertical-align: middle;
+	text-align: left;
+
 	label {
-		display: block;
+
 		margin: 0.5rem 0 0 0;
 
 		span {
@@ -17,5 +24,9 @@
 			height: 35px;
 			margin-left: 0.5rem;
 		}
+	}
+	.list {
+		width: 100%;
+		max-width: 700px;
 	}
 }

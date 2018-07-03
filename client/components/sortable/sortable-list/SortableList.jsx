@@ -24,7 +24,9 @@ class SortableList extends Component {
 	render() {
 		return (
 			<List
+				enableDragHandle={this.props.enableDragHandle}
 				items={this.state.items}
+				useDragHandle={this.props.enableDragHandle}
 				onSortEnd={this.onSortEnd}
 				lockAxis={this.props.lockAxis}
 				transitionDuration={this.props.transitionDuration}
@@ -40,14 +42,16 @@ SortableList.propTypes = {
 	lockAxis: PropTypes.string,
 	transitionDuration: PropTypes.number,
 	pressDelay: PropTypes.number,
-	distance: PropTypes.number
+	distance: PropTypes.number,
+	enableDragHandle: PropTypes.bool
 };
 
 SortableList.defaultProps = {
 	lockAxis: '',
 	transitionDuration: 100,
 	pressDelay: 0,
-	distance: 0
+	distance: 0,
+	enableDragHandle: false
 };
 
 export default SortableList;

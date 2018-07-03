@@ -5,9 +5,9 @@ import App from '../components/app';
 import About from '../components/about';
 import NotFound from '../components/not-found';
 import Nav from '../components/nav/Nav';
+import Sortable from '../components/sortable';
 
 import links from './links';
-import Sortable from '../components/sortable-list';
 
 const Root = () => (
 	<BrowserRouter>
