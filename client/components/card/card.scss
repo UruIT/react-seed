@@ -1,5 +1,5 @@
-@import '~styles/_palette';
-@import '~styles/_mixins';
+@import '../../styles/_palette.scss';
+@import '../../styles/_mixins.scss';
 
 .card {
 	display: flex;
@@ -13,7 +13,7 @@
 	background-color: $white;
 	box-shadow: -1px 3px 5px 0px $black-05;
 
-	margin: 1%;
+	margin: 10px;
 	transition: all 0.4s;
 	@include unselectable();
 

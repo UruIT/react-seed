@@ -18,15 +18,15 @@ const App = ({ samples, loading, error, fetchSamples }) => {
 			<div>
 				{!!text && <Button text={text} />}
 				{!text &&
-					samples.map(s =>
+					samples.map(s => (
 						<div key={s.id}>
 							<Button text={s.description} />
 						</div>
-					)}
+					))}
 			</div>
 		</div>
 	);
-}
+};
 
 App.propTypes = {
 	fetchSamples: PropTypes.func.isRequired,

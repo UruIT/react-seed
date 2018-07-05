@@ -1,7 +1,6 @@
 import React from 'react';
 import SortableList from './sortable-list';
 import styles from './sortable.scss';
-
 class Sortable extends React.Component {
 	constructor(props) {
 		super(props);
@@ -21,8 +20,8 @@ class Sortable extends React.Component {
 	}
 
 	handleChangeChecked(param, e) {
-		let value = e.target.checked
-		if (param === 'lockAxis'){
+		let value = e.target.checked;
+		if (param === 'lockAxis') {
 			value = e.target.checked ? 'y' : '';
 		}
 		this.handleChange(param, value);
@@ -44,12 +43,7 @@ class Sortable extends React.Component {
 			<div className={styles.sortable}>
 				<label>
 					<span>Lock Axis</span>
-					<input
-						type="checkbox"
-						name="lockAxis"
-						checked={lockAxis}
-						onChange={this.handleChangeLockAxis}
-					/>
+					<input type="checkbox" name="lockAxis" checked={lockAxis} onChange={this.handleChangeLockAxis} />
 				</label>
 				<label>
 					<span>Drag Handle</span>
@@ -71,21 +65,11 @@ class Sortable extends React.Component {
 				</label>
 				<label>
 					<span>Press Delay</span>
-					<input
-						type="Number"
-						name="pressDelay"
-						onChange={this.handleChangeNumber}
-						value={pressDelay}
-					/>
+					<input type="Number" name="pressDelay" onChange={this.handleChangeNumber} value={pressDelay} />
 				</label>
 				<label>
 					<span>Distance</span>
-					<input
-						type="Number"
-						name="distance"
-						onChange={this.handleChangeNumber}
-						value={distance}
-					/>
+					<input type="Number" name="distance" onChange={this.handleChangeNumber} value={distance} />
 				</label>
 				<div className={styles.list}>
 					<SortableList

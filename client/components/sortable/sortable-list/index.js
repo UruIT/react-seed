@@ -1,3 +1,3 @@
-import SortableList from './SortableList';
+import sortableListContainer from './sortableList.container';
 
-export default SortableList;
+export default sortableListContainer;

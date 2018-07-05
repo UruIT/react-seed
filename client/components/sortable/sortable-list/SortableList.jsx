@@ -1,39 +1,46 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { arrayMove } from 'react-sortable-hoc';
 
 import List from './list';
 import styles from './sortable-list.scss';
-import items from './items';
-
+//TODO
+/* Transform in class the component and use the ComponentDidMount lifecycle to load the items from the DB */
 class SortableList extends Component {
 	constructor(props) {
 		super(props);
-		this.onSortEnd = this.onSortEnd.bind(this);
-		this.state = {
-			items
-		};
 	}
 
-	onSortEnd = ({ oldIndex, newIndex }) => {
-		this.setState({
-			items: arrayMove(this.state.items, oldIndex, newIndex)
-		});
-	};
-
+	componentDidMount() {
+		this.props.fetchItems();
+	}
 	render() {
+		const {
+			enableDragHandle,
+			items,
+			onSortEnd,
+			lockAxis,
+			transitionDuration,
+			pressDelay,
+			distance,
+			error,
+			loading
+		} = this.props;
 		return (
-			<List
-				enableDragHandle={this.props.enableDragHandle}
-				items={this.state.items}
-				useDragHandle={this.props.enableDragHandle}
-				onSortEnd={this.onSortEnd}
-				lockAxis={this.props.lockAxis}
-				transitionDuration={this.props.transitionDuration}
-				pressDelay={this.props.pressDelay}
-				distance={this.props.distance}
-				helperClass={styles.helperClass}
-			/>
+			<div>
+				{!!error && <p className="Error"> {error} </p>}
+				{loading && <p className="Loading"> loading </p>}
+				<List
+					enableDragHandle={enableDragHandle}
+					items={items}
+					useDragHandle={enableDragHandle}
+					onSortEnd={onSortEnd}
+					lockAxis={lockAxis}
+					transitionDuration={transitionDuration}
+					pressDelay={pressDelay}
+					distance={distance}
+					helperClass={styles.helperClass}
+				/>
+			</div>
 		);
 	}
 }
@@ -43,7 +50,12 @@ SortableList.propTypes = {
 	transitionDuration: PropTypes.number,
 	pressDelay: PropTypes.number,
 	distance: PropTypes.number,
-	enableDragHandle: PropTypes.bool
+	enableDragHandle: PropTypes.bool,
+	items: PropTypes.array,
+	onSortEnd: PropTypes.func,
+	fetchItems: PropTypes.func,
+	error: PropTypes.string,
+	loading: PropTypes.bool
 };
 
 SortableList.defaultProps = {
