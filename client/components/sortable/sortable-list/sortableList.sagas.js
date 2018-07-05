@@ -4,7 +4,7 @@ import { itemsFetchSucceeded, itemsFetchFailed, ITEMS_FETCH_REQUESTED } from './
 
 export function* fetchItems() {
 	try {
-		const items = yield call(getJson, '/api/sample');
+		const items = yield call(getJson, '/api/item');
 		yield put(itemsFetchSucceeded(items));
 	} catch (err) {
 		yield put(itemsFetchFailed(err));

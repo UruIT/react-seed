@@ -17,7 +17,7 @@ export const sortableReducer = (state = DEFAULT_STATE, action) => {
 			};
 		case ITEMS_FETCH_SUCCEEDED:
 			return {
-				items: action.items.map(i => ({ title: i.id.toString(), content: i.description })),
+				items: action.items,
 				loading: false,
 				error: ''
 			};
