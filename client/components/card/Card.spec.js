@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-
 import Card from './Card';
 
 describe('<Card />', () => {
@@ -21,7 +20,27 @@ describe('<Card />', () => {
 	});
 
 	it('snapshot - with title and content', () => {
-		const tree = renderer.create(<Card content="CONTENT" title="TITLE"/>).toJSON();
+		const tree = renderer.create(<Card content="CONTENT" title="TITLE" />).toJSON();
+		expect(tree).toMatchSnapshot();
+	});
+
+	it('snapshot - handle and default props', () => {
+		const tree = renderer.create(<Card enableDragHandle />).toJSON();
+		expect(tree).toMatchSnapshot();
+	});
+
+	it('snapshot - with handle and content', () => {
+		const tree = renderer.create(<Card enableDragHandle content="TEXT" />).toJSON();
+		expect(tree).toMatchSnapshot();
+	});
+
+	it('snapshot - with handle and title', () => {
+		const tree = renderer.create(<Card enableDragHandle title="TEXT" />).toJSON();
+		expect(tree).toMatchSnapshot();
+	});
+
+	it('snapshot - with handle, title and content', () => {
+		const tree = renderer.create(<Card enableDragHandle content="CONTENT" title="TITLE" />).toJSON();
 		expect(tree).toMatchSnapshot();
 	});
 });

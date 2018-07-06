@@ -18,7 +18,7 @@
 	@include unselectable();
 
 	&:hover {
-		transform: scale(1.01, 1.01);
+		transform: scale(1.01);
 	}
 
 	h4 {
@@ -34,4 +34,3 @@
 	padding-left: 10px;
 	flex-grow: 1;
 }
-

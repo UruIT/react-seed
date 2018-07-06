@@ -15,23 +15,25 @@ class SortableList extends Component {
 		};
 	}
 
-	onSortEnd = ({ oldIndex, newIndex }) => {
+	onSortEnd({ oldIndex, newIndex }) {
 		this.setState({
 			items: arrayMove(this.state.items, oldIndex, newIndex)
 		});
-	};
+	}
 
 	render() {
+		const { enableDragHandle, lockAxis, transitionDuration, pressDelay, distance } = this.props;
+		const { items } = this.state;
 		return (
 			<List
-				enableDragHandle={this.props.enableDragHandle}
-				items={this.state.items}
-				useDragHandle={this.props.enableDragHandle}
+				enableDragHandle={enableDragHandle}
+				items={items}
+				useDragHandle={enableDragHandle}
 				onSortEnd={this.onSortEnd}
-				lockAxis={this.props.lockAxis}
-				transitionDuration={this.props.transitionDuration}
-				pressDelay={this.props.pressDelay}
-				distance={this.props.distance}
+				lockAxis={lockAxis}
+				transitionDuration={transitionDuration}
+				pressDelay={pressDelay}
+				distance={distance}
 				helperClass={styles.helperClass}
 			/>
 		);
