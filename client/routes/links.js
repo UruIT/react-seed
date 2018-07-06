@@ -2,6 +2,8 @@ const index = '/';
 
 const about = '/about';
 
+const sortableList = '/sortable-list';
+
 const chucknorris = 'https://api.chucknorris.io/jokes/random';
 
 const api = {
@@ -11,6 +13,7 @@ const api = {
 export default {
 	index,
 	about,
+	sortableList,
 	chucknorris,
 	api
 };

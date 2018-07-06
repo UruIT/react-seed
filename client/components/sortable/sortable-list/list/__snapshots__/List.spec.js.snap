@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<List /> snapshot 1`] = `
+<ul>
+  <div>
+    <div
+      className="card"
+    >
+      <div
+        className="cardInfo"
+      >
+        <h4>
+          Item 1
+        </h4>
+        <p>
+          Item number one
+        </p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      className="card"
+    >
+      <div
+        className="cardInfo"
+      >
+        <h4>
+          Item 2
+        </h4>
+        <p>
+          Item number two
+        </p>
+      </div>
+    </div>
+  </div>
+</ul>
+`;

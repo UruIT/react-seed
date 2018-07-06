@@ -1,0 +1,36 @@
+@import '~styles/_palette';
+@import '~styles/_mixins';
+
+.card {
+	display: flex;
+	flex-direction: row;
+
+	align-items: center;
+	vertical-align: middle;
+	text-align: left;
+
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: $white;
+	box-shadow: -1px 3px 5px 0px $black-05;
+
+	margin: 1%;
+	transition: all 0.4s;
+	@include unselectable();
+
+	&:hover {
+		transform: scale(1.01);
+	}
+
+	h4 {
+		color: $black-2;
+	}
+}
+
+.handleContainer {
+	padding-left: 10px;
+}
+
+.cardInfo {
+	padding-left: 10px;
+	flex-grow: 1;
+}

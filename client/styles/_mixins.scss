@@ -14,3 +14,10 @@
 	color: $black-2;
 	text-shadow: 0 0 4px $black-05;
 }
+
+@mixin unselectable() {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}

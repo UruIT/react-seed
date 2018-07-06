@@ -21,6 +21,17 @@ exports[`<Nav/> snapshot 1`] = `
       ariaCurrent="true"
       className="link"
       exact={true}
+      to="/sortable-list"
+    >
+      Sortable List
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      activeClassName="active"
+      ariaCurrent="true"
+      className="link"
+      exact={true}
       to="/about"
     >
       About
