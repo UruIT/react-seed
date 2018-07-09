@@ -1,11 +1,11 @@
 import SortableList from './SortableList';
 import { connect } from 'react-redux';
-import { sortList, itemsFetchRequested } from './sortableList.actions';
+import { sortListRequested, itemsFetchRequested } from './sortableList.actions';
 
 const mapStateToProps = ({ sortable }) => sortable;
 
 const mapDispatchToProps = {
-	onSortEnd: sortList,
+	onSortEnd: sortListRequested,
 	fetchItems: itemsFetchRequested
 };
 

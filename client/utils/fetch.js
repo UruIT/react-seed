@@ -15,6 +15,22 @@ const _errorHandle = response => {
 
 const _parseJson = response => response.json();
 
-export const getJson = url => fetch(url).then(_errorHandle).then(_parseJson);
+export const getJson = url =>
+	fetch(url)
+		.then(_errorHandle)
+		.then(_parseJson);
 
-export default { getJson };
+export const putJSON = (url, data) => {
+	const options = {
+		method: 'PUT',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: data
+	};
+	fetch(url, options)
+		.then(_errorHandle)
+		.then(_parseJson);
+};
+
+export default { getJson, putJSON };

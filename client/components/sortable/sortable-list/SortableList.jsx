@@ -13,6 +13,7 @@ class SortableList extends Component {
 	componentDidMount() {
 		this.props.fetchItems();
 	}
+
 	render() {
 		const {
 			enableDragHandle,

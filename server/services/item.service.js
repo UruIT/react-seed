@@ -18,8 +18,20 @@ class ItemsService {
 	insert(item) {
 		return itemStore.insert(item);
 	}
-	update(item) {
-		return itemStore.update(item.id, item);
+	update(items) {
+		return new Promise((resolve, reject) => {
+			const promises = items.map((item, index) => {
+				item.index = index;
+				return new Promise((resolve, reject) => {
+					itemStore
+						.update(item.id, item)
+						.then(resolve)
+						.catch(reject);
+				});
+			});
+
+			Promise.all(promises).then(resolve, reject);
+		});
 	}
 }
 

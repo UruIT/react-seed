@@ -1,13 +1,33 @@
-import { SORT_LIST, ITEMS_FETCH_REQUESTED, ITEMS_FETCH_SUCCEEDED, ITEMS_FETCH_FAILED } from './sortableList.actions';
-import { arrayMove } from 'react-sortable-hoc';
-import items from './items';
-const DEFAULT_STATE = { items };
+import {
+	SORT_LIST_REQUESTED,
+	SORT_LIST_SUCCEEDED,
+	SORT_LIST_FAILED,
+	ITEMS_FETCH_REQUESTED,
+	ITEMS_FETCH_SUCCEEDED,
+	ITEMS_FETCH_FAILED
+} from './sortableList.actions';
+
+const DEFAULT_STATE = { items: [] };
+
 export const sortableReducer = (state = DEFAULT_STATE, action) => {
 	switch (action.type) {
-		case SORT_LIST:
+		case SORT_LIST_REQUESTED:
 			return {
 				...state,
-				items: arrayMove(state.items, action.payload.oldIndex, action.payload.newIndex)
+				loading: true,
+				error: ''
+			};
+		case SORT_LIST_SUCCEEDED:
+			return {
+				items: action.items,
+				loading: false,
+				error: ''
+			};
+		case SORT_LIST_FAILED:
+			return {
+				...state,
+				loading: false,
+				error: action.message
 			};
 		case ITEMS_FETCH_REQUESTED:
 			return {

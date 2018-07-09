@@ -1,11 +1,25 @@
-export const SORT_LIST = 'SORT_LIST';
+export const SORT_LIST_REQUESTED = 'SORT_LIST_REQUESTED';
 
-export const sortList = ({ oldIndex, newIndex }) => ({
-	type: SORT_LIST,
+export const sortListRequested = ({ oldIndex, newIndex }) => ({
+	type: SORT_LIST_REQUESTED,
 	payload: {
 		oldIndex,
 		newIndex
 	}
+});
+
+export const SORT_LIST_SUCCEEDED = 'SORT_LIST_SUCCEEDED';
+
+export const sortListSucceeded = items => ({
+	type: SORT_LIST_SUCCEEDED,
+	items
+});
+
+export const SORT_LIST_FAILED = 'SORT_LIST_FAILED';
+
+export const sortListFailed = error => ({
+	type: SORT_LIST_FAILED,
+	message: error.message || error
 });
 
 export const ITEMS_FETCH_REQUESTED = 'ITEMS_FETCH_REQUESTED';
