@@ -5,7 +5,7 @@ import {
 	ITEMS_FETCH_REQUESTED,
 	ITEMS_FETCH_SUCCEEDED,
 	ITEMS_FETCH_FAILED
-} from './sortableList.actions';
+} from './sortableList.action';
 
 const DEFAULT_STATE = { items: [] };
 

@@ -1,10 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer'
+import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 
-import SortableList from './SortableList';
+import SortableList from '../SortableList';
 
-import items from './items'
+import items from '../items';
 
 const itemsSorted = [
 	{
@@ -34,17 +34,16 @@ const itemsSorted = [
 ];
 
 describe('<SortableList />', () => {
-
 	it('snapshot', () => {
 		const tree = renderer.create(<SortableList />).toJSON();
 		expect(tree).toMatchSnapshot();
 	});
 
-	it('should reorder the items array in the state',()=>{
-		const wrapper = shallow(<SortableList />)
-		const instance = wrapper.instance()
-		expect(wrapper.state('items')).toEqual(items)
-		instance.onSortEnd({ oldIndex:0, newIndex:2 } )
-		expect(wrapper.state('items')).toEqual(itemsSorted)
-	})
+	it('should reorder the items array in the state', () => {
+		const wrapper = shallow(<SortableList />);
+		const instance = wrapper.instance();
+		expect(wrapper.state('items')).toEqual(items);
+		instance.onSortEnd({ oldIndex: 0, newIndex: 2 });
+		expect(wrapper.state('items')).toEqual(itemsSorted);
+	});
 });

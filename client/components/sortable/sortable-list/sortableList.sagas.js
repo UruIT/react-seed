@@ -10,7 +10,7 @@ import {
 	sortListSucceeded,
 	sortListFailed,
 	SORT_LIST_REQUESTED
-} from './sortableList.actions';
+} from './sortableList.action';
 
 export function* fetchItems() {
 	try {
