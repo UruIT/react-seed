@@ -28,7 +28,7 @@ export const putJSON = (url, data) => {
 		},
 		body: data
 	};
-	fetch(url, options)
+	return fetch(url, options)
 		.then(_errorHandle)
 		.then(_parseJson);
 };

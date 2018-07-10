@@ -7,7 +7,11 @@ import {
 	ITEMS_FETCH_FAILED
 } from './sortableList.action';
 
-const DEFAULT_STATE = { items: [] };
+const DEFAULT_STATE = {
+	loading: false,
+	items: [],
+	error: ''
+};
 
 export const sortableReducer = (state = DEFAULT_STATE, action) => {
 	switch (action.type) {

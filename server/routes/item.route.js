@@ -16,13 +16,6 @@ router.get('/:id', (request, response, next) => {
 		.catch(err => next(err));
 });
 
-router.post('/', (request, response, next) => {
-	itemSvc
-		.insert(request.body)
-		.then(result => response.send(result))
-		.catch(err => next(err));
-});
-
 router.put('/', (request, response, next) => {
 	itemSvc
 		.update(request.body)
