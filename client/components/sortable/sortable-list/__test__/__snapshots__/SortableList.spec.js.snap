@@ -3,7 +3,7 @@
 exports[`<SortableList /> error 1`] = `
 <div>
   <p
-    className="Error"
+    className="error"
   >
      
     ERROR
@@ -113,9 +113,9 @@ exports[`<SortableList /> error 1`] = `
 exports[`<SortableList /> loading 1`] = `
 <div>
   <p
-    className="Loading"
+    className="loading"
   >
-     loading 
+     loading ... 
   </p>
   <ul>
     <div>

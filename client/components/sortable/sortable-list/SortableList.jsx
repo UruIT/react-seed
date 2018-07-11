@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import List from './list';
 import styles from './sortable-list.scss';
-//TODO
-/* Transform in class the component and use the ComponentDidMount lifecycle to load the items from the DB */
-class SortableList extends Component {
-	constructor(props) {
-		super(props);
-	}
 
+class SortableList extends React.Component {
 	componentDidMount() {
 		this.props.fetchItems();
 	}
@@ -28,8 +23,8 @@ class SortableList extends Component {
 		} = this.props;
 		return (
 			<div>
-				{!!error && <p className="Error"> {error} </p>}
-				{loading && <p className="Loading"> loading </p>}
+				{!!error && <p className={styles.error}> {error} </p>}
+				{loading && <p className={styles.loading}> loading ... </p>}
 				<List
 					enableDragHandle={enableDragHandle}
 					items={items}

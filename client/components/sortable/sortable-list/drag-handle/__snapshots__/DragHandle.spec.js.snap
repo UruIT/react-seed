@@ -1,28 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<DragHandle /> snapshot 1`] = `
-<svg
-  height="24"
-  viewBox="0 0 24 24"
-  width="24"
->
-  <defs>
-    <path
-      d="M0 0h24v24H0V0z"
-      id="a"
-    />
-  </defs>
-  <clipPath
-    id="b"
-  >
-    <use
-      overflow="visible"
-      xlinkHref="#a"
-    />
-  </clipPath>
-  <path
-    clipPath="url(#b)"
-    d="M20 9H4v2h16V9zM4 15h16v-2H4v2z"
-  />
-</svg>
+<i
+  className="dragHandle"
+/>
 `;

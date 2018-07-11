@@ -1,11 +1,3 @@
-const compare = (a, b) => {
-	if (a.index > b.index) {
-		return 1;
-	}
-	if (a.index < b.index) {
-		return -1;
-	}
-	return 0;
-};
+const compare = (a, b) => Math.sign(a.index - b.index);
 
 export { compare };

@@ -1,6 +1,7 @@
 import React from 'react';
 import SortableList from './sortable-list';
 import styles from './sortable.scss';
+
 class Sortable extends React.Component {
 	constructor(props) {
 		super(props);
@@ -21,11 +22,9 @@ class Sortable extends React.Component {
 
 	handleChangeChecked(param, e) {
 		let value = e.target.checked;
-		if (param === 'lockAxis') {
-			value = e.target.checked ? 'y' : '';
-		}
 		this.handleChange(param, value);
 	}
+
 	handleChangeNumber(e) {
 		const { name, value = 0 } = e.target;
 		this.handleChange(name, parseInt(value) || 0);
@@ -73,7 +72,7 @@ class Sortable extends React.Component {
 				</label>
 				<div className={styles.list}>
 					<SortableList
-						lockAxis={lockAxis}
+						lockAxis={lockAxis ? 'y' : ''}
 						transitionDuration={transitionDuration}
 						pressDelay={pressDelay}
 						distance={distance}

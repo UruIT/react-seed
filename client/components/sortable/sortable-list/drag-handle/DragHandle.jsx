@@ -1,8 +1,8 @@
 import React from 'react';
 import { SortableHandle } from 'react-sortable-hoc';
 
-import DragHandleIcon from './DragHandleIcon'
+import styles from './drag-handle.scss';
 
-const DragHandle = SortableHandle(() => (<DragHandleIcon/>));
+const DragHandle = SortableHandle(() => <i className={styles.dragHandle} />);
 
 export default DragHandle;

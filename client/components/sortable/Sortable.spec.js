@@ -28,13 +28,13 @@ describe('Sortable - events', () => {
 			.simulate('change', { target: { checked: false, name: 'useDragHandle' } });
 		expect(sortable.instance().state.enableDragHandle).toEqual(false);
 	});
-	it("should update to 'y' lockAxis in component's state", () => {
+	it("should update to true lockAxis in component's state", () => {
 		sortable.find('[name="lockAxis"]').simulate('change', { target: { checked: true, name: 'lockAxis' } });
-		expect(sortable.instance().state.lockAxis).toEqual('y');
+		expect(sortable.instance().state.lockAxis).toEqual(true);
 	});
-	it("should update to ''  lockAxis in component's state", () => {
+	it("should update to false  lockAxis in component's state", () => {
 		sortable.find('[name="lockAxis"]').simulate('change', { target: { checked: false, name: 'loyarnckAxis' } });
-		expect(sortable.instance().state.lockAxis).toEqual('');
+		expect(sortable.instance().state.lockAxis).toEqual(false);
 	});
 	it("should update to 800 transitionDuration in component's state", () => {
 		sortable
