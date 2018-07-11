@@ -4,16 +4,16 @@ import PropTypes from 'prop-types';
 import DragHandle from '../sortable/sortable-list/drag-handle';
 import styles from './card.scss';
 
-const Card = props => (
+const Card = ({ enableDragHandle, title, content }) => (
 	<div className={styles.card}>
-		{props.enableDragHandle && (
+		{enableDragHandle && (
 			<div className={styles.handleContainer}>
 				<DragHandle />
 			</div>
 		)}
 		<div className={styles.cardInfo}>
-			<h4>{props.title}</h4>
-			<p>{props.content}</p>
+			<h4>{title}</h4>
+			<p>{content}</p>
 		</div>
 	</div>
 );

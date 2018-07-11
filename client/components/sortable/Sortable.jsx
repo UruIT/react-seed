@@ -27,8 +27,8 @@ class Sortable extends React.Component {
 		this.handleChange(param, value);
 	}
 	handleChangeNumber(e) {
-		const value = Number.parseInt(e.target.value) || 0;
-		this.handleChange(e.target.name, value);
+		const { name, value = 0 } = e.target;
+		this.handleChange(name, parseInt(value) || 0);
 	}
 
 	handleChange(param, value) {
