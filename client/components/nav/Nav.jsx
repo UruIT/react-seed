@@ -16,6 +16,11 @@ const Nav = () => (
 				About
 			</NavLink>
 		</li>
+		<li>
+			<NavLink to="/sortable-list" activeClassName={active} exact>
+				Sortable
+			</NavLink>
+		</li>
 	</ul>
 );
 

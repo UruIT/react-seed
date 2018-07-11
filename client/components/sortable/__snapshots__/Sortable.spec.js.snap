@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Sortable /> snapshot 1`] = `
+<div
+  className="sortable"
+>
+  <label>
+    <span>
+      Lock Axis
+    </span>
+    <input
+      checked=""
+      name="lockAxis"
+      onChange={[Function]}
+      type="checkbox"
+    />
+  </label>
+  <label>
+    <span>
+      Drag Handle
+    </span>
+    <input
+      checked={false}
+      name="useDragHandle"
+      onChange={[Function]}
+      type="checkbox"
+    />
+  </label>
+  <label>
+    <span>
+      Transition duration
+    </span>
+    <input
+      name="transitionDuration"
+      onChange={[Function]}
+      type="Number"
+      value={400}
+    />
+  </label>
+  <label>
+    <span>
+      Press Delay
+    </span>
+    <input
+      name="pressDelay"
+      onChange={[Function]}
+      type="Number"
+      value={0}
+    />
+  </label>
+  <label>
+    <span>
+      Distance
+    </span>
+    <input
+      name="distance"
+      onChange={[Function]}
+      type="Number"
+      value={0}
+    />
+  </label>
+  <div
+    className="list"
+  >
+    <Connect(SortableList)
+      distance={0}
+      enableDragHandle={false}
+      lockAxis=""
+      pressDelay={0}
+      transitionDuration={400}
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,13 @@
+@import '../../../styles/_palette.scss';
+
+.helperClass {
+	opacity: 0.5;
+}
+
+.error {
+	color: $red-error;
+}
+
+.loading {
+	color: $slate;
+}
