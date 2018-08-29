@@ -1,9 +1,9 @@
 import React from 'react';
-import { getJson } from 'utils/fetch';
+import { getJson } from '../../utils/fetch';
 import links from '../../routes/links';
 import Clickable from '../clickable';
 import styles from './app.scss';
-import classes from 'utils/classes';
+import classes from '../../utils/classes';
 
 class App extends React.Component {
 	constructor(props) {

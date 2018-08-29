@@ -4,4 +4,6 @@ import './index.scss';
 
 import Root from './routes/Root';
 
-render(<Root />, document.getElementById('app'));
+
+render(<Root />, document.getElementById('react-app'));
+

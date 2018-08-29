@@ -1,13 +1,14 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
-const glob = require('glob');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
+const glob = require('glob');
+const webpack = require('webpack');
 
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
-	root: path.join(__dirname, '..', '..'),
+	root: path.join(__dirname, '..'),
 	app: path.join(__dirname, '..'),
-	dist: path.join(__dirname, '../../dist'),
+	build: path.join(__dirname, '../../server/ReactSeed.WebApp/wwwroot'),
 	style: glob.sync('./**/*.scss'),
 	test: glob.sync('./**/*.spec.js')
 };
@@ -15,9 +16,10 @@ const PATHS = {
 process.env.BABEL_ENV = TARGET;
 
 const common = {
-	context: PATHS.app,
+    context: PATHS.root,
 	entry: {
-		app: [PATHS.app]
+        app: [PATHS.app]
+
 	},
 	resolve: {
 		extensions: ['.js', '.jsx'],
@@ -27,7 +29,7 @@ const common = {
 		}
 	},
 	output: {
-		path: PATHS.dist,
+		path: PATHS.build,
 		filename: '[name].js',
 		publicPath: '/'
 	},
@@ -39,7 +41,7 @@ const common = {
 				exclude: ['../index.html']
 			},
 			{
-				test: /\.(jpg|png|gif|svg)$/,
+				test: /\.(jpg|png|gif|svg|ico)$/,
 				use: 'file-loader'
 			},
 			{
@@ -47,30 +49,21 @@ const common = {
 				use: ['babel-loader?cacheDirectory'],
 				exclude: /node_modules/,
 				include: PATHS.app
+			},
+			{
+				test: /\.json$/,
+				loader: 'json-loader'
 			}
 		]
 	},
 	plugins: [
-		new HtmlWebpackPlugin({
-			template: '../node_modules/html-webpack-template/index.ejs',
-			title: 'UruIT React Seed',
-			favicon: 'favicon.ico',
-			appMountId: 'app',
-			inject: false,
-			minify: {
-				collapseWhitespace: true,
-				conservativeCollapse: true,
-				preserveLineBreaks: true,
-				useShortDoctype: true,
-				html5: true
-			},
-			mobile: true
-		}),
-		new webpack.optimize.ModuleConcatenationPlugin()
-	],
-	stats: {
-		children: false
-	}
+        new HtmlWebpackPlugin({
+			template: './node_modules/html-webpack-template/index.ejs',
+			title: 'react-seed',			
+			appMountId: 'react-app',
+		 	inject: false
+		 })
+	]
 };
 
 module.exports = {
