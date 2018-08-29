@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "f69ac9e51cb0d99fae9b";
+/******/ 	var hotCurrentHash = "827d7d0d0520f30e083c";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -2180,7 +2180,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\nvar index = '/';\n\nvar about = '/about';\n\nvar chucknorris = 'https://api.chucknorris.io/jokes/random';\n\nvar api = {\n\tsample: '/api/sample'\n};\n\nexports.default = {\n\tindex: index,\n\tabout: about,\n\tchucknorris: chucknorris,\n\tapi: api\n};\n\n//# sourceURL=webpack:///./routes/links.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\nvar index = '/';\n\nvar about = '/about';\n\nvar chucknorris = '/api/random';\n\nvar api = {\n\tsample: '/api/sample/get'\n};\n\nexports.default = {\n\tindex: index,\n\tabout: about,\n\tchucknorris: chucknorris,\n\tapi: api\n};\n\n//# sourceURL=webpack:///./routes/links.js?");
 
 /***/ }),
 
