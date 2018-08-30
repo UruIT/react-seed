@@ -61,7 +61,8 @@ const common = {
 			template: './node_modules/html-webpack-template/index.ejs',
 			title: 'react-seed',			
 			appMountId: 'app',
-		 	inject: false
+			inject: false,
+			mobile: true
 		 })
 	]
 };
