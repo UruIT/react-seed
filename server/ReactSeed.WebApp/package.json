@@ -1,7 +1,7 @@
 {
-	"name": "rekord",
+	"name": "react-seed-server",
 	"version": "1.0.0",
-	"description": "rekord web app",
+	"description": "react seed - server",
 	"main": "index.js",
 	"repository": "",
 	"author": "UruIT",

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Rekord.WebApp
+namespace ReactSeed.WebApp
 {
     public class Program
     {

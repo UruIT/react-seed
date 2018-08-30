@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Rekord.WebApp
+namespace ReactSeed.WebApp
 {
     public class Startup
     {

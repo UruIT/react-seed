@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
-namespace TopContent.Web.ApiControllers
+namespace ReactSeed.WebApp.ApiControllers
 {
     [Route("api/Sample")]
     public class SampleController : Controller

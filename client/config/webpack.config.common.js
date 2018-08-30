@@ -60,7 +60,7 @@ const common = {
         new HtmlWebpackPlugin({
 			template: './node_modules/html-webpack-template/index.ejs',
 			title: 'react-seed',			
-			appMountId: 'react-app',
+			appMountId: 'app',
 		 	inject: false
 		 })
 	]

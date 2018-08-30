@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "827d7d0d0520f30e083c";
+/******/ 	var hotCurrentHash = "522a535e9b799ab6b9dd";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1000,7 +1000,7 @@ eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader??re
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\n__webpack_require__(/*! ./index.scss */ \"./index.scss\");\n\nvar _Root = __webpack_require__(/*! ./routes/Root */ \"./routes/Root.js\");\n\nvar _Root2 = _interopRequireDefault(_Root);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _reactDom.render)(_react2.default.createElement(_Root2.default, null), document.getElementById('react-app'));\n\n//# sourceURL=webpack:///./index.jsx?");
+eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\n__webpack_require__(/*! ./index.scss */ \"./index.scss\");\n\nvar _Root = __webpack_require__(/*! ./routes/Root */ \"./routes/Root.js\");\n\nvar _Root2 = _interopRequireDefault(_Root);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(0, _reactDom.render)(_react2.default.createElement(_Root2.default, null), document.getElementById('app'));\n\n//# sourceURL=webpack:///./index.jsx?");
 
 /***/ }),
 
