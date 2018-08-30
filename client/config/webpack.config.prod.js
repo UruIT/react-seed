@@ -54,14 +54,6 @@ module.exports = merge(common, {
 			minChunks: module => /node_modules/.test(module.resource)
 		}),
 		new ExtractTextPlugin('[name].[chunkhash].css'),
-		new HtmlWebpackExternalsPlugin({
-			externals: [
-				{
-				  module: 'bootstrap',
-				  entry: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css',
-				},
-			]
-		}),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': '"production"'
 		}),
