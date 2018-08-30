@@ -4,6 +4,7 @@
 /dist
 /build
 /tmp
+/wwwroot
 
 # dependencies
 /node_modules
@@ -42,3 +43,7 @@ Thumbs.db
 
 # cache
 .eslintcache
+/.vs
+/server/ReactSeed.WebApp/.vs
+/server/ReactSeed.WebApp/bin/Debug/netcoreapp2.0
+/server/ReactSeed.WebApp/obj

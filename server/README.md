@@ -1,42 +1,25 @@
 # React Seed Server
 
+
 ## Dependencies
 
-Add new packages to the `server` sub-project:
+Add new nuget packages to the `server` project:
 
-```bash
-yarn add <package>
+```Package Manager Console
+Install-Package <packageName> -ProjectName MyProject 
 ```
 
-## Migrations
 
-### Create migration script
-```bash
-yarn run migrate:make -- <migration_name>
+## Execute Seed
+
+On Visual Studio:
+
 ```
-Example: 
-`yarn run migrate:make -- create_person_table`
-
-### Execute migration
-```bash
-yarn run migrate:latest
+Run
 ```
 
-### Rollback migration
-```bash
-yarn run migrate:rollback
+On Visual Studio Code Terminal:
+
 ```
-
-## Seeds
-
-### Create seed script
-```bash
-yarn run seed:make
+dotnet run 
 ```
-
-### Execute seed
-```bash
-yarn run seed:run
-```
-
-### [Setup info here](../docs/setup.md)

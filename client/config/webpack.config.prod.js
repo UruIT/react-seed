@@ -1,68 +1,66 @@
-const CleanPlugin = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const merge = require('webpack-merge');
-const path = require('path');
-
 const { common, PATHS } = require('./webpack.config.common');
+const merge = require('webpack-merge');
+const webpack = require('webpack');
+const CleanPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
 
 module.exports = merge(common, {
-	mode: 'production',
 	output: {
-		chunkFilename: '[chunkhash].js',
-		filename: '[name].[chunkhash].js'
+		path: PATHS.build,
+		filename: '[name].[chunkhash].js',
+		chunkFilename: '[chunkhash].js'
 	},
-	optimization: {
-		runtimeChunk: 'single',
-		splitChunks: {
-			chunks: 'all'
-		}
-	},
-	devtool: 'hidden-source-map',
 	module: {
 		rules: [
 			{
-				test: /\.jsx?$/,
-				use: ['eslint-loader'],
-				include: PATHS.app,
-				enforce: 'pre'
+				test: /\.scss$/,
+				use: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: [
+						{
+							loader: 'css-loader',
+							options: {
+								modules: true,
+								camelCase: 'dashes',
+								minimize: true
+							}
+						},
+						{
+							loader: 'postcss-loader'
+						},
+						{
+							loader: 'resolve-url-loader'
+						},
+						{
+							loader: 'sass-loader'
+						}
+					]
+				})
 			},
 			{
-				test: /\.scss$/,
-				use: [
-					MiniCssExtractPlugin.loader,
-					{
-						loader: 'css-loader',
-						options: {
-							modules: true,
-							camelCase: 'dashes',
-							minimize: true
-						}
-					},
-					{
-						loader: 'postcss-loader'
-					},
-					{
-						loader: 'resolve-url-loader'
-					},
-					{
-						loader: 'sass-loader'
-					}
-				]
+				test: /\.css$/,
+				loader: 'style-loader!css-loader'
 			}
 		]
 	},
 	plugins: [
-		new CleanPlugin([PATHS.dist], {
+		new CleanPlugin([PATHS.build], {
 			root: PATHS.root,
 			verbose: false
 		}),
-		new MiniCssExtractPlugin('[name].[chunkhash].css'),
-		new CopyWebpackPlugin([
-			{
-				from: path.join(PATHS.app, 'favicon.ico'),
-				to: path.join(PATHS.dist, 'favicon.ico')
+		new webpack.optimize.CommonsChunkPlugin({
+			names: 'vendor',
+			minChunks: module => /node_modules/.test(module.resource)
+		}),
+		new ExtractTextPlugin('[name].[chunkhash].css'),
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': '"production"'
+		}),
+		new webpack.optimize.UglifyJsPlugin({
+			compress: {
+				warnings: false
 			}
-		])
+		})
 	]
 });

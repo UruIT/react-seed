@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import noop from 'utils/noop';
+import noop from '../../utils/noop';
 import styles from './clickable.scss';
 
 const Clickable = ({ content, onClick }) => (

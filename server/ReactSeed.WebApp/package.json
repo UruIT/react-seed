@@ -1,7 +1,7 @@
 {
-	"name": "react-seed",
-	"version": "1.1.0",
-	"description": "react seed - uruit",
+	"name": "react-seed-server",
+	"version": "1.0.0",
+	"description": "react seed - server",
 	"main": "index.js",
 	"repository": "",
 	"author": "UruIT",
@@ -25,10 +25,7 @@
 	"devDependencies": {
 		"aspnet-webpack": "^2.0.1",
 		"aspnet-webpack-react": "^3.0.0",
-		"webpack-dev-middleware": "^1.12.0",
-		"eslint": "^4.5.0",
-		"eslint-loader": "^2.0.0",
-		"eslint-plugin-react": "^7.3.0"
+		"webpack-dev-middleware": "^1.12.0"
 	},
 	"dependencies": {
 		"react-hot-loader": "^1.3.1",

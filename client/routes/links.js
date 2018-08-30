@@ -2,10 +2,10 @@ const index = '/';
 
 const about = '/about';
 
-const chucknorris = 'https://api.chucknorris.io/jokes/random';
+const chucknorris = '/api/random';
 
 const api = {
-	sample: '/api/sample'
+	sample: '/api/sample/get'
 };
 
 export default {
