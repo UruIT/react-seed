@@ -64,7 +64,12 @@ const common = {
 				useShortDoctype: true,
 				html5: true
 			},
-			mobile: true
+			mobile: true,
+			scripts: [
+				'https://cdnjs.cloudflare.com/ajax/libs/react/16.1.1/umd/react.production.min.js',
+				'https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.1/umd/react-dom.production.min.js',
+				'https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/4.2.0/react-router-dom.min.js'
+			]
 		}),
 		new webpack.optimize.ModuleConcatenationPlugin()
 	],

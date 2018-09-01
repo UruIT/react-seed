@@ -8,6 +8,11 @@ const { common, PATHS } = require('./webpack.config.common');
 
 module.exports = merge(common, {
 	mode: 'production',
+	externals: {
+		react: 'React',
+		'react-dom': 'ReactDOM',
+		'react-router-dom': 'ReactRouterDOM'
+	},
 	output: {
 		chunkFilename: '[chunkhash].js',
 		filename: '[name].[chunkhash].js'
