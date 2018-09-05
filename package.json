@@ -12,7 +12,9 @@
 		"dev": "cd client && npm run dev",
 		"prod": "npm run build",
 		"test": "npm run test:client",
+		"test:client": "cd client && npm test",
 		"test:coverage": "cd client && npm run coverage",
+		"coveralls": "npm run test:coverage && cat ./client/coverage/lcov.info | coveralls",
 		"tdd": "cd client && npm run tdd",
 		"serve": "npm run build && http-server build/ -p 8081",
 		"postinstall": "cd client && yarn"
