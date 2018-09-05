@@ -1,5 +1,5 @@
 import React from 'react';
-import { getJson } from 'utils/fetch';
+import { getJson, run } from 'utils/fetch';
 import links from '../../routes/links';
 import Clickable from '../clickable';
 import styles from './app.scss';
@@ -18,13 +18,13 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		getJson(links.api.sample)
+		run(getJson(links.api.sample))
 			.then(sample => this.setState({ sample }))
 			.catch(error => this.setState({ error }));
 	}
 
 	handleClick() {
-		return getJson(links.chucknorris).then(response =>
+		return run(getJson(links.chucknorris)).then(response =>
 			this.setState({
 				jokes: [response.value, ...this.state.jokes]
 			})
