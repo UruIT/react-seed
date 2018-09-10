@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ReactSeed.WebApp.ApiControllers
 {
-    [Route("api/Sample")]
+    [Route("api/Sample/")]
     public class SampleController : Controller
     {
 
@@ -16,7 +16,7 @@ namespace ReactSeed.WebApp.ApiControllers
 		{
 		}
 
-		[HttpGet("[action]")]
+		[HttpGet]
 		public ExampleDto Get()
 		{
 			var model = new ExampleDto() { Text = "Hi, this is a http get .net core response." };
