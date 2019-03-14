@@ -15,20 +15,20 @@
 		"build": "webpack"
 	},
 	"dependencies": {
-		"es6-promise": "^4.1.1",
-		"prop-types": "^15.5.9",
-		"react": "^16.1.1",
-		"react-dom": "^16.1.1",
-		"react-router-dom": "^4.2.0",
-		"whatwg-fetch": "^2.0.3"
+		"es6-promise": "^4.2.6",
+		"prop-types": "^15.7.2",
+		"react": "^16.8.4",
+		"react-dom": "^16.8.4",
+		"react-router-dom": "^4.3.1",
+		"whatwg-fetch": "^3.0.0"
 	},
 	"devDependencies": {
 		"babel-preset-react-hmre": "^1.1.1",
-		"enzyme": "^3.2.0",
-		"enzyme-adapter-react-16": "^1.1.0",
-		"jest": "^21.2.1",
-		"react-test-renderer": "^16.1.1",
-		"webpack-bundle-analyzer": "^2.13.1"
+		"enzyme": "^3.9.0",
+		"enzyme-adapter-react-16": "^1.11.0",
+		"jest": "^24.5.0",
+		"react-test-renderer": "^16.8.4",
+		"webpack-bundle-analyzer": "^3.1.0"
 	},
 	"jest": {
 		"moduleNameMapper": {
