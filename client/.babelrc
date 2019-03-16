@@ -9,5 +9,8 @@
 				"react-hmre"
 			]
 		}
-	}
+	},
+	"plugins": [
+		"@babel/plugin-syntax-dynamic-import"
+	]
 }
