@@ -1,8 +1,7 @@
 {
 	"presets": [
-		"es2015",
-		"react",
-		"survivejs-kanban"
+		"@babel/preset-env",
+		"@babel/preset-react"
 	],
 	"env": {
 		"start": {
