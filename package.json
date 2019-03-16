@@ -50,7 +50,13 @@
 			"npm run slint"
 		]
 	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run precommit"
+		}
+	},
 	"devDependencies": {
+		"@babel/core": "^7.3.4",
 		"autoprefixer": "^9.4.10",
 		"babel-core": "^6.26.3",
 		"babel-eslint": "^10.0.1",

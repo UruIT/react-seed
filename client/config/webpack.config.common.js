@@ -36,7 +36,7 @@ const common = {
 			{
 				test: /\.html$/,
 				use: 'raw-loader',
-				exclude: ['../index.html']
+				exclude: path.resolve('../index.html')
 			},
 			{
 				test: /\.(jpg|png|gif|svg)$/,
