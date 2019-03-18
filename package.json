@@ -18,8 +18,6 @@
 		"uruit"
 	],
 	"scripts": {
-		"precommit": "lint-staged",
-		"prepush": "npm test",
 		"slint": "eslint . --ext .js,.jsx --ignore-path .gitignore --cache --ignore-pattern plop-templates",
 		"stats": "cd client && npm run stats",
 		"build": "cd client && npm run build",
@@ -52,7 +50,8 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "npm run precommit"
+			"pre-commit": "lint-staged",
+			"pre-push": "npm test"
 		}
 	},
 	"devDependencies": {
