@@ -7,7 +7,7 @@ const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
 	root: path.join(__dirname, '..', '..'),
 	app: path.join(__dirname, '..'),
-	dist: path.join(__dirname, '../../dist'),
+	dist: path.join(__dirname, '..', '..', 'dist'),
 	style: glob.sync('./**/*.scss'),
 	test: glob.sync('./**/*.spec.js')
 };
@@ -36,7 +36,7 @@ const common = {
 			{
 				test: /\.html$/,
 				use: 'raw-loader',
-				exclude: ['../index.html']
+				exclude: path.resolve('../index.html')
 			},
 			{
 				test: /\.(jpg|png|gif|svg)$/,
@@ -44,7 +44,15 @@ const common = {
 			},
 			{
 				test: /\.jsx?$/,
-				use: ['babel-loader?cacheDirectory'],
+				use: {
+					loader: "babel-loader?cacheDirectory",
+					options: {
+						presets: [
+							"@babel/preset-env",
+							"@babel/preset-react"
+						]
+					}
+				},
 				exclude: /node_modules/,
 				include: PATHS.app
 			}
@@ -64,12 +72,7 @@ const common = {
 				useShortDoctype: true,
 				html5: true
 			},
-			mobile: true,
-			scripts: [
-				'https://cdnjs.cloudflare.com/ajax/libs/react/16.1.1/umd/react.production.min.js',
-				'https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.1/umd/react-dom.production.min.js',
-				'https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/4.2.0/react-router-dom.min.js'
-			]
+			mobile: true
 		}),
 		new webpack.optimize.ModuleConcatenationPlugin()
 	],

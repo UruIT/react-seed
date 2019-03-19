@@ -1,10 +1,16 @@
 const { common, PATHS } = require('./webpack.config.common');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = merge(common, {
 	mode: 'development',
 	devtool: 'eval',
+	output: {
+		filename: '[name].bundle.js',
+		chunkFilename: '[name].bundle.js',
+		path: path.resolve(__dirname, '..', '..', 'dist')
+	},
 	module: {
 		rules: [
 			{

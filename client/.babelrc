@@ -1,8 +1,7 @@
 {
 	"presets": [
-		"es2015",
-		"react",
-		"survivejs-kanban"
+		"@babel/preset-env",
+		"@babel/preset-react"
 	],
 	"env": {
 		"start": {
@@ -10,5 +9,8 @@
 				"react-hmre"
 			]
 		}
-	}
+	},
+	"plugins": [
+		"@babel/plugin-syntax-dynamic-import"
+	]
 }
