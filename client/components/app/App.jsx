@@ -2,6 +2,7 @@ import React from 'react';
 import { getJson } from 'utils/fetch';
 import links from '../../routes/links';
 import Clickable from '../clickable';
+import AuthButtons from '../auth-buttons';
 import styles from './app.scss';
 import classes from 'utils/classes';
 
@@ -42,6 +43,7 @@ class App extends React.Component {
 				</button>
 				<div className={styles.jokes}>{jsxJokes}</div>
 				{this.renderApiTest(sample, error)}
+				<AuthButtons />
 			</div>
 		);
 	}

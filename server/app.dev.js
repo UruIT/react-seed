@@ -8,6 +8,7 @@ const webpack = require('webpack');
 
 const logger = require('./utils/logger');
 const {
+	configureAuth,
 	configureBodyParser,
 	configureCors,
 	configureDevErrorHandler,
@@ -27,6 +28,7 @@ const compiler = webpack(wpConfig);
 
 const app = express();
 
+configureAuth(app);
 configureRequestLogger(app);
 configureBodyParser(app);
 configureCors(app);

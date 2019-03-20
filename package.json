@@ -90,5 +90,8 @@
 	},
 	"engines": {
 		"node": ">=8"
+	},
+	"dependencies": {
+		"cookie-parser": "^1.4.4"
 	}
 }

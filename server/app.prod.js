@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const {
+	configureAuth,
 	configureBodyParser,
 	configureCompression,
 	configureCors,
@@ -20,6 +21,7 @@ app.use(express.static(DIST_DIR));
 app.get('*', (req, res) => res.sendFile(HTML_FILE));
 
 function init(app) {
+	configureAuth(app);
 	configureCors(app);
 	configureBodyParser(app);
 	configureErrorHandler(app);

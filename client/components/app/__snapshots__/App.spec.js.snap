@@ -30,5 +30,6 @@ exports[`<App/> snapshot 1`] = `
     }
     onClick={[Function]}
   />
+  <AuthButtons />
 </div>
 `;
